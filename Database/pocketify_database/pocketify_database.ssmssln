@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# SQL Server Management Studio Solution File, Format Version 20.00
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "pocketify_database", "pocketify_database\pocketify_database.ssmssqlproj", "{1A5A25F7-1F2E-493E-9BE0-189268BB3D2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A5A25F7-1F2E-493E-9BE0-189268BB3D2C}.Default|Default.ActiveCfg = Default
+		{A7729412-4994-4C8A-BEFC-0D5C7BCA9DC9}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCEE3AD7-4D56-4B06-87EF-B83ADD3A9224}
+	EndGlobalSection
+EndGlobal
