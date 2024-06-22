@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using pocketify.Authentication;
 using pocketify.Database;
+using pocketify.Forms;
 
 namespace pocketify
 {
@@ -58,9 +59,9 @@ namespace pocketify
 
         private void login_signup_btn_Click(object sender, EventArgs e)
         {
-            //signup_form form = new signup_form();
-            //form.Show();
-            //this.Hide();
+            SignupForm signupForm = new SignupForm();
+            signupForm.Show();
+            this.Hide();
         }
     }
 }
