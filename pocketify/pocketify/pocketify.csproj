@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LandingForm.cs">
+    <Compile Include="Forms\LandingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LandingForm.Designer.cs">
+    <Compile Include="Forms\LandingForm.Designer.cs">
       <DependentUpon>LandingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LandingForm.resx">
+    <EmbeddedResource Include="Forms\LandingForm.resx">
       <DependentUpon>LandingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
