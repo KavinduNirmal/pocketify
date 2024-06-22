@@ -24,21 +24,34 @@ namespace pocketify
             string username = login_un_inp.Text;
             string password = login_pw_inp.Text;
 
+            // Try to check if the user is already in the system
             try
             {
-                if (!AuthenticateUser(username, password))
+                if (!AuthenticateUser(username, password)) // if the credentials are wrong, Warn the user.
                 {
                     MessageBox.Show("Invalid Username or Password");
+                    // after 3 tries, suggest creating an account.
                 }
                 else
                 {
-                    MessageBox.Show("Login Successful");
+                    MessageBox.Show("Login Successful"); // If succesful, send to dashboard.
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        // Authenticate User.
+        private bool AuthenticateUser(string username, string password)
+        {
+            string storedHash = dbOperations.GetPassword(username); // check the database for the right username, usernames must be unique.
+            if (storedHash == null)
+            {
+                return false;
+            }
+            return PasswordHasher.VerifyPassword(password, storedHash); // if the user exist, check if the password is valid.
         }
     }
 }
