@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using pocketify.Authentication;
+using pocketify.Database;
 
 namespace pocketify
 {
@@ -19,7 +21,24 @@ namespace pocketify
 
         private void login_login_btn_Click(object sender, EventArgs e)
         {
+            string username = login_un_inp.Text;
+            string password = login_pw_inp.Text;
 
+            try
+            {
+                if (!AuthenticateUser(username, password))
+                {
+                    MessageBox.Show("Invalid Username or Password");
+                }
+                else
+                {
+                    MessageBox.Show("Login Successful");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
         }
     }
 }
