@@ -45,7 +45,7 @@
             this.login_signup_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.login_signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_signup_btn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_signup_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.login_signup_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.login_signup_btn.Location = new System.Drawing.Point(650, 355);
             this.login_signup_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.login_signup_btn.Name = "login_signup_btn";

@@ -49,7 +49,7 @@
             this.signup_login_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.signup_login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_login_btn.Font = new System.Drawing.Font("Inter Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_login_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.signup_login_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.signup_login_btn.Location = new System.Drawing.Point(650, 473);
             this.signup_login_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_login_btn.Name = "signup_login_btn";
@@ -79,44 +79,49 @@
             // 
             // signup_pwdc_inp
             // 
-            this.signup_pwdc_inp.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_pwdc_inp.Font = new System.Drawing.Font("Inter", 10F);
+            this.signup_pwdc_inp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.signup_pwdc_inp.Location = new System.Drawing.Point(490, 414);
             this.signup_pwdc_inp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_pwdc_inp.Name = "signup_pwdc_inp";
-            this.signup_pwdc_inp.Size = new System.Drawing.Size(300, 27);
+            this.signup_pwdc_inp.Size = new System.Drawing.Size(300, 28);
             this.signup_pwdc_inp.TabIndex = 20;
             // 
             // signiup_pwd_input
             // 
-            this.signiup_pwd_input.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signiup_pwd_input.Font = new System.Drawing.Font("Inter", 10F);
+            this.signiup_pwd_input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.signiup_pwd_input.Location = new System.Drawing.Point(490, 355);
             this.signiup_pwd_input.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signiup_pwd_input.Name = "signiup_pwd_input";
-            this.signiup_pwd_input.Size = new System.Drawing.Size(300, 27);
+            this.signiup_pwd_input.Size = new System.Drawing.Size(300, 28);
             this.signiup_pwd_input.TabIndex = 19;
             // 
             // signup_email_input
             // 
-            this.signup_email_input.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_email_input.Font = new System.Drawing.Font("Inter", 10F);
+            this.signup_email_input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.signup_email_input.Location = new System.Drawing.Point(490, 296);
             this.signup_email_input.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_email_input.Name = "signup_email_input";
-            this.signup_email_input.Size = new System.Drawing.Size(300, 27);
+            this.signup_email_input.Size = new System.Drawing.Size(300, 28);
             this.signup_email_input.TabIndex = 18;
             // 
             // signup_username_inp
             // 
-            this.signup_username_inp.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_username_inp.Font = new System.Drawing.Font("Inter", 10F);
+            this.signup_username_inp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.signup_username_inp.Location = new System.Drawing.Point(490, 237);
             this.signup_username_inp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_username_inp.Name = "signup_username_inp";
-            this.signup_username_inp.Size = new System.Drawing.Size(300, 27);
+            this.signup_username_inp.Size = new System.Drawing.Size(300, 28);
             this.signup_username_inp.TabIndex = 17;
             // 
             // su_cpwd_txt
             // 
             this.su_cpwd_txt.AutoSize = true;
             this.su_cpwd_txt.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.su_cpwd_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.su_cpwd_txt.Location = new System.Drawing.Point(325, 417);
             this.su_cpwd_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.su_cpwd_txt.Name = "su_cpwd_txt";
@@ -128,6 +133,7 @@
             // 
             this.su_pwd_txt.AutoSize = true;
             this.su_pwd_txt.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.su_pwd_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.su_pwd_txt.Location = new System.Drawing.Point(393, 358);
             this.su_pwd_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.su_pwd_txt.Name = "su_pwd_txt";
@@ -139,6 +145,7 @@
             // 
             this.su_email_txt.AutoSize = true;
             this.su_email_txt.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.su_email_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.su_email_txt.Location = new System.Drawing.Point(422, 299);
             this.su_email_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.su_email_txt.Name = "su_email_txt";
@@ -150,6 +157,7 @@
             // 
             this.su_username_txt.AutoSize = true;
             this.su_username_txt.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.su_username_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.su_username_txt.Location = new System.Drawing.Point(382, 240);
             this.su_username_txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.su_username_txt.Name = "su_username_txt";
