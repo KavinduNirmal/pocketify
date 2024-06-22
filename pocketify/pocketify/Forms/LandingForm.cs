@@ -14,15 +14,17 @@ namespace pocketify
 {
     public partial class LandingForm : Form
     {
+        private DbOperations dbOperations;
         public LandingForm()
         {
             InitializeComponent();
+            dbOperations = new DbOperations();
         }
 
         private void login_login_btn_Click(object sender, EventArgs e)
         {
-            string username = login_un_inp.Text;
-            string password = login_pw_inp.Text;
+            string username = Login_un_inp.Text;
+            string password = Login_pw_inp.Text;
 
             // Try to check if the user is already in the system
             try
@@ -52,6 +54,13 @@ namespace pocketify
                 return false;
             }
             return PasswordHasher.VerifyPassword(password, storedHash); // if the user exist, check if the password is valid.
+        }
+
+        private void login_signup_btn_Click(object sender, EventArgs e)
+        {
+            //signup_form form = new signup_form();
+            //form.Show();
+            //this.Hide();
         }
     }
 }
