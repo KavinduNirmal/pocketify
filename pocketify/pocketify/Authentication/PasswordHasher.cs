@@ -9,6 +9,7 @@ namespace pocketify.Authentication
 {
     internal class PasswordHasher
     {
+        // Hash the password using SHA256 method
         public static string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())
@@ -20,6 +21,7 @@ namespace pocketify.Authentication
             }
         }
 
+        // Retrieve the given password hash from the database and check if it is correct.
         public static bool VerifyPassword(string enteredPassword, string storedHash)
         {
             var parts = storedHash.Split(':');
@@ -33,6 +35,7 @@ namespace pocketify.Authentication
             }
         }
 
+        // Doesnt know much of whats going on here. 
         private static string GenerateSalt()
         {
             var buffer = new byte[16];
