@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\PasswordHasher.cs" />
     <Compile Include="Forms\LandingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pocketify-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -70,6 +70,7 @@
             this.login_login_btn.TabIndex = 12;
             this.login_login_btn.Text = "Login";
             this.login_login_btn.UseVisualStyleBackColor = false;
+            this.login_login_btn.Click += new System.EventHandler(this.login_login_btn_Click);
             // 
             // login_pw_label
             // 

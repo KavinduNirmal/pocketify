@@ -16,5 +16,10 @@ namespace pocketify
         {
             InitializeComponent();
         }
+
+        private void login_login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
