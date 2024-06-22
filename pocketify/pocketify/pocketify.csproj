@@ -47,16 +47,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\PasswordHasher.cs" />
+    <Compile Include="Database\DbConnection.cs" />
+    <Compile Include="Database\DbOperations.cs" />
     <Compile Include="Forms\LandingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LandingForm.Designer.cs">
       <DependentUpon>LandingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\LandingForm.resx">
       <DependentUpon>LandingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,8 +98,6 @@
   <ItemGroup>
     <None Include="Resources\pocketify-logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
