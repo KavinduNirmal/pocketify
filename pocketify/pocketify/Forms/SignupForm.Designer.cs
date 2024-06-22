@@ -57,6 +57,7 @@
             this.signup_login_btn.TabIndex = 22;
             this.signup_login_btn.Text = "Log In";
             this.signup_login_btn.UseVisualStyleBackColor = false;
+            this.signup_login_btn.Click += new System.EventHandler(this.signup_login_btn_Click);
             // 
             // signup_signin_btn
             // 
@@ -74,6 +75,7 @@
             this.signup_signin_btn.TabIndex = 21;
             this.signup_signin_btn.Text = "Sign Up";
             this.signup_signin_btn.UseVisualStyleBackColor = false;
+            this.signup_signin_btn.Click += new System.EventHandler(this.signup_signin_btn_Click);
             // 
             // signup_pwdc_inp
             // 
