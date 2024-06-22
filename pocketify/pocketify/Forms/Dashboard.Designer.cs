@@ -29,7 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            this.NavbarSidebar = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // NavbarSidebar
+            // 
+            this.NavbarSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NavbarSidebar.Location = new System.Drawing.Point(0, 0);
+            this.NavbarSidebar.Name = "NavbarSidebar";
+            this.NavbarSidebar.Size = new System.Drawing.Size(230, 753);
+            this.NavbarSidebar.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(230, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1032, 753);
+            this.panel1.TabIndex = 1;
             // 
             // Dashboard
             // 
@@ -37,10 +55,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1262, 753);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.NavbarSidebar);
             this.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -49,5 +70,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel NavbarSidebar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
