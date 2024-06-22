@@ -40,7 +40,7 @@ namespace pocketify.Database
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "INSERT INTO Users (Email, UserName, PwdHash) VALUES (@Email, @Username, @PwdHash)";
+                string query = "INSERT INTO Users (Email, UserName, PwdHash) VALUES (@Email, @Username, @PwdHash);";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
