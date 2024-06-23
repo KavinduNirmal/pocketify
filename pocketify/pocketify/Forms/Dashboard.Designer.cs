@@ -34,13 +34,16 @@
             this.FormContainer = new System.Windows.Forms.Panel();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.NavButtons = new System.Windows.Forms.Panel();
+            this.dash_primarybtnbtn = new System.Windows.Forms.Button();
+            this.Page_label = new System.Windows.Forms.Label();
+            this.Dash_acc_btn = new System.Windows.Forms.Button();
             this.dash_nav_budget_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dash_nav_trans_btn = new System.Windows.Forms.Button();
             this.dash_nav_dash_btn = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.dash_nav_settings_btn = new System.Windows.Forms.Button();
             this.NavbarSidebar.SuspendLayout();
+            this.DetailsTopBar.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             this.NavButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -58,18 +61,20 @@
             // 
             // DetailsTopBar
             // 
+            this.DetailsTopBar.Controls.Add(this.Dash_acc_btn);
+            this.DetailsTopBar.Controls.Add(this.Page_label);
             this.DetailsTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.DetailsTopBar.Location = new System.Drawing.Point(230, 0);
             this.DetailsTopBar.Name = "DetailsTopBar";
-            this.DetailsTopBar.Size = new System.Drawing.Size(1032, 50);
+            this.DetailsTopBar.Size = new System.Drawing.Size(1032, 60);
             this.DetailsTopBar.TabIndex = 1;
             // 
             // FormContainer
             // 
             this.FormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FormContainer.Location = new System.Drawing.Point(230, 50);
+            this.FormContainer.Location = new System.Drawing.Point(230, 60);
             this.FormContainer.Name = "FormContainer";
-            this.FormContainer.Size = new System.Drawing.Size(1032, 703);
+            this.FormContainer.Size = new System.Drawing.Size(1032, 693);
             this.FormContainer.TabIndex = 2;
             // 
             // LogoPanel
@@ -78,20 +83,65 @@
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(230, 50);
+            this.LogoPanel.Size = new System.Drawing.Size(230, 60);
             this.LogoPanel.TabIndex = 0;
             // 
             // NavButtons
             // 
-            this.NavButtons.Controls.Add(this.dash_nav_settings_btn);
+            this.NavButtons.Controls.Add(this.dash_primarybtnbtn);
             this.NavButtons.Controls.Add(this.dash_nav_budget_btn);
             this.NavButtons.Controls.Add(this.button1);
             this.NavButtons.Controls.Add(this.dash_nav_trans_btn);
             this.NavButtons.Controls.Add(this.dash_nav_dash_btn);
-            this.NavButtons.Location = new System.Drawing.Point(13, 50);
+            this.NavButtons.Location = new System.Drawing.Point(13, 60);
             this.NavButtons.Name = "NavButtons";
-            this.NavButtons.Size = new System.Drawing.Size(200, 653);
+            this.NavButtons.Size = new System.Drawing.Size(200, 643);
             this.NavButtons.TabIndex = 1;
+            // 
+            // dash_primarybtnbtn
+            // 
+            this.dash_primarybtnbtn.BackColor = System.Drawing.Color.White;
+            this.dash_primarybtnbtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dash_primarybtnbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(182)))), ((int)(((byte)(241)))));
+            this.dash_primarybtnbtn.FlatAppearance.BorderSize = 2;
+            this.dash_primarybtnbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dash_primarybtnbtn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dash_primarybtnbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(133)))), ((int)(((byte)(231)))));
+            this.dash_primarybtnbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dash_primarybtnbtn.Location = new System.Drawing.Point(0, 563);
+            this.dash_primarybtnbtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.dash_primarybtnbtn.Name = "dash_primarybtnbtn";
+            this.dash_primarybtnbtn.Size = new System.Drawing.Size(200, 80);
+            this.dash_primarybtnbtn.TabIndex = 4;
+            this.dash_primarybtnbtn.Text = "+ Add Transaction";
+            this.dash_primarybtnbtn.UseVisualStyleBackColor = false;
+            // 
+            // Page_label
+            // 
+            this.Page_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Page_label.AutoSize = true;
+            this.Page_label.Font = new System.Drawing.Font("Inter", 14F, System.Drawing.FontStyle.Bold);
+            this.Page_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.Page_label.Location = new System.Drawing.Point(31, 12);
+            this.Page_label.Name = "Page_label";
+            this.Page_label.Size = new System.Drawing.Size(141, 29);
+            this.Page_label.TabIndex = 0;
+            this.Page_label.Text = "Dashboard";
+            this.Page_label.Click += new System.EventHandler(this.Page_label_Click);
+            // 
+            // Dash_acc_btn
+            // 
+            this.Dash_acc_btn.BackgroundImage = global::pocketify.Properties.Resources.avatar_male;
+            this.Dash_acc_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Dash_acc_btn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Dash_acc_btn.FlatAppearance.BorderSize = 0;
+            this.Dash_acc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Dash_acc_btn.Location = new System.Drawing.Point(942, 0);
+            this.Dash_acc_btn.Name = "Dash_acc_btn";
+            this.Dash_acc_btn.Size = new System.Drawing.Size(90, 60);
+            this.Dash_acc_btn.TabIndex = 1;
+            this.Dash_acc_btn.UseVisualStyleBackColor = true;
             // 
             // dash_nav_budget_btn
             // 
@@ -106,6 +156,7 @@
             this.dash_nav_budget_btn.Location = new System.Drawing.Point(0, 135);
             this.dash_nav_budget_btn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.dash_nav_budget_btn.Name = "dash_nav_budget_btn";
+            this.dash_nav_budget_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.dash_nav_budget_btn.Size = new System.Drawing.Size(200, 45);
             this.dash_nav_budget_btn.TabIndex = 3;
             this.dash_nav_budget_btn.Text = "   Budget";
@@ -125,6 +176,7 @@
             this.button1.Location = new System.Drawing.Point(0, 90);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(200, 45);
             this.button1.TabIndex = 2;
             this.button1.Text = "   Categories";
@@ -144,6 +196,7 @@
             this.dash_nav_trans_btn.Location = new System.Drawing.Point(0, 45);
             this.dash_nav_trans_btn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.dash_nav_trans_btn.Name = "dash_nav_trans_btn";
+            this.dash_nav_trans_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.dash_nav_trans_btn.Size = new System.Drawing.Size(200, 45);
             this.dash_nav_trans_btn.TabIndex = 1;
             this.dash_nav_trans_btn.Text = "   Transactions";
@@ -162,6 +215,7 @@
             this.dash_nav_dash_btn.Location = new System.Drawing.Point(0, 0);
             this.dash_nav_dash_btn.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.dash_nav_dash_btn.Name = "dash_nav_dash_btn";
+            this.dash_nav_dash_btn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.dash_nav_dash_btn.Size = new System.Drawing.Size(200, 45);
             this.dash_nav_dash_btn.TabIndex = 0;
             this.dash_nav_dash_btn.Text = "   Dashboard";
@@ -171,30 +225,12 @@
             // LogoPictureBox
             // 
             this.LogoPictureBox.Image = global::pocketify.Properties.Resources.pocketify_logo;
-            this.LogoPictureBox.Location = new System.Drawing.Point(45, 12);
+            this.LogoPictureBox.Location = new System.Drawing.Point(46, 12);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(117, 24);
             this.LogoPictureBox.TabIndex = 0;
             this.LogoPictureBox.TabStop = false;
             this.LogoPictureBox.Click += new System.EventHandler(this.LogoPictureBox_Click);
-            // 
-            // dash_nav_settings_btn
-            // 
-            this.dash_nav_settings_btn.BackColor = System.Drawing.Color.White;
-            this.dash_nav_settings_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dash_nav_settings_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(182)))), ((int)(((byte)(241)))));
-            this.dash_nav_settings_btn.FlatAppearance.BorderSize = 2;
-            this.dash_nav_settings_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dash_nav_settings_btn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dash_nav_settings_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(133)))), ((int)(((byte)(231)))));
-            this.dash_nav_settings_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dash_nav_settings_btn.Location = new System.Drawing.Point(0, 573);
-            this.dash_nav_settings_btn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.dash_nav_settings_btn.Name = "dash_nav_settings_btn";
-            this.dash_nav_settings_btn.Size = new System.Drawing.Size(200, 80);
-            this.dash_nav_settings_btn.TabIndex = 4;
-            this.dash_nav_settings_btn.Text = "+ Add Transaction";
-            this.dash_nav_settings_btn.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
@@ -214,6 +250,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.NavbarSidebar.ResumeLayout(false);
+            this.DetailsTopBar.ResumeLayout(false);
+            this.DetailsTopBar.PerformLayout();
             this.LogoPanel.ResumeLayout(false);
             this.NavButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
@@ -233,6 +271,8 @@
         private System.Windows.Forms.Button dash_nav_trans_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button dash_nav_budget_btn;
-        private System.Windows.Forms.Button dash_nav_settings_btn;
+        private System.Windows.Forms.Button dash_primarybtnbtn;
+        private System.Windows.Forms.Label Page_label;
+        private System.Windows.Forms.Button Dash_acc_btn;
     }
 }

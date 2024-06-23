@@ -21,5 +21,10 @@ namespace pocketify.Forms
         {
 
         }
+
+        private void Page_label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

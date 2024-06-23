@@ -47,7 +47,7 @@
             this.login_signup_btn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_signup_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.login_signup_btn.Location = new System.Drawing.Point(650, 355);
-            this.login_signup_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login_signup_btn.Margin = new System.Windows.Forms.Padding(4);
             this.login_signup_btn.Name = "login_signup_btn";
             this.login_signup_btn.Size = new System.Drawing.Size(140, 40);
             this.login_signup_btn.TabIndex = 13;
@@ -67,7 +67,7 @@
             this.login_login_btn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_login_btn.ForeColor = System.Drawing.Color.White;
             this.login_login_btn.Location = new System.Drawing.Point(490, 355);
-            this.login_login_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login_login_btn.Margin = new System.Windows.Forms.Padding(4);
             this.login_login_btn.Name = "login_login_btn";
             this.login_login_btn.Size = new System.Drawing.Size(140, 40);
             this.login_login_btn.TabIndex = 12;
@@ -94,7 +94,7 @@
             this.Login_pw_inp.Font = new System.Drawing.Font("Inter", 10F);
             this.Login_pw_inp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.Login_pw_inp.Location = new System.Drawing.Point(490, 296);
-            this.Login_pw_inp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login_pw_inp.Margin = new System.Windows.Forms.Padding(4);
             this.Login_pw_inp.MaxLength = 16;
             this.Login_pw_inp.Name = "Login_pw_inp";
             this.Login_pw_inp.PasswordChar = '•';
@@ -120,7 +120,7 @@
             this.Login_un_inp.Font = new System.Drawing.Font("Inter", 10F);
             this.Login_un_inp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.Login_un_inp.Location = new System.Drawing.Point(490, 237);
-            this.Login_un_inp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login_un_inp.Margin = new System.Windows.Forms.Padding(4);
             this.Login_un_inp.MaxLength = 20;
             this.Login_un_inp.Name = "Login_un_inp";
             this.Login_un_inp.Size = new System.Drawing.Size(300, 28);
@@ -130,7 +130,7 @@
             // 
             this.login_logo_1.Image = global::pocketify.Properties.Resources.pocketify_logo;
             this.login_logo_1.Location = new System.Drawing.Point(585, 169);
-            this.login_logo_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login_logo_1.Margin = new System.Windows.Forms.Padding(4);
             this.login_logo_1.Name = "login_logo_1";
             this.login_logo_1.Size = new System.Drawing.Size(111, 24);
             this.login_logo_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -139,6 +139,7 @@
             // 
             // LandingForm
             // 
+            this.AcceptButton = this.login_login_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -156,7 +157,7 @@
             this.Font = new System.Drawing.Font("Inter", 10F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LandingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
