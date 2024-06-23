@@ -83,9 +83,29 @@ namespace pocketify.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap budget_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("budget_icon_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap categories_icon {
             get {
                 object obj = ResourceManager.GetObject("categories_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap categories_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("categories_icon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace pocketify.Properties {
         internal static System.Drawing.Bitmap transaction_icon {
             get {
                 object obj = ResourceManager.GetObject("transaction_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transaction_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("transaction_icon_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

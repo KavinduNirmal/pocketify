@@ -130,6 +130,9 @@
   <data name="budget_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\budget_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="avatar_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pocketify-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pocketify-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,13 @@
   <data name="categories_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categories_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avatar_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="budget_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\budget_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="categories_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categories_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transaction_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transaction_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
