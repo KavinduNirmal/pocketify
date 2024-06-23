@@ -16,5 +16,10 @@ namespace pocketify.Forms
         {
             InitializeComponent();
         }
+
+        private void LogoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
