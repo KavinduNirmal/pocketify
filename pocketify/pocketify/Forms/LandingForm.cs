@@ -38,6 +38,9 @@ namespace pocketify
                 else
                 {
                     MessageBox.Show("Login Successful"); // If succesful, send to dashboard.
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
+                    this.Hide();
                 }
             }
             catch (Exception ex)
