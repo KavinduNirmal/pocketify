@@ -63,6 +63,46 @@ namespace pocketify.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap budget_icon {
+            get {
+                object obj = ResourceManager.GetObject("budget_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap categories_icon {
+            get {
+                object obj = ResourceManager.GetObject("categories_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboard_icon {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboard_icon_white {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_icon_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginBG {
             get {
                 object obj = ResourceManager.GetObject("loginBG", resourceCulture);
@@ -76,6 +116,16 @@ namespace pocketify.Properties {
         internal static System.Drawing.Bitmap pocketify_logo {
             get {
                 object obj = ResourceManager.GetObject("pocketify-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transaction_icon {
+            get {
+                object obj = ResourceManager.GetObject("transaction_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
