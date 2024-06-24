@@ -38,6 +38,17 @@ namespace pocketify.Forms
             currentButton.BackColor = Color.FromArgb(92, 133, 231);
         }
 
+        public void loadForm(object Form)
+        {
+            if (this.FormContainer.Controls.Count > 0) this.FormContainer.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.FormContainer.Controls.Add(f);
+            this.FormContainer.Tag = f;
+            f.Show();
+        }
+
         private void Button_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
