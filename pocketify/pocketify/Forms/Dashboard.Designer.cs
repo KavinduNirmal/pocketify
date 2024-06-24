@@ -183,7 +183,7 @@
             // LogoPictureBox
             // 
             this.LogoPictureBox.Image = global::pocketify.Properties.Resources.pocketify_logo;
-            this.LogoPictureBox.Location = new System.Drawing.Point(46, 12);
+            this.LogoPictureBox.Location = new System.Drawing.Point(45, 17);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(117, 24);
             this.LogoPictureBox.TabIndex = 0;
