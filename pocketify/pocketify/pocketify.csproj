@@ -107,6 +107,32 @@
   <ItemGroup>
     <None Include="Resources\pocketify-logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\dashboard_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budget_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budget_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categories_icon_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction_icon_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
