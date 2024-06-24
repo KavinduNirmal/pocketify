@@ -38,13 +38,14 @@ namespace pocketify.Forms
             currentButton.BackColor = Color.FromArgb(92, 133, 231);
         }
 
+        // the following function loads a given form into a panel
         public void loadForm(object Form)
         {
-            if (this.FormContainer.Controls.Count > 0) this.FormContainer.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.FormContainer.Controls.Add(f);
+            if (this.FormContainer.Controls.Count > 0) this.FormContainer.Controls.RemoveAt(0); // Check if a form is already loaded.
+            Form f = Form as Form; // make sure the given value is an actual form.
+            f.TopLevel = false; // prevent the form to load as a separate application.
+            f.Dock = DockStyle.Fill; // fill the FormContainer with the form.
+            this.FormContainer.Controls.Add(f); // add the newly loaded form into the current controls count.
             this.FormContainer.Tag = f;
             f.Show();
         }
@@ -99,6 +100,11 @@ namespace pocketify.Forms
                     button.ForeColor = Color.FromArgb(24, 24, 24);
                 }
             }
+        }
+
+        private void Dash_acc_btn_Click(object sender, EventArgs e)
+        {
+            loadForm(new SettingsPage());
         }
     }
 }

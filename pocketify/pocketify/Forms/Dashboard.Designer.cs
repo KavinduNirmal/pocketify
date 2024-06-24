@@ -212,6 +212,7 @@
             this.Dash_acc_btn.Size = new System.Drawing.Size(90, 60);
             this.Dash_acc_btn.TabIndex = 1;
             this.Dash_acc_btn.UseVisualStyleBackColor = true;
+            this.Dash_acc_btn.Click += new System.EventHandler(this.Dash_acc_btn_Click);
             // 
             // Page_label
             // 
