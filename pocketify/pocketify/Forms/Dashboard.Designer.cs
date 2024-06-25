@@ -129,6 +129,7 @@
             this.dash_nav_category_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dash_nav_category_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dash_nav_category_btn.UseVisualStyleBackColor = false;
+            this.dash_nav_category_btn.Click += new System.EventHandler(this.dash_nav_category_btn_Click);
             // 
             // dash_nav_trans_btn
             // 

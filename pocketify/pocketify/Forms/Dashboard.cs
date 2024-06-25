@@ -88,8 +88,8 @@ namespace pocketify.Forms
 
         private void dash_nav_trans_btn_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent = (MouseEventArgs)e;
-            
+            loadForm(new Transactions());
+
         }
 
         private void dash_primarybtnbtn_Click(object sender, EventArgs e)
@@ -128,6 +128,11 @@ namespace pocketify.Forms
         private void menu_item_copy_click(object sender, EventArgs e)
         {
             // Do something here
+        }
+
+        private void dash_nav_category_btn_Click(object sender, EventArgs e)
+        {
+            loadForm(new Categories());
         }
     }
 }
