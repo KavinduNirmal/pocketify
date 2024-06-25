@@ -56,8 +56,8 @@ namespace pocketify.Forms
                     int uid = dbOperations.GetUid(username);
                     if (uid != 0) 
                     {
-                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).username;
-                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).email;
+                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).Username;
+                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).Email;
                         Dashboard dashboard = new Dashboard(); 
                         dashboard.Show();
                         this.Hide();

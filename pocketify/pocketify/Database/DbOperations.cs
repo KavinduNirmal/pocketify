@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using pocketify.Authentication;
 using pocketify.Database;
 using pocketify.GlobalHelpers;
@@ -43,6 +44,31 @@ namespace pocketify.Database
             
         }
 
+        public string GetPasswordHash(int userid)
+        {
+            string storedHash = null;
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "SELECT PwdHash FROM Users WHERE UID = @Uid;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Uid", userid);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            storedHash = reader.GetString(0);
+                        }
+                    }
+                }
+
+
+            }
+            return storedHash;
+        }
+
         public bool GetUser(string username)
         {
             bool userExistance = false;
@@ -72,8 +98,8 @@ namespace pocketify.Database
 
         public class UserDetails
         {
-            public string username { get; set; }
-            public string email { get; set; }
+            public string Username { get; set; }
+            public string Email { get; set; }
         }
 
         public UserDetails GetUserDetails(int userid)
@@ -92,8 +118,8 @@ namespace pocketify.Database
                     {
                         if (reader.Read())
                         {
-                            userDetails.username = reader.GetString(0);
-                            userDetails.email = reader.GetString(1);
+                            userDetails.Username = reader.GetString(0);
+                            userDetails.Email = reader.GetString(1);
                         }
                     }
                 }
@@ -122,6 +148,32 @@ namespace pocketify.Database
                     }
                     catch (SqlException ex)
                     {
+                        
+                        // Handle exception (e.g., log it)
+                    }
+                }
+            }
+        }
+
+        public void UpdatePassword(int userid, string pwdHash)
+        {
+
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "UPDATE Users SET PwdHash = @pwdHash WHERE UID = @uid;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@pwdHash", pwdHash);;
+                    cmd.Parameters.AddWithValue("@uid", userid);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+
                         // Handle exception (e.g., log it)
                     }
                 }
