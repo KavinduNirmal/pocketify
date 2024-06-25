@@ -144,5 +144,8 @@
   <ItemGroup>
     <None Include="Resources\transaction_icon_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

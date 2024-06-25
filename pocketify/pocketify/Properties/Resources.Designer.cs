@@ -133,6 +133,16 @@ namespace pocketify.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Edit_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginBG {
             get {
                 object obj = ResourceManager.GetObject("loginBG", resourceCulture);

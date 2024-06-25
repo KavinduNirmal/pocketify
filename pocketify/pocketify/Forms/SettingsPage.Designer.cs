@@ -36,6 +36,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Settings_un_edit_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +95,19 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Save Settings";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Settings_un_edit_btn
+            // 
+            this.Settings_un_edit_btn.FlatAppearance.BorderSize = 0;
+            this.Settings_un_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_un_edit_btn.Image = global::pocketify.Properties.Resources.Edit_Icon;
+            this.Settings_un_edit_btn.Location = new System.Drawing.Point(764, 76);
+            this.Settings_un_edit_btn.Name = "Settings_un_edit_btn";
+            this.Settings_un_edit_btn.Size = new System.Drawing.Size(25, 23);
+            this.Settings_un_edit_btn.TabIndex = 7;
+            this.Settings_un_edit_btn.UseVisualStyleBackColor = true;
+            this.Settings_un_edit_btn.Click += new System.EventHandler(this.Settings_un_edit_btn_Click);
             // 
             // SettingsPage
             // 
@@ -101,6 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 646);
+            this.Controls.Add(this.Settings_un_edit_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -128,5 +143,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Settings_un_edit_btn;
     }
 }

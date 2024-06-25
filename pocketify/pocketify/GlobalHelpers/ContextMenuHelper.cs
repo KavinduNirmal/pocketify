@@ -23,13 +23,12 @@ namespace pocketify.GlobalHelpers
                 menu.Items.Add(toolStripMenuItem);
             }
 
-            Point menuPosition = form.PointToClient(Cursor.Position);
-            menuPosition.X += 10;  // Offset the X coordinate 10 pixels to the right
-            menuPosition.Y -= 40;   // Offset the Y coordinate 40 pixels up
-
             // Show the ContextMenuStrip at the current mouse position
-            menu.Show(button, menuPosition);
-        
+            Point location = button.PointToScreen(new Point(button.Width, 0));
+
+            // Show the ContextMenuStrip at the calculated position
+            menu.Show(location, ToolStripDropDownDirection.BelowRight);
+
         }
 
         // Create a nested class or structure for MenuItem
