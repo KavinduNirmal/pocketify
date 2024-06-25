@@ -33,6 +33,8 @@ namespace pocketify
                 if (!AuthenticateUser(username, password)) // if the credentials are wrong, Warn the user.
                 {
                     MessageBox.Show("Invalid Username or Password");
+                    Login_pw_inp.Text = "";
+                    login_pw_label.ForeColor = System.Drawing.Color.Red;
                     // after 3 tries, suggest creating an account.
                 }
                 else
