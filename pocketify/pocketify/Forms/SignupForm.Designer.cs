@@ -40,6 +40,7 @@
             this.su_email_txt = new System.Windows.Forms.Label();
             this.su_username_txt = new System.Windows.Forms.Label();
             this.login_logo_1 = new System.Windows.Forms.PictureBox();
+            this.Signup_term_check = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.login_logo_1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.signup_login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_login_btn.Font = new System.Drawing.Font("Inter Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_login_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.signup_login_btn.Location = new System.Drawing.Point(650, 473);
+            this.signup_login_btn.Location = new System.Drawing.Point(650, 532);
             this.signup_login_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_login_btn.Name = "signup_login_btn";
             this.signup_login_btn.Size = new System.Drawing.Size(140, 40);
@@ -68,7 +69,7 @@
             this.signup_signin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_signin_btn.Font = new System.Drawing.Font("Inter Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_signin_btn.ForeColor = System.Drawing.Color.White;
-            this.signup_signin_btn.Location = new System.Drawing.Point(490, 473);
+            this.signup_signin_btn.Location = new System.Drawing.Point(490, 532);
             this.signup_signin_btn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.signup_signin_btn.Name = "signup_signin_btn";
             this.signup_signin_btn.Size = new System.Drawing.Size(140, 40);
@@ -176,6 +177,17 @@
             this.login_logo_1.TabIndex = 12;
             this.login_logo_1.TabStop = false;
             // 
+            // Signup_term_check
+            // 
+            this.Signup_term_check.AutoSize = true;
+            this.Signup_term_check.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Signup_term_check.Location = new System.Drawing.Point(523, 478);
+            this.Signup_term_check.Name = "Signup_term_check";
+            this.Signup_term_check.Size = new System.Drawing.Size(226, 20);
+            this.Signup_term_check.TabIndex = 23;
+            this.Signup_term_check.Text = "I Agree to the terms of service.";
+            this.Signup_term_check.UseVisualStyleBackColor = true;
+            // 
             // SignupForm
             // 
             this.AcceptButton = this.signup_signin_btn;
@@ -185,6 +197,7 @@
             this.BackgroundImage = global::pocketify.Properties.Resources.loginBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 753);
+            this.Controls.Add(this.Signup_term_check);
             this.Controls.Add(this.signup_login_btn);
             this.Controls.Add(this.signup_signin_btn);
             this.Controls.Add(this.signup_pwdc_inp);
@@ -223,5 +236,6 @@
         private System.Windows.Forms.Label su_email_txt;
         private System.Windows.Forms.Label su_username_txt;
         private System.Windows.Forms.PictureBox login_logo_1;
+        private System.Windows.Forms.CheckBox Signup_term_check;
     }
 }

@@ -129,6 +129,7 @@
             this.dash_nav_category_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dash_nav_category_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dash_nav_category_btn.UseVisualStyleBackColor = false;
+            this.dash_nav_category_btn.Click += new System.EventHandler(this.dash_nav_category_btn_Click);
             // 
             // dash_nav_trans_btn
             // 
@@ -170,6 +171,7 @@
             this.dash_nav_dash_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dash_nav_dash_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dash_nav_dash_btn.UseVisualStyleBackColor = false;
+            this.dash_nav_dash_btn.Click += new System.EventHandler(this.dash_nav_dash_btn_Click);
             // 
             // LogoPanel
             // 
@@ -183,7 +185,7 @@
             // LogoPictureBox
             // 
             this.LogoPictureBox.Image = global::pocketify.Properties.Resources.pocketify_logo;
-            this.LogoPictureBox.Location = new System.Drawing.Point(46, 12);
+            this.LogoPictureBox.Location = new System.Drawing.Point(45, 17);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(117, 24);
             this.LogoPictureBox.TabIndex = 0;
@@ -212,6 +214,7 @@
             this.Dash_acc_btn.Size = new System.Drawing.Size(90, 60);
             this.Dash_acc_btn.TabIndex = 1;
             this.Dash_acc_btn.UseVisualStyleBackColor = true;
+            this.Dash_acc_btn.Click += new System.EventHandler(this.Dash_acc_btn_Click);
             // 
             // Page_label
             // 
