@@ -52,8 +52,8 @@ namespace pocketify
                     if (uid != 0) 
                     {
                         UserIDHelper.Instance.UserId = uid; // Set the UserId in AppContext
-                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).username;
-                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).email;
+                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).Username;
+                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).Email;
                         // Opening Dashboard form
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
