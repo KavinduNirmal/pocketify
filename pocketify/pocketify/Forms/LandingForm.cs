@@ -40,10 +40,20 @@ namespace pocketify
                 else
                 {
                     // If succesful, send to dashboard.
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
-                    this.Hide();
-                    MessageBox.Show("Login Successful"); 
+                    int uid = dbOperations.GetUid(username);
+                    if (uid != 0) 
+                    {
+                        Dashboard dashboard = new Dashboard(uid);
+                        dashboard.Show();
+                        this.Hide();
+                        MessageBox.Show("Login Successful : Logged in as " + uid + " " + username);
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found or UID is invalid for " + username);
+                        return; // Or handle this case appropriately
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -56,6 +66,7 @@ namespace pocketify
         private bool AuthenticateUser(string username, string password)
         {
             string storedHash = dbOperations.GetPassword(username); // check the database for the right username, usernames must be unique.
+           
             if (storedHash == null)
             {
                 return false;

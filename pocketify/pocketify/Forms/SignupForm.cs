@@ -52,11 +52,20 @@ namespace pocketify.Forms
 
                 else
                 {
-                    // if the user doesnt exist, create an account and log them in.
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
-                    this.Hide();
-                    MessageBox.Show("Signup Successful!");
+                    int uid = dbOperations.GetUid(username);
+                    if (uid != 0) 
+                    {
+                        Dashboard dashboard = new Dashboard(uid); 
+                        dashboard.Show();
+                        this.Hide();
+                        MessageBox.Show("Signup Successful! : Logging in as " + uid + " " + username);
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found or UID is invalid for " + username);
+                        return; // Or handle this case appropriately
+                    }
+                    
                 }
             }
             catch (Exception ex)

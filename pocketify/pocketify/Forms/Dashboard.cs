@@ -17,7 +17,7 @@ namespace pocketify.Forms
         private readonly Button focusButton;
         private Button currentButton;
 
-        public Dashboard()
+        public Dashboard(int UID)
         {
             InitializeComponent();
 
