@@ -39,6 +39,7 @@
             this.Settings_un_edit_btn = new System.Windows.Forms.Button();
             this.Settings_email_edit_btn = new System.Windows.Forms.Button();
             this.Settings_change_pw_btn = new System.Windows.Forms.Button();
+            this.Settings_pw_conf_input = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -135,12 +136,20 @@
             this.Settings_change_pw_btn.UseVisualStyleBackColor = true;
             this.Settings_change_pw_btn.Click += new System.EventHandler(this.Settings_change_pw_btn_Click);
             // 
+            // Settings_pw_conf_input
+            // 
+            this.Settings_pw_conf_input.Location = new System.Drawing.Point(468, 231);
+            this.Settings_pw_conf_input.Name = "Settings_pw_conf_input";
+            this.Settings_pw_conf_input.Size = new System.Drawing.Size(290, 22);
+            this.Settings_pw_conf_input.TabIndex = 11;
+            // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 646);
+            this.Controls.Add(this.Settings_pw_conf_input);
             this.Controls.Add(this.Settings_change_pw_btn);
             this.Controls.Add(this.Settings_email_edit_btn);
             this.Controls.Add(this.Settings_save_btn);
@@ -174,5 +183,6 @@
         private System.Windows.Forms.Button Settings_save_btn;
         private System.Windows.Forms.Button Settings_email_edit_btn;
         private System.Windows.Forms.Button Settings_change_pw_btn;
+        private System.Windows.Forms.TextBox Settings_pw_conf_input;
     }
 }
