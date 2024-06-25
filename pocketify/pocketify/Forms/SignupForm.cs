@@ -33,7 +33,12 @@ namespace pocketify.Forms
             if (password != confPassword) { MessageBox.Show("Passwords do not match!"); return; } // if the passwords do not match, throw an error.
             if (!IsValidEmail(email)) { MessageBox.Show("Invalid email format."); return; } // if the email is not a conventional email, throw an error.
             if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confPassword)) { MessageBox.Show("Password cannot be empty"); return; } // if password inputs are empty, throw an error.
-            if (IsTermsAgreed(terms)) { MessageBox.Show("You must agree to terms of service"); Signup_term_check.ForeColor = Color.Red; return; }
+            if (IsTermsAgreed(terms)) 
+            { 
+                Signup_term_check.ForeColor = Color.FromArgb(221,38,38); 
+                MessageBox.Show("You must agree to terms of service"); 
+                return; 
+            }
 
             string passwordHash = PasswordHasher.HashPassword(password);
 
