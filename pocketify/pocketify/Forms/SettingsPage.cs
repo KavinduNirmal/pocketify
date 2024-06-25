@@ -30,6 +30,7 @@ namespace pocketify.Forms
             dbOperations = new DbOperations();
             Settings_username_input.Text = userName;
             Settings_email_edit_Input.Text = userEmail;
+            Settings_pw_conf_input.Visible = false;
             this.Load += SettingsPage_Load;
         }
 
@@ -80,7 +81,7 @@ namespace pocketify.Forms
             string currentPwHash = dbOperations.GetPasswordHash(userId);
             string newPassword = Setting_pw_edit_input.Text;
 
-
+            
 
             if (Settings_username_input.Enabled || Settings_email_edit_Input.Enabled || Setting_pw_edit_input.Enabled)
             {
@@ -115,6 +116,8 @@ namespace pocketify.Forms
                         {
                             items.Enabled = false;
                         }
+
+                        Settings_pw_conf_input.Visible = false;
                     }
                 }
                 else
@@ -169,7 +172,40 @@ namespace pocketify.Forms
 
         private void Settings_change_pw_btn_Click(object sender, EventArgs e)
         {
-            
+            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            if (mouseEvent.Button == MouseButtons.Left)
+            {
+
+                List<ContextMenuHelper.MenuItem> menuItems = new List<ContextMenuHelper.MenuItem>();
+                menuItems.Add(new ContextMenuHelper.MenuItem("Edit", Settings_pw_edit_click));
+
+                // Create and show the context menu
+                ContextMenuHelper helper = new ContextMenuHelper();
+                helper.CreateContextMenu(Settings_change_pw_btn, menuItems, this);
+            }
+        }
+
+        private void Settings_pw_edit_click(object sender, EventArgs e) 
+        {
+            Setting_pw_edit_input.Enabled = true;
+            Setting_pw_edit_input.Text = "";
+            Settings_pw_conf_input.Visible = true;
+            if (!Setting_pw_edit_input.Focused || !Settings_pw_conf_input.Focused)
+            {
+                Setting_pw_edit_input.PasswordChar = '*';
+                Settings_pw_conf_input.PasswordChar = '*';
+            }
+            else
+            {
+                Setting_pw_edit_input.PasswordChar = '\0';
+                Settings_pw_conf_input.PasswordChar = '\0';
+            }
+
+            // Add event handlers to manage focus changes
+            Setting_pw_edit_input.GotFocus += (s, args) => Setting_pw_edit_input.PasswordChar = '\0';
+            Setting_pw_edit_input.LostFocus += (s, args) => Setting_pw_edit_input.PasswordChar = '*';
+            Settings_pw_conf_input.GotFocus += (s, args) => Settings_pw_conf_input.PasswordChar = '\0';
+            Settings_pw_conf_input.LostFocus += (s, args) => Settings_pw_conf_input.PasswordChar = '*';
         }
     }
 }
