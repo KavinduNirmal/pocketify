@@ -35,8 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.Settings_un_edit_btn = new System.Windows.Forms.Button();
+            this.Settings_save_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -87,16 +87,6 @@
             this.textBox3.Size = new System.Drawing.Size(290, 22);
             this.textBox3.TabIndex = 5;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 33);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save Settings";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Settings_un_edit_btn
             // 
             this.Settings_un_edit_btn.FlatAppearance.BorderSize = 0;
@@ -109,14 +99,24 @@
             this.Settings_un_edit_btn.UseVisualStyleBackColor = true;
             this.Settings_un_edit_btn.Click += new System.EventHandler(this.Settings_un_edit_btn_Click);
             // 
+            // Settings_save_btn
+            // 
+            this.Settings_save_btn.Location = new System.Drawing.Point(587, 26);
+            this.Settings_save_btn.Name = "Settings_save_btn";
+            this.Settings_save_btn.Size = new System.Drawing.Size(171, 33);
+            this.Settings_save_btn.TabIndex = 8;
+            this.Settings_save_btn.Text = "Save Settings";
+            this.Settings_save_btn.UseVisualStyleBackColor = true;
+            this.Settings_save_btn.Click += new System.EventHandler(this.Settings_save_btn_Click);
+            // 
             // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 646);
+            this.Controls.Add(this.Settings_save_btn);
             this.Controls.Add(this.Settings_un_edit_btn);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -142,7 +142,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Settings_un_edit_btn;
+        private System.Windows.Forms.Button Settings_save_btn;
     }
 }

@@ -43,6 +43,11 @@ namespace pocketify.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Settings_save_btn_Click(object sender, EventArgs e)
+        {
             MouseEventArgs mouseEvent = (MouseEventArgs)e;
             if (mouseEvent.Button == MouseButtons.Left)
             {
@@ -52,7 +57,7 @@ namespace pocketify.Forms
 
                 // Create and show the context menu
                 ContextMenuHelper helper = new ContextMenuHelper();
-                helper.CreateContextMenu(button1, menuItems, this);
+                helper.CreateContextMenu(Settings_save_btn, menuItems, this);
             }
         }
     }
