@@ -30,12 +30,17 @@ namespace pocketify
             // Try to check if the user is already in the system
             try
             {
-                if (!AuthenticateUser(username, password)) // if the credentials are wrong, Warn the user.
+                if (!dbOperations.GetUser(username))
+                {
+                    MessageBox.Show("User Doesnt Exist, Please create a new account");
+                    return;
+                }
+                else if (!AuthenticateUser(username, password)) // if the credentials are wrong, Warn the user.
                 {
                     MessageBox.Show("Invalid Username or Password");
                     Login_pw_inp.Text = "";
                     login_pw_label.ForeColor = System.Drawing.Color.Red;
-                    // after 3 tries, suggest creating an account.
+                    
                 }
                 else
                 {

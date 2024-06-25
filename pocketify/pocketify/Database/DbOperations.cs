@@ -39,6 +39,33 @@ namespace pocketify.Database
             
         }
 
+        public bool GetUser(string username)
+        {
+            bool userExistance = false;
+
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "SELECT * FROM Users WHERE Username = @Username;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            userExistance = true;
+                        }
+                    }
+                }
+
+
+            }
+            return userExistance;
+
+        }
+
         public int GetUid(string username)
         {
             int UID = 0; 

@@ -8,7 +8,7 @@ GO
 
 CREATE TABLE Users 
 (
-	UID INT IDENTITY(0,4),
+	UID INT IDENTITY(3,4),
 	UserName VARCHAR(20) UNIQUE NOT NULL,
 	Email VARCHAR(50) NOT NULL,
 	PwdHash VARCHAR(256) NOT NULL,
@@ -16,3 +16,5 @@ CREATE TABLE Users
 );
 
 SELECT * FROM Users;
+
+drop table Users;
