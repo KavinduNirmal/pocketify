@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using pocketify.GlobalHelpers;
 
 namespace pocketify.Forms
 {
@@ -105,6 +106,36 @@ namespace pocketify.Forms
         private void Dash_acc_btn_Click(object sender, EventArgs e)
         {
             loadForm(new SettingsPage());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dash_nav_dash_btn_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            if (mouseEvent.Button == MouseButtons.Left)
+            {
+                
+                List<ContextMenuHelper.MenuItem> menuItems = new List<ContextMenuHelper.MenuItem>();
+                menuItems.Add(new ContextMenuHelper.MenuItem("Copy", menu_item_copy_click)); 
+
+                // Create and show the context menu
+                ContextMenuHelper helper = new ContextMenuHelper();
+                helper.CreateContextMenu(dash_nav_dash_btn, menuItems, this);
+            }
+        }
+
+        private void menu_item_copy_click(object sender, EventArgs e)
+        {
+            // Do something here
         }
     }
 }

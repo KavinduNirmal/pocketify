@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,13 @@ namespace pocketify.GlobalHelpers
                 menu.Items.Add(toolStripMenuItem);
             }
 
+            Point menuPosition = form.PointToClient(Cursor.Position);
+            menuPosition.X += 10;  // Offset the X coordinate 10 pixels to the right
+            menuPosition.Y -= 40;   // Offset the Y coordinate 40 pixels up
+
             // Show the ContextMenuStrip at the current mouse position
-            menu.Show(button, form.PointToClient(Cursor.Position));
+            menu.Show(button, menuPosition);
+        
         }
 
         // Create a nested class or structure for MenuItem

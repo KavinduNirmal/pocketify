@@ -170,6 +170,7 @@
             this.dash_nav_dash_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dash_nav_dash_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dash_nav_dash_btn.UseVisualStyleBackColor = false;
+            this.dash_nav_dash_btn.Click += new System.EventHandler(this.dash_nav_dash_btn_Click);
             // 
             // LogoPanel
             // 
