@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using pocketify.Authentication;
 using pocketify.Database;
 using pocketify.Forms;
+using pocketify.GlobalHelpers;
+
 
 namespace pocketify
 {
@@ -46,11 +48,17 @@ namespace pocketify
                 {
                     // If succesful, send to dashboard.
                     int uid = dbOperations.GetUid(username);
+
                     if (uid != 0) 
                     {
-                        Dashboard dashboard = new Dashboard(uid);
+                        UserIDHelper.Instance.UserId = uid; // Set the UserId in AppContext
+                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).username;
+                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).email;
+                        // Opening Dashboard form
+                        Dashboard dashboard = new Dashboard();
                         dashboard.Show();
                         this.Hide();
+
                         MessageBox.Show("Login Successful : Logged in as " + uid + " " + username);
                     }
                     else

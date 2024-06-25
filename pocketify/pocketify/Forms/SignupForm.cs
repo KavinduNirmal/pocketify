@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using pocketify.Authentication;
 using pocketify.Database;
+using pocketify.GlobalHelpers;
 
 namespace pocketify.Forms
 {
@@ -55,7 +56,9 @@ namespace pocketify.Forms
                     int uid = dbOperations.GetUid(username);
                     if (uid != 0) 
                     {
-                        Dashboard dashboard = new Dashboard(uid); 
+                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).username;
+                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).email;
+                        Dashboard dashboard = new Dashboard(); 
                         dashboard.Show();
                         this.Hide();
                         MessageBox.Show("Signup Successful! : Logging in as " + uid + " " + username);

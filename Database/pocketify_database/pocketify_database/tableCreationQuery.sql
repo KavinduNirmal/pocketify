@@ -16,5 +16,3 @@ CREATE TABLE Users
 );
 
 SELECT * FROM Users;
-
-drop table Users;

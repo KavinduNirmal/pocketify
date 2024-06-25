@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Settings_username_input = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Settings_email_edit_Input = new System.Windows.Forms.TextBox();
+            this.Setting_pw_edit_input = new System.Windows.Forms.TextBox();
             this.Settings_save_btn = new System.Windows.Forms.Button();
             this.Settings_un_edit_btn = new System.Windows.Forms.Button();
             this.Settings_email_edit_btn = new System.Windows.Forms.Button();
@@ -75,19 +75,19 @@
             this.Settings_username_input.Size = new System.Drawing.Size(290, 22);
             this.Settings_username_input.TabIndex = 3;
             // 
-            // textBox2
+            // Settings_email_edit_Input
             // 
-            this.textBox2.Location = new System.Drawing.Point(468, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 22);
-            this.textBox2.TabIndex = 4;
+            this.Settings_email_edit_Input.Location = new System.Drawing.Point(468, 132);
+            this.Settings_email_edit_Input.Name = "Settings_email_edit_Input";
+            this.Settings_email_edit_Input.Size = new System.Drawing.Size(290, 22);
+            this.Settings_email_edit_Input.TabIndex = 4;
             // 
-            // textBox3
+            // Setting_pw_edit_input
             // 
-            this.textBox3.Location = new System.Drawing.Point(468, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(290, 22);
-            this.textBox3.TabIndex = 5;
+            this.Setting_pw_edit_input.Location = new System.Drawing.Point(468, 181);
+            this.Setting_pw_edit_input.Name = "Setting_pw_edit_input";
+            this.Setting_pw_edit_input.Size = new System.Drawing.Size(290, 22);
+            this.Setting_pw_edit_input.TabIndex = 5;
             // 
             // Settings_save_btn
             // 
@@ -145,8 +145,8 @@
             this.Controls.Add(this.Settings_email_edit_btn);
             this.Controls.Add(this.Settings_save_btn);
             this.Controls.Add(this.Settings_un_edit_btn);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Setting_pw_edit_input);
+            this.Controls.Add(this.Settings_email_edit_Input);
             this.Controls.Add(this.Settings_username_input);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -168,8 +168,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Settings_username_input;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Settings_email_edit_Input;
+        private System.Windows.Forms.TextBox Setting_pw_edit_input;
         private System.Windows.Forms.Button Settings_un_edit_btn;
         private System.Windows.Forms.Button Settings_save_btn;
         private System.Windows.Forms.Button Settings_email_edit_btn;

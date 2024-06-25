@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pocketify.GlobalHelpers;
+using pocketify.Database;
+using static pocketify.Database.DbOperations;
 
 namespace pocketify.Forms
 {
@@ -15,18 +17,37 @@ namespace pocketify.Forms
     {
         private ContextMenuHelper contextMenuHelper;
         private TextBox[] editButtons;
+        private DbOperations dbOperations;
+        public int userId = UserIDHelper.Instance.UserId;
+        public string userName = UserIDHelper.Instance.UserName;
+        public string userEmail = UserIDHelper.Instance.Email;
 
         public SettingsPage()
         {
             InitializeComponent();
             contextMenuHelper = new ContextMenuHelper();
-            editButtons = new TextBox[] { Settings_username_input, textBox2, textBox3 };
+            editButtons = new TextBox[] { Settings_username_input, Settings_email_edit_Input, Setting_pw_edit_input };
+
+            dbOperations = new DbOperations();
 
             foreach (TextBox items in editButtons)
             {
                 items.Enabled = false;
-                items.Text = items.Text;
+                UpdateData();
             }
+
+            Settings_username_input.Text = userName;
+            Settings_email_edit_Input.Text = userEmail;
+            Setting_pw_edit_input.Text = "*******";
+
+        }
+
+
+        private void UpdateData()
+        {
+            Settings_username_input.Text = UserIDHelper.Instance.UserName;
+            Settings_email_edit_Input.Text = UserIDHelper.Instance.Email;
+            Setting_pw_edit_input.Text = "*******";
         }
 
         private void Settings_un_edit_btn_Click(object sender, EventArgs e)
@@ -56,7 +77,21 @@ namespace pocketify.Forms
 
         private void Settings_save_btn_Click(object sender, EventArgs e)
         {
+            string givenName = Settings_username_input.Text;
+            string givenEmail = Settings_email_edit_Input.Text;
 
+            // Update database with new data
+            dbOperations.UpdateData(givenName, givenEmail, userId);
+
+            // Fetch updated details and update UserIDHelper
+            UserDetails updatedDetails = dbOperations.GetUserDetails(userId);
+            UserIDHelper.Instance.UserName = updatedDetails.username;
+            UserIDHelper.Instance.Email = updatedDetails.email;
+
+            // Refresh the displayed data
+            UpdateData();
+
+            // Disable editing after save
             foreach (TextBox items in editButtons)
             {
                 items.Enabled = false;

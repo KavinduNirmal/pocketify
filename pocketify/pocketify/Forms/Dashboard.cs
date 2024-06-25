@@ -17,12 +17,13 @@ namespace pocketify.Forms
         private readonly Button focusButton;
         private Button currentButton;
 
-        public Dashboard(int UID)
+        public Dashboard()
         {
             InitializeComponent();
 
             navbarButtons = new Button[] { dash_nav_dash_btn, dash_nav_trans_btn, dash_nav_category_btn, dash_nav_budget_btn };
             focusButton = dash_primarybtnbtn;
+            
 
             foreach (Button button in navbarButtons) 
             {
