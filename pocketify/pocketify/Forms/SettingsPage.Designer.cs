@@ -32,11 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Settings_username_input = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Settings_un_edit_btn = new System.Windows.Forms.Button();
             this.Settings_save_btn = new System.Windows.Forms.Button();
+            this.Settings_un_edit_btn = new System.Windows.Forms.Button();
+            this.Settings_email_edit_btn = new System.Windows.Forms.Button();
+            this.Settings_change_pw_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -66,12 +68,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "UI Colour";
             // 
-            // textBox1
+            // Settings_username_input
             // 
-            this.textBox1.Location = new System.Drawing.Point(468, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 22);
-            this.textBox1.TabIndex = 3;
+            this.Settings_username_input.Location = new System.Drawing.Point(468, 76);
+            this.Settings_username_input.Name = "Settings_username_input";
+            this.Settings_username_input.Size = new System.Drawing.Size(290, 22);
+            this.Settings_username_input.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -87,6 +89,16 @@
             this.textBox3.Size = new System.Drawing.Size(290, 22);
             this.textBox3.TabIndex = 5;
             // 
+            // Settings_save_btn
+            // 
+            this.Settings_save_btn.Location = new System.Drawing.Point(587, 26);
+            this.Settings_save_btn.Name = "Settings_save_btn";
+            this.Settings_save_btn.Size = new System.Drawing.Size(171, 33);
+            this.Settings_save_btn.TabIndex = 8;
+            this.Settings_save_btn.Text = "Save Settings";
+            this.Settings_save_btn.UseVisualStyleBackColor = true;
+            this.Settings_save_btn.Click += new System.EventHandler(this.Settings_save_btn_Click);
+            // 
             // Settings_un_edit_btn
             // 
             this.Settings_un_edit_btn.FlatAppearance.BorderSize = 0;
@@ -99,15 +111,29 @@
             this.Settings_un_edit_btn.UseVisualStyleBackColor = true;
             this.Settings_un_edit_btn.Click += new System.EventHandler(this.Settings_un_edit_btn_Click);
             // 
-            // Settings_save_btn
+            // Settings_email_edit_btn
             // 
-            this.Settings_save_btn.Location = new System.Drawing.Point(587, 26);
-            this.Settings_save_btn.Name = "Settings_save_btn";
-            this.Settings_save_btn.Size = new System.Drawing.Size(171, 33);
-            this.Settings_save_btn.TabIndex = 8;
-            this.Settings_save_btn.Text = "Save Settings";
-            this.Settings_save_btn.UseVisualStyleBackColor = true;
-            this.Settings_save_btn.Click += new System.EventHandler(this.Settings_save_btn_Click);
+            this.Settings_email_edit_btn.FlatAppearance.BorderSize = 0;
+            this.Settings_email_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_email_edit_btn.Image = global::pocketify.Properties.Resources.Edit_Icon;
+            this.Settings_email_edit_btn.Location = new System.Drawing.Point(764, 131);
+            this.Settings_email_edit_btn.Name = "Settings_email_edit_btn";
+            this.Settings_email_edit_btn.Size = new System.Drawing.Size(25, 23);
+            this.Settings_email_edit_btn.TabIndex = 9;
+            this.Settings_email_edit_btn.UseVisualStyleBackColor = true;
+            this.Settings_email_edit_btn.Click += new System.EventHandler(this.Settings_email_edit_btn_Click);
+            // 
+            // Settings_change_pw_btn
+            // 
+            this.Settings_change_pw_btn.FlatAppearance.BorderSize = 0;
+            this.Settings_change_pw_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings_change_pw_btn.Image = global::pocketify.Properties.Resources.Edit_Icon;
+            this.Settings_change_pw_btn.Location = new System.Drawing.Point(764, 180);
+            this.Settings_change_pw_btn.Name = "Settings_change_pw_btn";
+            this.Settings_change_pw_btn.Size = new System.Drawing.Size(25, 23);
+            this.Settings_change_pw_btn.TabIndex = 10;
+            this.Settings_change_pw_btn.UseVisualStyleBackColor = true;
+            this.Settings_change_pw_btn.Click += new System.EventHandler(this.Settings_change_pw_btn_Click);
             // 
             // SettingsPage
             // 
@@ -115,11 +141,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 646);
+            this.Controls.Add(this.Settings_change_pw_btn);
+            this.Controls.Add(this.Settings_email_edit_btn);
             this.Controls.Add(this.Settings_save_btn);
             this.Controls.Add(this.Settings_un_edit_btn);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Settings_username_input);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -139,10 +167,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Settings_username_input;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button Settings_un_edit_btn;
         private System.Windows.Forms.Button Settings_save_btn;
+        private System.Windows.Forms.Button Settings_email_edit_btn;
+        private System.Windows.Forms.Button Settings_change_pw_btn;
     }
 }
