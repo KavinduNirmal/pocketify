@@ -90,6 +90,7 @@ namespace pocketify.Forms
         private void dash_nav_trans_btn_Click(object sender, EventArgs e)
         {
             loadForm(new Transactions());
+            Page_label.Text = "Transactions";
 
         }
 
@@ -108,6 +109,8 @@ namespace pocketify.Forms
         private void Dash_acc_btn_Click(object sender, EventArgs e)
         {
             loadForm(new SettingsPage());
+            Page_label.Text = "Settings";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -134,6 +137,7 @@ namespace pocketify.Forms
         private void dash_nav_category_btn_Click(object sender, EventArgs e)
         {
             loadForm(new Categories());
+            Page_label.Text = "Categories";
         }
     }
 }
