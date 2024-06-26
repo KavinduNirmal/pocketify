@@ -32,6 +32,7 @@ namespace pocketify.Forms
             Settings_email_edit_Input.Text = userEmail;
             Settings_pw_conf_input.Visible = false;
             this.Load += SettingsPage_Load;
+            Settings_version_label.Text = ApplicationInfoHelper.Instance.Version;
         }
 
         private void SettingsPage_Load(object sender, EventArgs e)

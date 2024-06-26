@@ -22,6 +22,7 @@ namespace pocketify
         {
             InitializeComponent();
             dbOperations = new DbOperations();
+            ApplicationInfoHelper.Instance.Version = "V A.0.0.5";
         }
 
         private void login_login_btn_Click(object sender, EventArgs e)

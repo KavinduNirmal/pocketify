@@ -85,6 +85,7 @@
     <Compile Include="Forms\Transactions.Designer.cs">
       <DependentUpon>Transactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalHelpers\ApplicationInfoHelper.cs" />
     <Compile Include="GlobalHelpers\ContextMenuHelper.cs" />
     <Compile Include="GlobalHelpers\UserIDHelper.cs" />
     <Compile Include="Program.cs" />
