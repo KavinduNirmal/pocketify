@@ -142,8 +142,6 @@ namespace pocketify.Database
 
         public UserBalance GetUserBalance(int userid)
         {
-            UserBalance ub = new UserBalance();
-
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
@@ -156,17 +154,91 @@ namespace pocketify.Database
                     {
                         if (reader.Read())
                         {
-                            ub.Balance = reader.GetFloat(0);
-                            ub.BalanceGoal = reader.GetFloat(1);
-                            ub.BalanceDeadline = Convert.ToString(reader.GetDateTime(2));
+                            return new UserBalance
+                            {
+                                Balance = reader.GetFloat(0),
+                                BalanceGoal = reader.GetFloat(1),
+                                BalanceDeadline = reader.GetDateTime(2).ToString("yyyy-MM-dd")
+                            };
                         }
                     }
                 }
-
-
             }
-            return ub;
+            return null;
         }
+
+        public UserBalance IntitalizeBalance(int userId)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "INSERT INTO Balance (UID, Balance, BalanceGoal, BalanceDeadLine) VALUES (@userId, @balance, @balanceGoal, @balanceDeadline);";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    float newBalance = 0;
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@balance", newBalance);
+                    cmd.Parameters.AddWithValue("@balanceGoal", newBalance);
+                    cmd.Parameters.AddWithValue("@balanceDeadline", DateTime.Today);
+
+                    cmd.ExecuteNonQuery();
+
+                    return new UserBalance
+                    {
+                        Balance = newBalance,
+                        BalanceGoal = newBalance,
+                        BalanceDeadline = DateTime.Today.ToString("yyyy-MM-dd")
+                    };
+                }
+            }
+        }
+
+        // Get the user Credit balance
+
+        public float GetUserCredit(int userId)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "SELECT Balance FROM CreditBalance WHERE UID = @Uid;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@uid", userId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetFloat(0);
+                        }
+                    }
+                }
+            }
+            return -1; // Indicate no balance found
+        }
+
+
+        public float InitializeCreditBalance(int userId)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "INSERT INTO CreditBalance (UID, Balance) VALUES (@userId, @balance);";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    float newBalance = 0;
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@balance", newBalance);
+
+                    cmd.ExecuteNonQuery();
+
+                    return newBalance;
+                }
+            }
+        }
+
 
         public void UpdateData(string username, string email, int userid)
         {
