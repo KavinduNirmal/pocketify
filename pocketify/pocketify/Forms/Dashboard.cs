@@ -104,6 +104,9 @@ namespace pocketify.Forms
                     button.ForeColor = Color.FromArgb(24, 24, 24);
                 }
             }
+
+            loadForm(new AddTransactionForm());
+            Page_label.Text = "Add Transactions";
         }
 
         private void Dash_acc_btn_Click(object sender, EventArgs e)
@@ -125,7 +128,8 @@ namespace pocketify.Forms
 
         private void dash_nav_dash_btn_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            loadForm(new DashboardForm());
+            Page_label.Text = "Dashboard";
             
         }
 
@@ -138,6 +142,12 @@ namespace pocketify.Forms
         {
             loadForm(new Categories());
             Page_label.Text = "Categories";
+        }
+
+        private void dash_nav_budget_btn_Click(object sender, EventArgs e)
+        {
+            loadForm(new BudgetForm());
+            Page_label.Text = "Budgeting";
         }
     }
 }
