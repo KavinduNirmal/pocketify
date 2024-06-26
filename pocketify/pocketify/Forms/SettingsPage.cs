@@ -167,7 +167,17 @@ namespace pocketify.Forms
 
         private void Settings_email_edit_btn_Click(object sender, EventArgs e)
         {
-            
+            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            if (mouseEvent.Button == MouseButtons.Left)
+            {
+
+                List<ContextMenuHelper.MenuItem> menuItems = new List<ContextMenuHelper.MenuItem>();
+                menuItems.Add(new ContextMenuHelper.MenuItem("Edit", Settings_pw_edit_click));
+
+                // Create and show the context menu
+                ContextMenuHelper helper = new ContextMenuHelper();
+                helper.CreateContextMenu(Settings_email_edit_btn, menuItems, this);
+            }
         }
 
         private void Settings_change_pw_btn_Click(object sender, EventArgs e)
@@ -201,7 +211,7 @@ namespace pocketify.Forms
                 Settings_pw_conf_input.PasswordChar = '\0';
             }
 
-            // Add event handlers to manage focus changes
+            // Manage focus changes
             Setting_pw_edit_input.GotFocus += (s, args) => Setting_pw_edit_input.PasswordChar = '\0';
             Setting_pw_edit_input.LostFocus += (s, args) => Setting_pw_edit_input.PasswordChar = '*';
             Settings_pw_conf_input.GotFocus += (s, args) => Settings_pw_conf_input.PasswordChar = '\0';
