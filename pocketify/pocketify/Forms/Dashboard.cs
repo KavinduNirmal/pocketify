@@ -23,7 +23,8 @@ namespace pocketify.Forms
 
             navbarButtons = new Button[] { dash_nav_dash_btn, dash_nav_trans_btn, dash_nav_category_btn, dash_nav_budget_btn };
             focusButton = dash_primarybtnbtn;
-            
+
+            loadForm(new DashboardForm());
 
             foreach (Button button in navbarButtons) 
             {
