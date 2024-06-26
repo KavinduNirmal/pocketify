@@ -197,5 +197,29 @@
   <ItemGroup>
     <None Include="Resources\Settings_bg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Balance_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Cat_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Credit_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Main_Cat_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Med_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dash_Trans_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two_dot_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two_dot_icon_black.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

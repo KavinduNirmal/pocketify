@@ -160,9 +160,9 @@
             // Settings_About_lbl
             // 
             this.Settings_About_lbl.AutoSize = true;
-            this.Settings_About_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Settings_About_lbl.BackColor = System.Drawing.Color.White;
             this.Settings_About_lbl.Font = new System.Drawing.Font("Inter Italic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings_About_lbl.Location = new System.Drawing.Point(323, 651);
+            this.Settings_About_lbl.Location = new System.Drawing.Point(270, 603);
             this.Settings_About_lbl.Name = "Settings_About_lbl";
             this.Settings_About_lbl.Size = new System.Drawing.Size(384, 16);
             this.Settings_About_lbl.TabIndex = 12;
@@ -172,9 +172,9 @@
             // Settings_version_label
             // 
             this.Settings_version_label.AutoSize = true;
-            this.Settings_version_label.BackColor = System.Drawing.Color.Transparent;
-            this.Settings_version_label.Font = new System.Drawing.Font("Inter Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings_version_label.Location = new System.Drawing.Point(930, 651);
+            this.Settings_version_label.BackColor = System.Drawing.Color.White;
+            this.Settings_version_label.Font = new System.Drawing.Font("Inter Italic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Settings_version_label.Location = new System.Drawing.Point(890, 603);
             this.Settings_version_label.Name = "Settings_version_label";
             this.Settings_version_label.Size = new System.Drawing.Size(0, 16);
             this.Settings_version_label.TabIndex = 13;
@@ -184,8 +184,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::pocketify.Properties.Resources.Settings_bg;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1032, 693);
             this.Controls.Add(this.Settings_version_label);
             this.Controls.Add(this.Settings_About_lbl);
@@ -201,6 +200,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
