@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +12,14 @@ using pocketify.Database;
 using pocketify.GlobalHelpers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static pocketify.Database.DbOperations;
 
 namespace pocketify.Database
 {
     internal class DbOperations : DbConnection
     {
         // get the password from the database.
-        
+
         public string GetPassword(string username)
         {
             string storedHash = null;
@@ -25,7 +28,7 @@ namespace pocketify.Database
             {
                 con.Open();
                 string query = "SELECT PwdHash FROM Users WHERE Username = @Username;";
-                
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);
@@ -38,10 +41,10 @@ namespace pocketify.Database
                     }
                 }
 
-                
+
             }
             return storedHash;
-            
+
         }
 
         public string GetPasswordHash(int userid)
@@ -127,6 +130,42 @@ namespace pocketify.Database
 
             }
             return userDetails;
+        }
+
+        // Get the user balance
+        public class UserBalance
+        {
+            public float Balance { get; set; }
+            public float BalanceGoal { get; set; }
+            public string BalanceDeadline { get; set; }
+        }
+
+        public UserBalance GetUserBalance(int userid)
+        {
+            UserBalance ub = new UserBalance();
+
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "SELECT Balance, BalanceGoal, BalanceDeadLine FROM Balance WHERE UID = @uid;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@uid", userid);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ub.Balance = reader.GetFloat(0);
+                            ub.BalanceGoal = reader.GetFloat(1);
+                            ub.BalanceDeadline = Convert.ToString(reader.GetDateTime(2));
+                        }
+                    }
+                }
+
+
+            }
+            return ub;
         }
 
         public void UpdateData(string username, string email, int userid)
