@@ -32,18 +32,6 @@
             this.Dash_dash_transactions_lbl = new System.Windows.Forms.Label();
             this.Dash_dash_transactions_sub = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl1 = new System.Windows.Forms.Panel();
-            this.Dash_dash_trans_pnl1_txt = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl1_val = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl2 = new System.Windows.Forms.Panel();
-            this.Dash_dash_trans_pnl2_val = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl2_txt = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl3 = new System.Windows.Forms.Panel();
-            this.Dash_dash_trans_pnl3_val = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl3_txt = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl4 = new System.Windows.Forms.Panel();
-            this.Dash_dash_trans_pnl4_val = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl4_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2 = new System.Windows.Forms.Panel();
             this.Dash_dash_cat_pnl2_btn = new System.Windows.Forms.Button();
             this.Dash_dash_cat_pnl2_val = new System.Windows.Forms.Label();
@@ -59,6 +47,18 @@
             this.Dash_dash_cat_main_pnl_val = new System.Windows.Forms.Label();
             this.Dash_dash_cat_main_pnl_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_main_pnl_ico = new System.Windows.Forms.PictureBox();
+            this.Dash_dash_trans_pnl4 = new System.Windows.Forms.Panel();
+            this.Dash_dash_trans_pnl4_val = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl4_txt = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl3 = new System.Windows.Forms.Panel();
+            this.Dash_dash_trans_pnl3_val = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl3_txt = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl2 = new System.Windows.Forms.Panel();
+            this.Dash_dash_trans_pnl2_val = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl2_txt = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl1 = new System.Windows.Forms.Panel();
+            this.Dash_dash_trans_pnl1_val = new System.Windows.Forms.Label();
+            this.Dash_dash_trans_pnl1_txt = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -86,22 +86,25 @@
             this.Dash_dash_balance_progress = new System.Windows.Forms.ProgressBar();
             this.Dash_dash_balance_value = new System.Windows.Forms.Label();
             this.Dash_dash_balace_lbl = new System.Windows.Forms.Label();
-            this.Dash_dash_trans_pnl1.SuspendLayout();
-            this.Dash_dash_trans_pnl2.SuspendLayout();
-            this.Dash_dash_trans_pnl3.SuspendLayout();
-            this.Dash_dash_trans_pnl4.SuspendLayout();
+            this.Dash_dash_noshow_pnl = new System.Windows.Forms.Panel();
+            this.Dash_dash_noshow_pnl_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).BeginInit();
             this.Dash_dash_cat_pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl1_ico)).BeginInit();
             this.Dash_dash_cat_main_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_main_pnl_ico)).BeginInit();
+            this.Dash_dash_trans_pnl4.SuspendLayout();
+            this.Dash_dash_trans_pnl3.SuspendLayout();
+            this.Dash_dash_trans_pnl2.SuspendLayout();
+            this.Dash_dash_trans_pnl1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.Dash_dash_expense_pnl.SuspendLayout();
             this.Dash_dash_income_pnl.SuspendLayout();
             this.Dash_dash_cd_balance_panel.SuspendLayout();
             this.Dash_dash_balance_pnl.SuspendLayout();
+            this.Dash_dash_noshow_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Dash_dash_fd_lbl
@@ -147,165 +150,6 @@
             this.label4.Size = new System.Drawing.Size(118, 24);
             this.label4.TabIndex = 4;
             this.label4.Text = "Categories";
-            // 
-            // Dash_dash_trans_pnl1
-            // 
-            this.Dash_dash_trans_pnl1.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl1.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
-            this.Dash_dash_trans_pnl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_trans_pnl1.Controls.Add(this.Dash_dash_trans_pnl1_val);
-            this.Dash_dash_trans_pnl1.Controls.Add(this.Dash_dash_trans_pnl1_txt);
-            this.Dash_dash_trans_pnl1.Font = new System.Drawing.Font("Inter", 8.25F);
-            this.Dash_dash_trans_pnl1.Location = new System.Drawing.Point(39, 343);
-            this.Dash_dash_trans_pnl1.Name = "Dash_dash_trans_pnl1";
-            this.Dash_dash_trans_pnl1.Size = new System.Drawing.Size(521, 50);
-            this.Dash_dash_trans_pnl1.TabIndex = 11;
-            // 
-            // Dash_dash_trans_pnl1_txt
-            // 
-            this.Dash_dash_trans_pnl1_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Dash_dash_trans_pnl1_txt.AutoSize = true;
-            this.Dash_dash_trans_pnl1_txt.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl1_txt.Font = new System.Drawing.Font("Inter", 10F);
-            this.Dash_dash_trans_pnl1_txt.Location = new System.Drawing.Point(17, 15);
-            this.Dash_dash_trans_pnl1_txt.Name = "Dash_dash_trans_pnl1_txt";
-            this.Dash_dash_trans_pnl1_txt.Size = new System.Drawing.Size(90, 20);
-            this.Dash_dash_trans_pnl1_txt.TabIndex = 12;
-            this.Dash_dash_trans_pnl1_txt.Text = "Apple Pay";
-            // 
-            // Dash_dash_trans_pnl1_val
-            // 
-            this.Dash_dash_trans_pnl1_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dash_dash_trans_pnl1_val.AutoSize = true;
-            this.Dash_dash_trans_pnl1_val.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl1_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_dash_trans_pnl1_val.Location = new System.Drawing.Point(409, 16);
-            this.Dash_dash_trans_pnl1_val.Name = "Dash_dash_trans_pnl1_val";
-            this.Dash_dash_trans_pnl1_val.Size = new System.Drawing.Size(85, 20);
-            this.Dash_dash_trans_pnl1_val.TabIndex = 13;
-            this.Dash_dash_trans_pnl1_val.Text = "- 600,00";
-            // 
-            // Dash_dash_trans_pnl2
-            // 
-            this.Dash_dash_trans_pnl2.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl2.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
-            this.Dash_dash_trans_pnl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_trans_pnl2.Controls.Add(this.Dash_dash_trans_pnl2_val);
-            this.Dash_dash_trans_pnl2.Controls.Add(this.Dash_dash_trans_pnl2_txt);
-            this.Dash_dash_trans_pnl2.Font = new System.Drawing.Font("Inter", 8.25F);
-            this.Dash_dash_trans_pnl2.Location = new System.Drawing.Point(39, 422);
-            this.Dash_dash_trans_pnl2.Name = "Dash_dash_trans_pnl2";
-            this.Dash_dash_trans_pnl2.Size = new System.Drawing.Size(521, 50);
-            this.Dash_dash_trans_pnl2.TabIndex = 14;
-            // 
-            // Dash_dash_trans_pnl2_val
-            // 
-            this.Dash_dash_trans_pnl2_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dash_dash_trans_pnl2_val.AutoSize = true;
-            this.Dash_dash_trans_pnl2_val.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl2_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_dash_trans_pnl2_val.Location = new System.Drawing.Point(409, 16);
-            this.Dash_dash_trans_pnl2_val.Name = "Dash_dash_trans_pnl2_val";
-            this.Dash_dash_trans_pnl2_val.Size = new System.Drawing.Size(85, 20);
-            this.Dash_dash_trans_pnl2_val.TabIndex = 13;
-            this.Dash_dash_trans_pnl2_val.Text = "- 600,00";
-            // 
-            // Dash_dash_trans_pnl2_txt
-            // 
-            this.Dash_dash_trans_pnl2_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Dash_dash_trans_pnl2_txt.AutoSize = true;
-            this.Dash_dash_trans_pnl2_txt.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl2_txt.Font = new System.Drawing.Font("Inter", 10F);
-            this.Dash_dash_trans_pnl2_txt.Location = new System.Drawing.Point(18, 15);
-            this.Dash_dash_trans_pnl2_txt.Name = "Dash_dash_trans_pnl2_txt";
-            this.Dash_dash_trans_pnl2_txt.Size = new System.Drawing.Size(90, 20);
-            this.Dash_dash_trans_pnl2_txt.TabIndex = 12;
-            this.Dash_dash_trans_pnl2_txt.Text = "Apple Pay";
-            this.Dash_dash_trans_pnl2_txt.Click += new System.EventHandler(this.label28_Click);
-            // 
-            // Dash_dash_trans_pnl3
-            // 
-            this.Dash_dash_trans_pnl3.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl3.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
-            this.Dash_dash_trans_pnl3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_trans_pnl3.Controls.Add(this.Dash_dash_trans_pnl3_val);
-            this.Dash_dash_trans_pnl3.Controls.Add(this.Dash_dash_trans_pnl3_txt);
-            this.Dash_dash_trans_pnl3.Font = new System.Drawing.Font("Inter", 8.25F);
-            this.Dash_dash_trans_pnl3.Location = new System.Drawing.Point(39, 498);
-            this.Dash_dash_trans_pnl3.Name = "Dash_dash_trans_pnl3";
-            this.Dash_dash_trans_pnl3.Size = new System.Drawing.Size(521, 50);
-            this.Dash_dash_trans_pnl3.TabIndex = 14;
-            // 
-            // Dash_dash_trans_pnl3_val
-            // 
-            this.Dash_dash_trans_pnl3_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dash_dash_trans_pnl3_val.AutoSize = true;
-            this.Dash_dash_trans_pnl3_val.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl3_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_dash_trans_pnl3_val.Location = new System.Drawing.Point(409, 16);
-            this.Dash_dash_trans_pnl3_val.Name = "Dash_dash_trans_pnl3_val";
-            this.Dash_dash_trans_pnl3_val.Size = new System.Drawing.Size(85, 20);
-            this.Dash_dash_trans_pnl3_val.TabIndex = 13;
-            this.Dash_dash_trans_pnl3_val.Text = "- 600,00";
-            // 
-            // Dash_dash_trans_pnl3_txt
-            // 
-            this.Dash_dash_trans_pnl3_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Dash_dash_trans_pnl3_txt.AutoSize = true;
-            this.Dash_dash_trans_pnl3_txt.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl3_txt.Font = new System.Drawing.Font("Inter", 10F);
-            this.Dash_dash_trans_pnl3_txt.Location = new System.Drawing.Point(18, 15);
-            this.Dash_dash_trans_pnl3_txt.Name = "Dash_dash_trans_pnl3_txt";
-            this.Dash_dash_trans_pnl3_txt.Size = new System.Drawing.Size(90, 20);
-            this.Dash_dash_trans_pnl3_txt.TabIndex = 12;
-            this.Dash_dash_trans_pnl3_txt.Text = "Apple Pay";
-            this.Dash_dash_trans_pnl3_txt.Click += new System.EventHandler(this.label30_Click);
-            // 
-            // Dash_dash_trans_pnl4
-            // 
-            this.Dash_dash_trans_pnl4.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl4.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
-            this.Dash_dash_trans_pnl4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_trans_pnl4.Controls.Add(this.Dash_dash_trans_pnl4_val);
-            this.Dash_dash_trans_pnl4.Controls.Add(this.Dash_dash_trans_pnl4_txt);
-            this.Dash_dash_trans_pnl4.Font = new System.Drawing.Font("Inter", 8.25F);
-            this.Dash_dash_trans_pnl4.Location = new System.Drawing.Point(39, 580);
-            this.Dash_dash_trans_pnl4.Name = "Dash_dash_trans_pnl4";
-            this.Dash_dash_trans_pnl4.Size = new System.Drawing.Size(521, 50);
-            this.Dash_dash_trans_pnl4.TabIndex = 14;
-            // 
-            // Dash_dash_trans_pnl4_val
-            // 
-            this.Dash_dash_trans_pnl4_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Dash_dash_trans_pnl4_val.AutoSize = true;
-            this.Dash_dash_trans_pnl4_val.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl4_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_dash_trans_pnl4_val.Location = new System.Drawing.Point(409, 16);
-            this.Dash_dash_trans_pnl4_val.Name = "Dash_dash_trans_pnl4_val";
-            this.Dash_dash_trans_pnl4_val.Size = new System.Drawing.Size(85, 20);
-            this.Dash_dash_trans_pnl4_val.TabIndex = 13;
-            this.Dash_dash_trans_pnl4_val.Text = "- 600,00";
-            // 
-            // Dash_dash_trans_pnl4_txt
-            // 
-            this.Dash_dash_trans_pnl4_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Dash_dash_trans_pnl4_txt.AutoSize = true;
-            this.Dash_dash_trans_pnl4_txt.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_trans_pnl4_txt.Font = new System.Drawing.Font("Inter", 10F);
-            this.Dash_dash_trans_pnl4_txt.Location = new System.Drawing.Point(18, 15);
-            this.Dash_dash_trans_pnl4_txt.Name = "Dash_dash_trans_pnl4_txt";
-            this.Dash_dash_trans_pnl4_txt.Size = new System.Drawing.Size(90, 20);
-            this.Dash_dash_trans_pnl4_txt.TabIndex = 12;
-            this.Dash_dash_trans_pnl4_txt.Text = "Apple Pay";
-            this.Dash_dash_trans_pnl4_txt.Click += new System.EventHandler(this.label32_Click);
             // 
             // Dash_dash_cat_pnl2
             // 
@@ -485,6 +329,165 @@
             this.Dash_dash_cat_main_pnl_ico.Size = new System.Drawing.Size(24, 24);
             this.Dash_dash_cat_main_pnl_ico.TabIndex = 0;
             this.Dash_dash_cat_main_pnl_ico.TabStop = false;
+            // 
+            // Dash_dash_trans_pnl4
+            // 
+            this.Dash_dash_trans_pnl4.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl4.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
+            this.Dash_dash_trans_pnl4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_trans_pnl4.Controls.Add(this.Dash_dash_trans_pnl4_val);
+            this.Dash_dash_trans_pnl4.Controls.Add(this.Dash_dash_trans_pnl4_txt);
+            this.Dash_dash_trans_pnl4.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.Dash_dash_trans_pnl4.Location = new System.Drawing.Point(39, 580);
+            this.Dash_dash_trans_pnl4.Name = "Dash_dash_trans_pnl4";
+            this.Dash_dash_trans_pnl4.Size = new System.Drawing.Size(521, 50);
+            this.Dash_dash_trans_pnl4.TabIndex = 14;
+            // 
+            // Dash_dash_trans_pnl4_val
+            // 
+            this.Dash_dash_trans_pnl4_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dash_dash_trans_pnl4_val.AutoSize = true;
+            this.Dash_dash_trans_pnl4_val.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl4_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_trans_pnl4_val.Location = new System.Drawing.Point(409, 16);
+            this.Dash_dash_trans_pnl4_val.Name = "Dash_dash_trans_pnl4_val";
+            this.Dash_dash_trans_pnl4_val.Size = new System.Drawing.Size(85, 20);
+            this.Dash_dash_trans_pnl4_val.TabIndex = 13;
+            this.Dash_dash_trans_pnl4_val.Text = "- 600,00";
+            // 
+            // Dash_dash_trans_pnl4_txt
+            // 
+            this.Dash_dash_trans_pnl4_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Dash_dash_trans_pnl4_txt.AutoSize = true;
+            this.Dash_dash_trans_pnl4_txt.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl4_txt.Font = new System.Drawing.Font("Inter", 10F);
+            this.Dash_dash_trans_pnl4_txt.Location = new System.Drawing.Point(18, 15);
+            this.Dash_dash_trans_pnl4_txt.Name = "Dash_dash_trans_pnl4_txt";
+            this.Dash_dash_trans_pnl4_txt.Size = new System.Drawing.Size(90, 20);
+            this.Dash_dash_trans_pnl4_txt.TabIndex = 12;
+            this.Dash_dash_trans_pnl4_txt.Text = "Apple Pay";
+            this.Dash_dash_trans_pnl4_txt.Click += new System.EventHandler(this.label32_Click);
+            // 
+            // Dash_dash_trans_pnl3
+            // 
+            this.Dash_dash_trans_pnl3.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl3.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
+            this.Dash_dash_trans_pnl3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_trans_pnl3.Controls.Add(this.Dash_dash_trans_pnl3_val);
+            this.Dash_dash_trans_pnl3.Controls.Add(this.Dash_dash_trans_pnl3_txt);
+            this.Dash_dash_trans_pnl3.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.Dash_dash_trans_pnl3.Location = new System.Drawing.Point(39, 498);
+            this.Dash_dash_trans_pnl3.Name = "Dash_dash_trans_pnl3";
+            this.Dash_dash_trans_pnl3.Size = new System.Drawing.Size(521, 50);
+            this.Dash_dash_trans_pnl3.TabIndex = 14;
+            // 
+            // Dash_dash_trans_pnl3_val
+            // 
+            this.Dash_dash_trans_pnl3_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dash_dash_trans_pnl3_val.AutoSize = true;
+            this.Dash_dash_trans_pnl3_val.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl3_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_trans_pnl3_val.Location = new System.Drawing.Point(409, 16);
+            this.Dash_dash_trans_pnl3_val.Name = "Dash_dash_trans_pnl3_val";
+            this.Dash_dash_trans_pnl3_val.Size = new System.Drawing.Size(85, 20);
+            this.Dash_dash_trans_pnl3_val.TabIndex = 13;
+            this.Dash_dash_trans_pnl3_val.Text = "- 600,00";
+            // 
+            // Dash_dash_trans_pnl3_txt
+            // 
+            this.Dash_dash_trans_pnl3_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Dash_dash_trans_pnl3_txt.AutoSize = true;
+            this.Dash_dash_trans_pnl3_txt.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl3_txt.Font = new System.Drawing.Font("Inter", 10F);
+            this.Dash_dash_trans_pnl3_txt.Location = new System.Drawing.Point(18, 15);
+            this.Dash_dash_trans_pnl3_txt.Name = "Dash_dash_trans_pnl3_txt";
+            this.Dash_dash_trans_pnl3_txt.Size = new System.Drawing.Size(90, 20);
+            this.Dash_dash_trans_pnl3_txt.TabIndex = 12;
+            this.Dash_dash_trans_pnl3_txt.Text = "Apple Pay";
+            this.Dash_dash_trans_pnl3_txt.Click += new System.EventHandler(this.label30_Click);
+            // 
+            // Dash_dash_trans_pnl2
+            // 
+            this.Dash_dash_trans_pnl2.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl2.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
+            this.Dash_dash_trans_pnl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_trans_pnl2.Controls.Add(this.Dash_dash_trans_pnl2_val);
+            this.Dash_dash_trans_pnl2.Controls.Add(this.Dash_dash_trans_pnl2_txt);
+            this.Dash_dash_trans_pnl2.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.Dash_dash_trans_pnl2.Location = new System.Drawing.Point(39, 422);
+            this.Dash_dash_trans_pnl2.Name = "Dash_dash_trans_pnl2";
+            this.Dash_dash_trans_pnl2.Size = new System.Drawing.Size(521, 50);
+            this.Dash_dash_trans_pnl2.TabIndex = 14;
+            // 
+            // Dash_dash_trans_pnl2_val
+            // 
+            this.Dash_dash_trans_pnl2_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dash_dash_trans_pnl2_val.AutoSize = true;
+            this.Dash_dash_trans_pnl2_val.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl2_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_trans_pnl2_val.Location = new System.Drawing.Point(409, 16);
+            this.Dash_dash_trans_pnl2_val.Name = "Dash_dash_trans_pnl2_val";
+            this.Dash_dash_trans_pnl2_val.Size = new System.Drawing.Size(85, 20);
+            this.Dash_dash_trans_pnl2_val.TabIndex = 13;
+            this.Dash_dash_trans_pnl2_val.Text = "- 600,00";
+            // 
+            // Dash_dash_trans_pnl2_txt
+            // 
+            this.Dash_dash_trans_pnl2_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Dash_dash_trans_pnl2_txt.AutoSize = true;
+            this.Dash_dash_trans_pnl2_txt.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl2_txt.Font = new System.Drawing.Font("Inter", 10F);
+            this.Dash_dash_trans_pnl2_txt.Location = new System.Drawing.Point(18, 15);
+            this.Dash_dash_trans_pnl2_txt.Name = "Dash_dash_trans_pnl2_txt";
+            this.Dash_dash_trans_pnl2_txt.Size = new System.Drawing.Size(90, 20);
+            this.Dash_dash_trans_pnl2_txt.TabIndex = 12;
+            this.Dash_dash_trans_pnl2_txt.Text = "Apple Pay";
+            this.Dash_dash_trans_pnl2_txt.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // Dash_dash_trans_pnl1
+            // 
+            this.Dash_dash_trans_pnl1.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl1.BackgroundImage = global::pocketify.Properties.Resources.Dash_Trans_Back;
+            this.Dash_dash_trans_pnl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_trans_pnl1.Controls.Add(this.Dash_dash_trans_pnl1_val);
+            this.Dash_dash_trans_pnl1.Controls.Add(this.Dash_dash_trans_pnl1_txt);
+            this.Dash_dash_trans_pnl1.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.Dash_dash_trans_pnl1.Location = new System.Drawing.Point(39, 343);
+            this.Dash_dash_trans_pnl1.Name = "Dash_dash_trans_pnl1";
+            this.Dash_dash_trans_pnl1.Size = new System.Drawing.Size(521, 50);
+            this.Dash_dash_trans_pnl1.TabIndex = 11;
+            // 
+            // Dash_dash_trans_pnl1_val
+            // 
+            this.Dash_dash_trans_pnl1_val.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Dash_dash_trans_pnl1_val.AutoSize = true;
+            this.Dash_dash_trans_pnl1_val.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl1_val.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_trans_pnl1_val.Location = new System.Drawing.Point(409, 16);
+            this.Dash_dash_trans_pnl1_val.Name = "Dash_dash_trans_pnl1_val";
+            this.Dash_dash_trans_pnl1_val.Size = new System.Drawing.Size(85, 20);
+            this.Dash_dash_trans_pnl1_val.TabIndex = 13;
+            this.Dash_dash_trans_pnl1_val.Text = "- 600,00";
+            // 
+            // Dash_dash_trans_pnl1_txt
+            // 
+            this.Dash_dash_trans_pnl1_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Dash_dash_trans_pnl1_txt.AutoSize = true;
+            this.Dash_dash_trans_pnl1_txt.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_trans_pnl1_txt.Font = new System.Drawing.Font("Inter", 10F);
+            this.Dash_dash_trans_pnl1_txt.Location = new System.Drawing.Point(17, 15);
+            this.Dash_dash_trans_pnl1_txt.Name = "Dash_dash_trans_pnl1_txt";
+            this.Dash_dash_trans_pnl1_txt.Size = new System.Drawing.Size(90, 20);
+            this.Dash_dash_trans_pnl1_txt.TabIndex = 12;
+            this.Dash_dash_trans_pnl1_txt.Text = "Apple Pay";
             // 
             // panel6
             // 
@@ -806,6 +809,27 @@
             this.Dash_dash_balace_lbl.TabIndex = 6;
             this.Dash_dash_balace_lbl.Text = "Balance";
             // 
+            // Dash_dash_noshow_pnl
+            // 
+            this.Dash_dash_noshow_pnl.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_noshow_pnl.BackgroundImage = global::pocketify.Properties.Resources.noshowbg;
+            this.Dash_dash_noshow_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_noshow_pnl.Controls.Add(this.Dash_dash_noshow_pnl_txt);
+            this.Dash_dash_noshow_pnl.Location = new System.Drawing.Point(39, 343);
+            this.Dash_dash_noshow_pnl.Name = "Dash_dash_noshow_pnl";
+            this.Dash_dash_noshow_pnl.Size = new System.Drawing.Size(521, 287);
+            this.Dash_dash_noshow_pnl.TabIndex = 20;
+            // 
+            // Dash_dash_noshow_pnl_txt
+            // 
+            this.Dash_dash_noshow_pnl_txt.AutoSize = true;
+            this.Dash_dash_noshow_pnl_txt.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_noshow_pnl_txt.Location = new System.Drawing.Point(129, 132);
+            this.Dash_dash_noshow_pnl_txt.Name = "Dash_dash_noshow_pnl_txt";
+            this.Dash_dash_noshow_pnl_txt.Size = new System.Drawing.Size(276, 20);
+            this.Dash_dash_noshow_pnl_txt.TabIndex = 0;
+            this.Dash_dash_noshow_pnl_txt.Text = "There are no recent Transactions";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -813,6 +837,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1032, 693);
+            this.Controls.Add(this.Dash_dash_noshow_pnl);
             this.Controls.Add(this.Dash_dash_cat_pnl2);
             this.Controls.Add(this.Dash_dash_cat_pnl1);
             this.Controls.Add(this.Dash_dash_cat_main_pnl);
@@ -835,14 +860,6 @@
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
-            this.Dash_dash_trans_pnl1.ResumeLayout(false);
-            this.Dash_dash_trans_pnl1.PerformLayout();
-            this.Dash_dash_trans_pnl2.ResumeLayout(false);
-            this.Dash_dash_trans_pnl2.PerformLayout();
-            this.Dash_dash_trans_pnl3.ResumeLayout(false);
-            this.Dash_dash_trans_pnl3.PerformLayout();
-            this.Dash_dash_trans_pnl4.ResumeLayout(false);
-            this.Dash_dash_trans_pnl4.PerformLayout();
             this.Dash_dash_cat_pnl2.ResumeLayout(false);
             this.Dash_dash_cat_pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).EndInit();
@@ -852,6 +869,14 @@
             this.Dash_dash_cat_main_pnl.ResumeLayout(false);
             this.Dash_dash_cat_main_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_main_pnl_ico)).EndInit();
+            this.Dash_dash_trans_pnl4.ResumeLayout(false);
+            this.Dash_dash_trans_pnl4.PerformLayout();
+            this.Dash_dash_trans_pnl3.ResumeLayout(false);
+            this.Dash_dash_trans_pnl3.PerformLayout();
+            this.Dash_dash_trans_pnl2.ResumeLayout(false);
+            this.Dash_dash_trans_pnl2.PerformLayout();
+            this.Dash_dash_trans_pnl1.ResumeLayout(false);
+            this.Dash_dash_trans_pnl1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -864,6 +889,8 @@
             this.Dash_dash_cd_balance_panel.PerformLayout();
             this.Dash_dash_balance_pnl.ResumeLayout(false);
             this.Dash_dash_balance_pnl.PerformLayout();
+            this.Dash_dash_noshow_pnl.ResumeLayout(false);
+            this.Dash_dash_noshow_pnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -928,5 +955,7 @@
         private System.Windows.Forms.Label Dash_dash_cat_pnl2_val;
         private System.Windows.Forms.Label Dash_dash_cat_pnl2_txt;
         private System.Windows.Forms.PictureBox Dash_dash_cat_pnl2_ico;
+        private System.Windows.Forms.Panel Dash_dash_noshow_pnl;
+        private System.Windows.Forms.Label Dash_dash_noshow_pnl_txt;
     }
 }

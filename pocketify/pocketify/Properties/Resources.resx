@@ -136,20 +136,20 @@
   <data name="Settings_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dashboard_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboard_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="categories_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categories_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avatar_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avatar_male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="two_dot_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\two_dot_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Edit_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="budget_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\budget_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pocketify-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pocketify-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="budget_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\budget_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,19 +166,22 @@
   <data name="transaction_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transaction_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="budget_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\budget_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="two_dot_icon_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\two_dot_icon_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="categories_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categories_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="two_dot_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\two_dot_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pocketify-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pocketify-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dashboard_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboard_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dash_Cat_Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dash_Cat_Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="two_dot_icon_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\two_dot_icon_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noshowbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noshowbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

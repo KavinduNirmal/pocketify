@@ -53,6 +53,8 @@ namespace pocketify.Forms
             }
             else { Dash_dash_balance_progress.Value = 0; }
 
+            Dash_dash_noshow_pnl.Visible = false;
+
             DisplayRecentTransactions();
         }
 
@@ -60,19 +62,28 @@ namespace pocketify.Forms
         {
             List<Transaction> recentTransactions = dbOperations.GetRecentTransactions(userID);
 
-            for (int i = 0; i < recentPanels.Length; i++)
+            if (recentTransactions.Count == 0) 
             {
-                if (i < recentTransactions.Count)
+                Dash_dash_noshow_pnl.Visible = true;
+            }
+            else
+            {
+                for (int i = 0; i < recentPanels.Length; i++)
                 {
-                    recentLabels[i].Text = recentTransactions[i].Title;
-                    recentValues[i].Text = "Rs. " + recentTransactions[i].Amount.ToString("F2");
-                    recentPanels[i].Visible = true;
-                }
-                else
-                {
-                    recentPanels[i].Visible = false;
+                    if (i < recentTransactions.Count)
+                    {
+                        recentLabels[i].Text = recentTransactions[i].Title;
+                        recentValues[i].Text = "Rs. " + recentTransactions[i].Amount.ToString("F2");
+                        recentPanels[i].Visible = true;
+                    }
+                    else
+                    {
+                        recentPanels[i].Visible = false;
+                        Dash_dash_noshow_pnl.Visible = true;
+                    }
                 }
             }
+            
         }
 
 
