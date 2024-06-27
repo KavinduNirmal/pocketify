@@ -19,7 +19,6 @@ namespace pocketify.Database
     internal class DbOperations : DbConnection
     {
         // get the password from the database.
-
         public string GetPassword(string username)
         {
             string storedHash = null;
@@ -27,7 +26,7 @@ namespace pocketify.Database
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "SELECT PwdHash FROM Users WHERE Username = @Username;";
+                string query = "SELECT PwdHash FROM Users WHERE UserName = @Username;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -46,7 +45,7 @@ namespace pocketify.Database
             return storedHash;
 
         }
-
+        // Get Password Hash
         public string GetPasswordHash(int userid)
         {
             string storedHash = null;
@@ -71,15 +70,15 @@ namespace pocketify.Database
             }
             return storedHash;
         }
-
+        // Check if the user exist in the database already
         public bool GetUser(string username)
         {
-            bool userExistance = false;
+            bool userExists = false;
 
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "SELECT * FROM Users WHERE Username = @Username;";
+                string query = "SELECT * FROM Users WHERE UserName = @Username;";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -88,17 +87,15 @@ namespace pocketify.Database
                     {
                         if (reader.HasRows)
                         {
-                            userExistance = true;
+                            userExists = true;
                         }
                     }
                 }
-
-
             }
-            return userExistance;
-
+            return userExists;
         }
 
+        // Get userdetails
         public class UserDetails
         {
             public string Username { get; set; }
@@ -138,6 +135,8 @@ namespace pocketify.Database
             public float Balance { get; set; }
             public float BalanceGoal { get; set; }
             public string BalanceDeadline { get; set; }
+
+            public float CreditBalance { get; set; }
         }
 
         public UserBalance GetUserBalance(int userid)
@@ -145,9 +144,10 @@ namespace pocketify.Database
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "SELECT Balance, BalanceGoal, BalanceDeadLine FROM Balance WHERE UID = @uid;";
+                string retrieveData = "SELECT Balance, BalanceGoal, BalanceDeadLine FROM Balance WHERE UID = @uid;";
+                string initializeFirst = "INSERT INTO Balance (UID, Balance, BalanceGoal, BalanceDeadLine) VALUES (@userId, @balance, @balanceGoal, @balanceDeadline);";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(retrieveData, con))
                 {
                     cmd.Parameters.AddWithValue("@uid", userid);
                     using (var reader = cmd.ExecuteReader())
@@ -162,81 +162,140 @@ namespace pocketify.Database
                             };
                         }
                     }
-                }
-            }
-            return null;
-        }
 
-        public UserBalance IntitalizeBalance(int userId)
-        {
-            using (SqlConnection con = GetConnection())
-            {
-                con.Open();
-                string query = "INSERT INTO Balance (UID, Balance, BalanceGoal, BalanceDeadLine) VALUES (@userId, @balance, @balanceGoal, @balanceDeadline);";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    float newBalance = 0;
-                    cmd.Parameters.AddWithValue("@userId", userId);
-                    cmd.Parameters.AddWithValue("@balance", newBalance);
-                    cmd.Parameters.AddWithValue("@balanceGoal", newBalance);
-                    cmd.Parameters.AddWithValue("@balanceDeadline", DateTime.Today);
-
-                    cmd.ExecuteNonQuery();
-
-                    return new UserBalance
+                    // If no rows were found, we need to initialize the balance
+                    using (SqlCommand cmd2 = new SqlCommand(initializeFirst, con))
                     {
-                        Balance = newBalance,
-                        BalanceGoal = newBalance,
-                        BalanceDeadline = DateTime.Today.ToString("yyyy-MM-dd")
-                    };
+                        float newBalance = 0;
+                        cmd2.Parameters.AddWithValue("@userId", userid);
+                        cmd2.Parameters.AddWithValue("@balance", newBalance);
+                        cmd2.Parameters.AddWithValue("@balanceGoal", newBalance);
+                        cmd2.Parameters.AddWithValue("@balanceDeadline", DateTime.Today);
+
+                        cmd2.ExecuteNonQuery();
+
+                        UserIDHelper.Instance.UserId = userid;
+                        UserIDHelper.Instance.Balance = newBalance;
+                        UserIDHelper.Instance.BalanceGoal = newBalance;
+
+                        return new UserBalance
+                        {
+                            Balance = newBalance,
+                            BalanceGoal = newBalance,
+                            BalanceDeadline = DateTime.Today.ToString("yyyy-MM-dd")
+                        };
+                    }
                 }
             }
         }
 
         // Get the user Credit balance
-
-        public float GetUserCredit(int userId)
+        public UserBalance GetUserCreditBalance(int userid)
         {
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "SELECT Balance FROM CreditBalance WHERE UID = @Uid;";
+                string retrieveData = "SELECT Balance FROM CreditBalance WHERE UID = @uid;";
+                string initializeFirst = "INSERT INTO CreditBalance (UID, Balance) VALUES (@userId, @balance);";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(retrieveData, con))
                 {
-                    cmd.Parameters.AddWithValue("@uid", userId);
+                    cmd.Parameters.AddWithValue("@uid", userid);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            return reader.GetFloat(0);
+                            float balance = reader.GetFloat(0);
+                            UserIDHelper.Instance.CreditBalance = balance;
+
+                            return new UserBalance
+                            {
+                                CreditBalance = balance,
+                            };
+                        }
+                    }
+
+                    // If no rows were found, initialize the balance
+                    using (SqlCommand cmd2 = new SqlCommand(initializeFirst, con))
+                    {
+                        float newBalance = 0;
+                        cmd2.Parameters.AddWithValue("@userId", userid);
+                        cmd2.Parameters.AddWithValue("@balance", newBalance);
+
+                        cmd2.ExecuteNonQuery();
+
+                        UserIDHelper.Instance.CreditBalance = newBalance;
+
+                        return new UserBalance
+                        {
+                            CreditBalance = newBalance,
+                        };
+                    }
+                }
+            }
+        }
+
+        // Get recent transactions
+        public List<Transaction> GetRecentTransactions(int userId)
+        {
+            List<Transaction> transactions = new List<Transaction>();
+
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "SELECT TOP 4 Title, Amount FROM Transactions WHERE UID = @uid ORDER BY Date DESC";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@uid", userId);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Transaction transaction = new Transaction
+                            {
+                                Title = reader.GetString(0),
+                                Amount = reader.GetFloat(1)
+                            };
+                            transactions.Add(transaction);
                         }
                     }
                 }
             }
-            return -1; // Indicate no balance found
+
+            return transactions;
         }
 
-
-        public float InitializeCreditBalance(int userId)
+        public class Transaction
         {
+            public string Title { get; set; }
+            public float Amount { get; set; }
+        }
+
+        // Get mothly income
+        public float GetUserMonthlyIncome(int userId)
+        {
+            float totalIncome = 0;
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "INSERT INTO CreditBalance (UID, Balance) VALUES (@userId, @balance);";
+                string query = @"
+                SELECT SUM(Value) 
+                FROM Income 
+                WHERE UID = @uid 
+                  AND YEAR(Date) = YEAR(GETDATE()) 
+                  AND MONTH(Date) = MONTH(GETDATE());";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    float newBalance = 0;
-                    cmd.Parameters.AddWithValue("@userId", userId);
-                    cmd.Parameters.AddWithValue("@balance", newBalance);
-
-                    cmd.ExecuteNonQuery();
-
-                    return newBalance;
+                    cmd.Parameters.AddWithValue("@uid", userId);
+                    var result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        totalIncome = Convert.ToSingle(result);
+                    }
                 }
             }
+            return totalIncome;
         }
 
 
@@ -298,7 +357,7 @@ namespace pocketify.Database
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string query = "SELECT UID FROM Users WHERE Username = @Username;";
+                string query = "SELECT UID FROM Users WHERE UserName = @Username;";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);

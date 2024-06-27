@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using pocketify.Authentication;
 using pocketify.Database;
 using pocketify.Forms;
 using pocketify.GlobalHelpers;
 
-
 namespace pocketify
 {
     public partial class LandingForm : Form
     {
         private DbOperations dbOperations;
+
         public LandingForm()
         {
             InitializeComponent();
@@ -30,44 +23,40 @@ namespace pocketify
             string username = Login_un_inp.Text;
             string password = Login_pw_inp.Text;
 
-            // Try to check if the user is already in the system
             try
             {
                 if (!dbOperations.GetUser(username))
                 {
-                    MessageBox.Show("User Doesnt Exist, Please create a new account");
+                    MessageBox.Show("User doesn't exist. Please create a new account.");
                     return;
                 }
-                else if (!AuthenticateUser(username, password)) // if the credentials are wrong, Warn the user.
+                else if (!AuthenticateUser(username, password))
                 {
-                    MessageBox.Show("Invalid Username or Password");
+                    MessageBox.Show("Invalid username or password.");
                     Login_pw_inp.Text = "";
                     login_pw_label.ForeColor = System.Drawing.Color.Red;
-                    
                 }
                 else
                 {
-                    // If succesful, send to dashboard.
                     int uid = dbOperations.GetUid(username);
 
-                    if (uid != 0) 
+                    if (uid != 0)
                     {
-                        UserIDHelper.Instance.UserId = uid; // Set the UserId in AppContext
-                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).Username;
-                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).Email;
-                        // Opening Dashboard form
+                        UserIDHelper.Instance.UserId = uid;
+                        var userDetails = dbOperations.GetUserDetails(uid);
+                        UserIDHelper.Instance.UserName = userDetails.Username;
+                        UserIDHelper.Instance.Email = userDetails.Email;
+
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
                         this.Hide();
 
-                        MessageBox.Show("Login Successful : Logged in as " + uid + " " + username);
+                        MessageBox.Show("Login successful: Logged in as " + uid + " " + username);
                     }
                     else
                     {
                         MessageBox.Show("User not found or UID is invalid for " + username);
-                        return; // Or handle this case appropriately
                     }
-
                 }
             }
             catch (Exception ex)
@@ -76,16 +65,15 @@ namespace pocketify
             }
         }
 
-        // Authenticate User.
         private bool AuthenticateUser(string username, string password)
         {
-            string storedHash = dbOperations.GetPassword(username); // check the database for the right username, usernames must be unique.
-           
+            string storedHash = dbOperations.GetPasswordHash(dbOperations.GetUid(username));
+
             if (storedHash == null)
             {
                 return false;
             }
-            return PasswordHasher.VerifyPassword(password, storedHash); // if the user exist, check if the password is valid.
+            return PasswordHasher.VerifyPassword(password, storedHash);
         }
 
         private void login_signup_btn_Click(object sender, EventArgs e)

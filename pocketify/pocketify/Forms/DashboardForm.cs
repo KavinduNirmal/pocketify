@@ -9,52 +9,73 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using pocketify.Database;
 using pocketify.GlobalHelpers;
-using pocketify.GlobalHelpers;
 using static pocketify.Database.DbOperations;
 
 namespace pocketify.Forms
 {
     public partial class DashboardForm : Form
     {
+        int userID;
+        float balance;
+        float balanceGoal;
+        float creditBalance;
+
+        private Label[] recentLabels;
+        private Label[] recentValues;
+        private Panel[] recentPanels;
+
+        DbOperations dbOperations = new DbOperations();            
+
         public DashboardForm()
         {
             InitializeComponent();
-            DbOperations dbOperations = new DbOperations();
-            int userID = UserIDHelper.Instance.UserId;
+            this.Load += Dashboard_Load;
 
-            // Check the database for the balance
-            UserBalance userBalance = dbOperations.GetUserBalance(userID);
-            if (userBalance != null) // if the user have a balance retrieve it ana populate.
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            userID = UserIDHelper.Instance.UserId;
+            balance = UserIDHelper.Instance.Balance;
+            balanceGoal = UserIDHelper.Instance.BalanceGoal;
+            creditBalance = UserIDHelper.Instance.CreditBalance;
+
+            recentLabels = new Label[] { Dash_dash_trans_pnl1_txt, Dash_dash_trans_pnl2_txt, Dash_dash_trans_pnl3_txt, Dash_dash_trans_pnl4_txt };
+            recentValues = new Label[] { Dash_dash_trans_pnl1_val, Dash_dash_trans_pnl2_val, Dash_dash_trans_pnl3_val, Dash_dash_trans_pnl4_val };
+            recentPanels = new Panel[] { Dash_dash_trans_pnl1, Dash_dash_trans_pnl2, Dash_dash_trans_pnl3, Dash_dash_trans_pnl4 };
+
+            Dash_dash_balance_value.Text = "Rs. " + Convert.ToString(balance);
+            Dash_dash_cbp_value.Text = "Rs. " + Convert.ToString(creditBalance);
+
+            if (balanceGoal != 0)
             {
-                float currentBalance = userBalance.Balance;
-                float balanceGoal = userBalance.BalanceGoal;
-                Dash_dash_balance_value.Text = "Rs." + currentBalance;
+                Dash_dash_balance_progress.Value = (int)((balance / balanceGoal) * 100);
+            }
+            else { Dash_dash_balance_progress.Value = 0; }
 
-                if (currentBalance <= balanceGoal && balanceGoal != 0)
+            DisplayRecentTransactions();
+        }
+
+        private void DisplayRecentTransactions()
+        {
+            List<Transaction> recentTransactions = dbOperations.GetRecentTransactions(userID);
+
+            for (int i = 0; i < recentPanels.Length; i++)
+            {
+                if (i < recentTransactions.Count)
                 {
-                    int percentage = (int)((currentBalance / (float)balanceGoal) * 100); // make the progressbar go brr.
-                    Dash_dash_balance_progress.Value = percentage;
+                    recentLabels[i].Text = recentTransactions[i].Title;
+                    recentValues[i].Text = "Rs. " + recentTransactions[i].Amount.ToString("F2");
+                    recentPanels[i].Visible = true;
+                }
+                else
+                {
+                    recentPanels[i].Visible = false;
                 }
             }
-            else // if the user doesnt have a balance, create one.
-            {
-                UserBalance newBalance = dbOperations.IntitalizeBalance(userID);
-                Dash_dash_balance_value.Text = "Rs." + newBalance.Balance;
-                Dash_dash_balance_progress.Value = 0; // Initial progress
-            }
-
-            // retrieve the user credit balance
-            float userCreditBalance = dbOperations.GetUserCredit(userID);
-            if (userCreditBalance >= 0) // Check if the balance is above or equal to 0 | if the user already have a balance
-            {
-                Dash_dash_cbp_value.Text = "Rs. " + userCreditBalance; // retrieve it
-            }
-            else // if the user doesnt have a balace create one
-            {
-                float newCreditBalance = dbOperations.InitializeCreditBalance(userID);
-                Dash_dash_cbp_value.Text = "Rs. " + newCreditBalance;
-            }
         }
+
+
         private void DashboardForm_Load(object sender, EventArgs e)
         {
 
