@@ -22,8 +22,9 @@ namespace pocketify.Forms
         public int userId = UserIDHelper.Instance.UserId;
         public string userName = UserIDHelper.Instance.UserName;
         public string userEmail = UserIDHelper.Instance.Email;
+        private Dashboard dashboard;
 
-        public SettingsPage()
+        public SettingsPage(Dashboard dash)
         {
             InitializeComponent();
             contextMenuHelper = new ContextMenuHelper();
@@ -33,6 +34,7 @@ namespace pocketify.Forms
             Settings_pw_conf_input.Visible = false;
             this.Load += SettingsPage_Load;
             Settings_version_label.Text = ApplicationInfoHelper.Instance.Version;
+            dashboard = dash;
         }
 
         private void SettingsPage_Load(object sender, EventArgs e)
@@ -217,6 +219,15 @@ namespace pocketify.Forms
             Setting_pw_edit_input.LostFocus += (s, args) => Setting_pw_edit_input.PasswordChar = '*';
             Settings_pw_conf_input.GotFocus += (s, args) => Settings_pw_conf_input.PasswordChar = '\0';
             Settings_pw_conf_input.LostFocus += (s, args) => Settings_pw_conf_input.PasswordChar = '*';
+        }
+
+
+
+        public void Settings_logout_btn_Click(object sender, EventArgs e)
+        {
+            dashboard.Close();
+            LandingForm landingForm = new LandingForm();
+            landingForm.Show();
         }
     }
 }

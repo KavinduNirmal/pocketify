@@ -16,6 +16,7 @@ namespace pocketify.Forms
         private readonly Button[] navbarButtons;
         private readonly Button focusButton;
         private Button currentButton;
+        
 
         public Dashboard()
         {
@@ -23,6 +24,8 @@ namespace pocketify.Forms
 
             navbarButtons = new Button[] { dash_nav_dash_btn, dash_nav_trans_btn, dash_nav_category_btn, dash_nav_budget_btn };
             focusButton = dash_primarybtnbtn;
+
+            
 
             loadForm(new DashboardForm());
 
@@ -112,7 +115,7 @@ namespace pocketify.Forms
 
         private void Dash_acc_btn_Click(object sender, EventArgs e)
         {
-            loadForm(new SettingsPage());
+            loadForm(new SettingsPage(this));
             Page_label.Text = "Settings";
 
         }
