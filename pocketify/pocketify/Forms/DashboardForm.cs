@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,13 +19,19 @@ namespace pocketify.Forms
         int userID;
         float balance;
         float balanceGoal;
+        double totalIncome;
+        double totalExpenses;
         float creditBalance;
 
         private Label[] recentLabels;
         private Label[] recentValues;
         private Panel[] recentPanels;
+        private Label[] hideThese;
+        private Label[] categoryLabels;
+        private Label[] categoryValues;
 
-        DbOperations dbOperations = new DbOperations();            
+        DbOperations dbOperations = new DbOperations();
+        
 
         public DashboardForm()
         {
@@ -39,13 +46,25 @@ namespace pocketify.Forms
             balance = UserIDHelper.Instance.Balance;
             balanceGoal = UserIDHelper.Instance.BalanceGoal;
             creditBalance = UserIDHelper.Instance.CreditBalance;
+            totalIncome = UserIDHelper.Instance.TotalIncome;
+            totalExpenses = UserIDHelper.Instance.TotalExpenses;
+
+            List<Category> topCategories = dbOperations.GetTopCategories(userID);
 
             recentLabels = new Label[] { Dash_dash_trans_pnl1_txt, Dash_dash_trans_pnl2_txt, Dash_dash_trans_pnl3_txt, Dash_dash_trans_pnl4_txt };
             recentValues = new Label[] { Dash_dash_trans_pnl1_val, Dash_dash_trans_pnl2_val, Dash_dash_trans_pnl3_val, Dash_dash_trans_pnl4_val };
             recentPanels = new Panel[] { Dash_dash_trans_pnl1, Dash_dash_trans_pnl2, Dash_dash_trans_pnl3, Dash_dash_trans_pnl4 };
+            hideThese = new Label[] { Dash_dash_income_prec, Dash_dash_income_month, Dash_dash_expense_month, Dash_dash_expense_prec, };
+            categoryLabels = new Label[] { Dash_dash_cat_main_pnl_txt, Dash_dash_cat_pnl1_txt, Dash_dash_cat_pnl2_txt};
+            categoryValues = new Label[] { Dash_dash_cat_main_pnl_val, Dash_dash_cat_pnl1_val, Dash_dash_cat_pnl2_val };
 
-            Dash_dash_balance_value.Text = "Rs. " + Convert.ToString(balance);
-            Dash_dash_cbp_value.Text = "Rs. " + Convert.ToString(creditBalance);
+            Dash_dash_balance_value.Text = "Rs. " + balance.ToString("F2");
+            Dash_dash_cbp_value.Text = "Rs. " + creditBalance.ToString("F2");
+
+            foreach (Label label in hideThese)
+            {
+                label.Visible = false;
+            }
 
             if (balanceGoal != 0)
             {
@@ -53,8 +72,23 @@ namespace pocketify.Forms
             }
             else { Dash_dash_balance_progress.Value = 0; }
 
-            Dash_dash_noshow_pnl.Visible = false;
+            for (int i = 0; i < categoryLabels.Length; i++)
+            {
+                if (i < topCategories.Count)
+                {
+                    categoryLabels[i].Text = topCategories[i].CategoryName;
+                    categoryValues[i].Text = "Rs. " + topCategories[i].CatAmount.ToString("F2"); 
+                }
+                else
+                {
+                    categoryLabels[i].Text = "N/A";
+                    categoryValues[i].Text = "Rs. 0.00";
+                }
+            }
 
+            Dash_dash_noshow_pnl.Visible = false;
+            dbOperations.GetTotalIncomeThisMonth(userID);
+            dbOperations.GetTotalExpenseThisMonth(userID);
             DisplayRecentTransactions();
         }
 
@@ -83,7 +117,9 @@ namespace pocketify.Forms
                     }
                 }
             }
-            
+
+            Dash_dash_income_value.Text = "Rs. " + totalIncome.ToString("F2");
+            Dash_dash_expense_value.Text = "Rs. " + totalExpenses.ToString("F2");
         }
 
 

@@ -189,6 +189,81 @@ namespace pocketify.Database
             }
         }
 
+        public double GetTotalIncomeThisMonth(int userid)
+        {
+            double totalIncome = 0.0;
+            DateTime startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            DateTime endDate = startDate.AddMonths(1);
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT SUM(Value) AS TotalIncome " +
+                               "FROM Income " +
+                               "WHERE UID = @UserId AND Date >= @StartDate AND Date < @EndDate;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userid);
+                    cmd.Parameters.AddWithValue("@StartDate", startDate);
+                    cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        totalIncome = Convert.ToDouble(result);
+                        UserIDHelper.Instance.TotalIncome = totalIncome;
+                    }
+                    else
+                    {
+                        totalIncome = 0;
+                        UserIDHelper.Instance.TotalIncome = totalIncome;
+                    }
+                }
+            }
+
+            return totalIncome;
+        }
+
+        public double GetTotalExpenseThisMonth(int userid)
+        {
+            double totalExpenses = 0.0;
+            DateTime startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            DateTime endDate = startDate.AddMonths(1);
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT SUM(Value) AS TotalExpenses " +
+                               "FROM Expenses " +
+                               "WHERE UID = @UserId AND Date >= @StartDate AND Date < @EndDate;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userid);
+                    cmd.Parameters.AddWithValue("@StartDate", startDate);
+                    cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        totalExpenses = Convert.ToDouble(result);
+                        UserIDHelper.Instance.TotalExpenses = totalExpenses;
+                    }
+                    else
+                    {
+                        totalExpenses = 0;
+                        UserIDHelper.Instance.TotalExpenses = totalExpenses;
+                    }
+                }
+            }
+
+            return totalExpenses;
+        }
+
+
         // Get the user Credit balance
         public UserBalance GetUserCreditBalance(int userid)
         {
@@ -269,6 +344,47 @@ namespace pocketify.Database
         {
             public string Title { get; set; }
             public float Amount { get; set; }
+        }
+
+        public class Category
+        {
+            public string CategoryName { get; set; }
+            public double CatAmount { get; set; }
+        }
+
+        public List<Category> GetTopCategories(int userId)
+        {
+            List<Category> topCategories = new List<Category>();
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT TOP 3 CategoryName, CatAmount " +
+                               "FROM Categories " +
+                               "WHERE UID = @UserId " +
+                               "ORDER BY CatAmount DESC;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Category category = new Category
+                            {
+                                CategoryName = reader["CategoryName"].ToString(),
+                                CatAmount = Convert.ToDouble(reader["CatAmount"])
+                            };
+                            topCategories.Add(category);
+                        }
+                    }
+                }
+            }
+
+            return topCategories;
         }
 
         // Get mothly income

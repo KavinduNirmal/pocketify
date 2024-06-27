@@ -15,6 +15,9 @@ namespace pocketify.GlobalHelpers
         public float Balance { get; set; }
         public float BalanceGoal { get; set; }
         public float CreditBalance { get; set; }
+        public double TotalIncome { get; set; }
+        public double TotalExpenses { get; set; }
+        
 
         private UserIDHelper() { }
 
