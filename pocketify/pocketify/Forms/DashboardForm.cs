@@ -95,7 +95,7 @@ namespace pocketify.Forms
 
         private void DisplayRecentTransactions()
         {
-            List<Transaction> recentTransactions = dbOperations.GetRecentTransactions(userID);
+            List<TopTransaction> recentTransactions = dbOperations.GetRecentTransactions(userID);
 
             if (recentTransactions.Count == 0) 
             {

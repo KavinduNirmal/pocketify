@@ -32,6 +32,8 @@
             this.Dash_dash_transactions_lbl = new System.Windows.Forms.Label();
             this.Dash_dash_transactions_sub = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Dash_dash_noshow_pnl = new System.Windows.Forms.Panel();
+            this.Dash_dash_noshow_pnl_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2 = new System.Windows.Forms.Panel();
             this.Dash_dash_cat_pnl2_val = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2_txt = new System.Windows.Forms.Label();
@@ -83,8 +85,7 @@
             this.Dash_dash_balance_progress = new System.Windows.Forms.ProgressBar();
             this.Dash_dash_balance_value = new System.Windows.Forms.Label();
             this.Dash_dash_balace_lbl = new System.Windows.Forms.Label();
-            this.Dash_dash_noshow_pnl = new System.Windows.Forms.Panel();
-            this.Dash_dash_noshow_pnl_txt = new System.Windows.Forms.Label();
+            this.Dash_dash_noshow_pnl.SuspendLayout();
             this.Dash_dash_cat_pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).BeginInit();
             this.Dash_dash_cat_pnl1.SuspendLayout();
@@ -101,7 +102,6 @@
             this.Dash_dash_income_pnl.SuspendLayout();
             this.Dash_dash_cd_balance_panel.SuspendLayout();
             this.Dash_dash_balance_pnl.SuspendLayout();
-            this.Dash_dash_noshow_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Dash_dash_fd_lbl
@@ -148,6 +148,27 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Categories";
             // 
+            // Dash_dash_noshow_pnl
+            // 
+            this.Dash_dash_noshow_pnl.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_noshow_pnl.BackgroundImage = global::pocketify.Properties.Resources.noshowbg;
+            this.Dash_dash_noshow_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_noshow_pnl.Controls.Add(this.Dash_dash_noshow_pnl_txt);
+            this.Dash_dash_noshow_pnl.Location = new System.Drawing.Point(39, 343);
+            this.Dash_dash_noshow_pnl.Name = "Dash_dash_noshow_pnl";
+            this.Dash_dash_noshow_pnl.Size = new System.Drawing.Size(521, 287);
+            this.Dash_dash_noshow_pnl.TabIndex = 20;
+            // 
+            // Dash_dash_noshow_pnl_txt
+            // 
+            this.Dash_dash_noshow_pnl_txt.AutoSize = true;
+            this.Dash_dash_noshow_pnl_txt.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_noshow_pnl_txt.Location = new System.Drawing.Point(129, 132);
+            this.Dash_dash_noshow_pnl_txt.Name = "Dash_dash_noshow_pnl_txt";
+            this.Dash_dash_noshow_pnl_txt.Size = new System.Drawing.Size(276, 20);
+            this.Dash_dash_noshow_pnl_txt.TabIndex = 0;
+            this.Dash_dash_noshow_pnl_txt.Text = "There are no recent Transactions";
+            // 
             // Dash_dash_cat_pnl2
             // 
             this.Dash_dash_cat_pnl2.BackColor = System.Drawing.Color.Transparent;
@@ -188,6 +209,8 @@
             // 
             // Dash_dash_cat_pnl2_ico
             // 
+            this.Dash_dash_cat_pnl2_ico.BackgroundImage = global::pocketify.Properties.Resources.currency_dollar;
+            this.Dash_dash_cat_pnl2_ico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Dash_dash_cat_pnl2_ico.Location = new System.Drawing.Point(15, 20);
             this.Dash_dash_cat_pnl2_ico.Name = "Dash_dash_cat_pnl2_ico";
             this.Dash_dash_cat_pnl2_ico.Size = new System.Drawing.Size(24, 24);
@@ -234,6 +257,8 @@
             // 
             // Dash_dash_cat_pnl1_ico
             // 
+            this.Dash_dash_cat_pnl1_ico.BackgroundImage = global::pocketify.Properties.Resources.currency_dollar;
+            this.Dash_dash_cat_pnl1_ico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Dash_dash_cat_pnl1_ico.Location = new System.Drawing.Point(15, 20);
             this.Dash_dash_cat_pnl1_ico.Name = "Dash_dash_cat_pnl1_ico";
             this.Dash_dash_cat_pnl1_ico.Size = new System.Drawing.Size(24, 24);
@@ -282,6 +307,9 @@
             // 
             // Dash_dash_cat_main_pnl_ico
             // 
+            this.Dash_dash_cat_main_pnl_ico.BackgroundImage = global::pocketify.Properties.Resources.currency_dollar_white;
+            this.Dash_dash_cat_main_pnl_ico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Dash_dash_cat_main_pnl_ico.InitialImage = global::pocketify.Properties.Resources.currency_dollar_white;
             this.Dash_dash_cat_main_pnl_ico.Location = new System.Drawing.Point(15, 20);
             this.Dash_dash_cat_main_pnl_ico.Name = "Dash_dash_cat_main_pnl_ico";
             this.Dash_dash_cat_main_pnl_ico.Size = new System.Drawing.Size(24, 24);
@@ -767,27 +795,6 @@
             this.Dash_dash_balace_lbl.TabIndex = 6;
             this.Dash_dash_balace_lbl.Text = "Balance";
             // 
-            // Dash_dash_noshow_pnl
-            // 
-            this.Dash_dash_noshow_pnl.BackColor = System.Drawing.Color.Transparent;
-            this.Dash_dash_noshow_pnl.BackgroundImage = global::pocketify.Properties.Resources.noshowbg;
-            this.Dash_dash_noshow_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_noshow_pnl.Controls.Add(this.Dash_dash_noshow_pnl_txt);
-            this.Dash_dash_noshow_pnl.Location = new System.Drawing.Point(39, 343);
-            this.Dash_dash_noshow_pnl.Name = "Dash_dash_noshow_pnl";
-            this.Dash_dash_noshow_pnl.Size = new System.Drawing.Size(521, 287);
-            this.Dash_dash_noshow_pnl.TabIndex = 20;
-            // 
-            // Dash_dash_noshow_pnl_txt
-            // 
-            this.Dash_dash_noshow_pnl_txt.AutoSize = true;
-            this.Dash_dash_noshow_pnl_txt.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_dash_noshow_pnl_txt.Location = new System.Drawing.Point(129, 132);
-            this.Dash_dash_noshow_pnl_txt.Name = "Dash_dash_noshow_pnl_txt";
-            this.Dash_dash_noshow_pnl_txt.Size = new System.Drawing.Size(276, 20);
-            this.Dash_dash_noshow_pnl_txt.TabIndex = 0;
-            this.Dash_dash_noshow_pnl_txt.Text = "There are no recent Transactions";
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -818,6 +825,8 @@
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
+            this.Dash_dash_noshow_pnl.ResumeLayout(false);
+            this.Dash_dash_noshow_pnl.PerformLayout();
             this.Dash_dash_cat_pnl2.ResumeLayout(false);
             this.Dash_dash_cat_pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).EndInit();
@@ -847,8 +856,6 @@
             this.Dash_dash_cd_balance_panel.PerformLayout();
             this.Dash_dash_balance_pnl.ResumeLayout(false);
             this.Dash_dash_balance_pnl.PerformLayout();
-            this.Dash_dash_noshow_pnl.ResumeLayout(false);
-            this.Dash_dash_noshow_pnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -113,6 +113,26 @@ namespace pocketify.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap currency_dollar {
+            get {
+                object obj = ResourceManager.GetObject("currency-dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap currency_dollar_white {
+            get {
+                object obj = ResourceManager.GetObject("currency-dollar_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dash_Balance_back {
             get {
                 object obj = ResourceManager.GetObject("Dash_Balance_back", resourceCulture);

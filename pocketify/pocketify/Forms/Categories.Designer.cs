@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.CategoriesDataset = new System.Windows.Forms.DataGridView();
-            this.Cat_main_lbl = new System.Windows.Forms.Label();
             this.Cat_action_btn = new System.Windows.Forms.Button();
             this.Cat_new_cat_pnl = new System.Windows.Forms.Panel();
             this.Cat_cat_name = new System.Windows.Forms.Label();
@@ -51,23 +50,12 @@
             this.CategoriesDataset.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.CategoriesDataset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CategoriesDataset.GridColor = System.Drawing.Color.Black;
-            this.CategoriesDataset.Location = new System.Drawing.Point(57, 102);
+            this.CategoriesDataset.Location = new System.Drawing.Point(57, 39);
             this.CategoriesDataset.Name = "CategoriesDataset";
             this.CategoriesDataset.RowHeadersWidth = 51;
             this.CategoriesDataset.RowTemplate.Height = 24;
-            this.CategoriesDataset.Size = new System.Drawing.Size(585, 445);
+            this.CategoriesDataset.Size = new System.Drawing.Size(604, 508);
             this.CategoriesDataset.TabIndex = 0;
-            // 
-            // Cat_main_lbl
-            // 
-            this.Cat_main_lbl.AutoSize = true;
-            this.Cat_main_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.Cat_main_lbl.Font = new System.Drawing.Font("Inter SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cat_main_lbl.Location = new System.Drawing.Point(53, 32);
-            this.Cat_main_lbl.Name = "Cat_main_lbl";
-            this.Cat_main_lbl.Size = new System.Drawing.Size(99, 20);
-            this.Cat_main_lbl.TabIndex = 2;
-            this.Cat_main_lbl.Text = "Categories";
             // 
             // Cat_action_btn
             // 
@@ -76,7 +64,7 @@
             this.Cat_action_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cat_action_btn.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cat_action_btn.ForeColor = System.Drawing.Color.White;
-            this.Cat_action_btn.Location = new System.Drawing.Point(698, 102);
+            this.Cat_action_btn.Location = new System.Drawing.Point(706, 39);
             this.Cat_action_btn.Name = "Cat_action_btn";
             this.Cat_action_btn.Size = new System.Drawing.Size(230, 42);
             this.Cat_action_btn.TabIndex = 9;
@@ -92,7 +80,7 @@
             this.Cat_new_cat_pnl.Controls.Add(this.Cat_cat_budget_lbl);
             this.Cat_new_cat_pnl.Controls.Add(this.Cat_cat_name_inp);
             this.Cat_new_cat_pnl.Controls.Add(this.Cat_cat_name);
-            this.Cat_new_cat_pnl.Location = new System.Drawing.Point(698, 178);
+            this.Cat_new_cat_pnl.Location = new System.Drawing.Point(706, 115);
             this.Cat_new_cat_pnl.Name = "Cat_new_cat_pnl";
             this.Cat_new_cat_pnl.Size = new System.Drawing.Size(230, 229);
             this.Cat_new_cat_pnl.TabIndex = 10;
@@ -164,7 +152,6 @@
             this.ClientSize = new System.Drawing.Size(1014, 646);
             this.Controls.Add(this.Cat_new_cat_pnl);
             this.Controls.Add(this.Cat_action_btn);
-            this.Controls.Add(this.Cat_main_lbl);
             this.Controls.Add(this.CategoriesDataset);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -174,14 +161,12 @@
             this.Cat_new_cat_pnl.ResumeLayout(false);
             this.Cat_new_cat_pnl.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView CategoriesDataset;
-        private System.Windows.Forms.Label Cat_main_lbl;
         private System.Windows.Forms.Button Cat_action_btn;
         private System.Windows.Forms.Panel Cat_new_cat_pnl;
         private System.Windows.Forms.Label Cat_cat_name;

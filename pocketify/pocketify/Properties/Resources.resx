@@ -151,6 +151,9 @@
   <data name="pocketify-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pocketify-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="currency-dollar_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currency-dollar_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="budget_icon_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\budget_icon_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,6 +175,9 @@
   <data name="two_dot_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\two_dot_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noshowbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noshowbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,7 +187,7 @@
   <data name="Dash_Cat_Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dash_Cat_Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="noshowbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\noshowbg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="currency-dollar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\currency-dollar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

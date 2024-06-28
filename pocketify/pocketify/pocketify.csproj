@@ -224,5 +224,11 @@
   <ItemGroup>
     <None Include="Resources\noshowbg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currency-dollar_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currency-dollar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -311,9 +312,9 @@ namespace pocketify.Database
         }
 
         // Get recent transactions
-        public List<Transaction> GetRecentTransactions(int userId)
+        public List<TopTransaction> GetRecentTransactions(int userId)
         {
-            List<Transaction> transactions = new List<Transaction>();
+            List<TopTransaction> transactions = new List<TopTransaction>();
 
             using (SqlConnection con = GetConnection())
             {
@@ -326,7 +327,7 @@ namespace pocketify.Database
                     {
                         while (reader.Read())
                         {
-                            Transaction transaction = new Transaction
+                            TopTransaction transaction = new TopTransaction
                             {
                                 Title = reader.GetString(0),
                                 Amount = reader.GetFloat(1)
@@ -340,10 +341,76 @@ namespace pocketify.Database
             return transactions;
         }
 
-        public class Transaction
+        public class TopTransaction
         {
             public string Title { get; set; }
             public float Amount { get; set; }
+        }
+
+        public class Transaction
+        {
+            public int TransactionID { get; set; }
+            public string Title { get; set; }
+            public double Amount { get; set; }
+            public DateTime Date { get; set; }
+            public string Description { get; set; }
+            public string Category { get; set; }
+
+        }
+
+        public List<Transaction> GetTransactions(int userId, DateTime? startDate, DateTime? endDate)
+        {
+            List<Transaction> transactions = new List<Transaction>();
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT TransactionID, Date, Title, Description, Amount " +
+                               "FROM Transactions " +
+                               "WHERE UID = @UserId ";
+
+                // Add date range condition if startDate and endDate are not null
+                if (startDate != null && endDate != null)
+                {
+                    query += "AND Date >= @StartDate AND Date <= @EndDate ";
+                }
+
+                query += "ORDER BY Date DESC;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+
+                    // Add parameters only if they are not null
+                    if (startDate != null)
+                    {
+                        cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate;
+                    }
+                    if (endDate != null)
+                    {
+                        cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate;
+                    }
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Transaction transaction = new Transaction
+                            {
+                                TransactionID = Convert.ToInt32(reader["TransactionID"]),
+                                Date = Convert.ToDateTime(reader["Date"]),
+                                Title = reader["Title"].ToString(),
+                                Description = reader["Description"].ToString(),
+                                Amount = Convert.ToDouble(reader["Amount"])
+                            };
+                            transactions.Add(transaction);
+                        }
+                    }
+                }
+            }
+
+            return transactions;
         }
 
         public class Category
