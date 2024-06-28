@@ -22,17 +22,13 @@ namespace pocketify.Forms
         double totalIncome;
         double totalExpenses;
         float creditBalance;
-        private string[] imgpath;
-
-
 
         private Label[] recentLabels;
         private Label[] recentValues;
         private Panel[] recentPanels;
         private Label[] hideThese;
         private Label[] categoryLabels;
-        private Label[] categoryValues;
-        private PictureBox[] categoryIcons;   
+        private Label[] categoryValues;   
 
         DbOperations dbOperations = new DbOperations();
         
@@ -61,7 +57,6 @@ namespace pocketify.Forms
             hideThese = new Label[] { Dash_dash_income_prec, Dash_dash_income_month, Dash_dash_expense_month, Dash_dash_expense_prec, };
             categoryLabels = new Label[] { Dash_dash_cat_main_pnl_txt, Dash_dash_cat_pnl1_txt, Dash_dash_cat_pnl2_txt};
             categoryValues = new Label[] { Dash_dash_cat_main_pnl_val, Dash_dash_cat_pnl1_val, Dash_dash_cat_pnl2_val };
-            categoryIcons = new PictureBox[] { Dash_dash_cat_main_pnl_ico, Dash_dash_cat_pnl1_ico, Dash_dash_cat_pnl2_ico };
 
             Dash_dash_balance_value.Text = "Rs. " + balance.ToString("F2");
             Dash_dash_cbp_value.Text = "Rs. " + creditBalance.ToString("F2");
@@ -83,31 +78,19 @@ namespace pocketify.Forms
                 if (i < topCategories.Count)
                 {
                     categoryLabels[i].Text = topCategories[i].CategoryName;
-                    categoryValues[i].Text = "Rs. " + topCategories[i].CatAmount.ToString("F2");
-
-                    // is the given path a valid path to the image
-                    string iconPath = topCategories[i].IconPath;
-                    if (System.IO.File.Exists(iconPath))
-                    {
-                        categoryIcons[i].Image = Image.FromFile(iconPath);
-                    }
-                    else
-                    {
-                        categoryIcons[i].Image = null;
-                    }
+                    categoryValues[i].Text = topCategories[i].CatAmount.ToString("C2"); // Format as currency
                 }
                 else
                 {
                     categoryLabels[i].Text = "N/A";
-                    categoryValues[i].Text = "Rs. 0.00";
-                    categoryIcons[i].Image = null;
+                    categoryValues[i].Text = "$0.00";
                 }
-
-                Dash_dash_noshow_pnl.Visible = false;
-                dbOperations.GetTotalIncomeThisMonth(userID);
-                dbOperations.GetTotalExpenseThisMonth(userID);
-                DisplayRecentTransactions();
             }
+
+            Dash_dash_noshow_pnl.Visible = false;
+            dbOperations.GetTotalIncomeThisMonth(userID);
+            dbOperations.GetTotalExpenseThisMonth(userID);
+            DisplayRecentTransactions();
         }
 
         private void DisplayRecentTransactions()

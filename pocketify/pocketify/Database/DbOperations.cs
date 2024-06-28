@@ -350,7 +350,7 @@ namespace pocketify.Database
         {
             public string CategoryName { get; set; }
             public double CatAmount { get; set; }
-            public string IconPath { get; set; }
+            public double CategoryBudget { get; set; }
         }
 
         public List<Category> GetTopCategories(int userId)
@@ -359,11 +359,43 @@ namespace pocketify.Database
 
             using (SqlConnection con = GetConnection())
             {
-                string query = "SELECT TOP 3 c.CategoryName, c.CatAmount, ci.IconPath " +
-                               "FROM Categories c " +
-                               "JOIN CategoryIcons ci ON c.CategoryIcon = ci.IconID " +
-                               "WHERE c.UID = @UserId " +
-                               "ORDER BY c.CatAmount DESC;";
+                string query = "SELECT TOP 3 CategoryName, CatAmount " +
+                               "FROM Categories " +
+                               "WHERE UID = @UserId " +
+                               "ORDER BY CatAmount DESC;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Category category = new Category
+                            {
+                                CategoryName = reader["CategoryName"].ToString(),
+                                CatAmount = Convert.ToDouble(reader["CatAmount"])
+                            };
+                            topCategories.Add(category);
+                        }
+                    }
+                }
+            }
+
+            return topCategories;
+        }
+
+
+        public List<Category> RetrieveCategories(int userId)
+        {
+            List<Category> categories = new List<Category>();
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT CategoryName, CatAmount, CategoryBudget FROM Categories WHERE UID = @UserId;";
 
                 con.Open();
 
@@ -379,16 +411,17 @@ namespace pocketify.Database
                             {
                                 CategoryName = reader["CategoryName"].ToString(),
                                 CatAmount = Convert.ToDouble(reader["CatAmount"]),
-                                IconPath = reader["IconPath"].ToString()
+                                CategoryBudget = Convert.ToDouble(reader["CategoryBudget"])
                             };
-                            topCategories.Add(category);
+                            categories.Add(category);
                         }
                     }
                 }
             }
 
-            return topCategories;
+            return categories;
         }
+
 
         // Get mothly income
         public float GetUserMonthlyIncome(int userId)
@@ -439,6 +472,34 @@ namespace pocketify.Database
                     {
                         
                         // Handle exception (e.g., log it)
+                    }
+                }
+            }
+        }
+
+        public void SaveCategory(int userId, string catName, double catBudget)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "INSERT INTO Categories (UID, CategoryName, CategoryBudget, CatAmount) " +
+                               "VALUES (@UserId, @CatName, @CatBudget, @CatAmount);";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@CatName", catName);
+                    cmd.Parameters.AddWithValue("@CatBudget", catBudget);
+                    cmd.Parameters.AddWithValue("@CatAmount", 0); 
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Log the exception or handle accordingly
+                        MessageBox.Show("An error occurred while saving the category: " + ex.Message);
                     }
                 }
             }

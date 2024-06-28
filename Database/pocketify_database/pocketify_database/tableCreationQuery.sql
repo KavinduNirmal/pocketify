@@ -34,6 +34,7 @@ CREATE TABLE Categories (
     CategoryName VARCHAR(20) NOT NULL,
     CatAmount FLOAT NOT NULL,
     CategoryIcon INT,
+	CategoryBudget FLOAT DEFAULT 0,
     FOREIGN KEY (UID) REFERENCES Users(UID),
     FOREIGN KEY (CategoryIcon) REFERENCES CategoryIcons(IconID)
 );
@@ -100,4 +101,6 @@ CREATE TABLE Income (
     FOREIGN KEY (TransactionID) REFERENCES Transactions(TransactionID)
 );
 
-SELECT * FROM Income;
+SELECT * FROM Categories;
+
+ 
