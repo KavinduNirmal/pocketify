@@ -350,6 +350,7 @@ namespace pocketify.Database
         {
             public string CategoryName { get; set; }
             public double CatAmount { get; set; }
+            public string IconPath { get; set; }
         }
 
         public List<Category> GetTopCategories(int userId)
@@ -358,10 +359,11 @@ namespace pocketify.Database
 
             using (SqlConnection con = GetConnection())
             {
-                string query = "SELECT TOP 3 CategoryName, CatAmount " +
-                               "FROM Categories " +
-                               "WHERE UID = @UserId " +
-                               "ORDER BY CatAmount DESC;";
+                string query = "SELECT TOP 3 c.CategoryName, c.CatAmount, ci.IconPath " +
+                               "FROM Categories c " +
+                               "JOIN CategoryIcons ci ON c.CategoryIcon = ci.IconID " +
+                               "WHERE c.UID = @UserId " +
+                               "ORDER BY c.CatAmount DESC;";
 
                 con.Open();
 
@@ -376,7 +378,8 @@ namespace pocketify.Database
                             Category category = new Category
                             {
                                 CategoryName = reader["CategoryName"].ToString(),
-                                CatAmount = Convert.ToDouble(reader["CatAmount"])
+                                CatAmount = Convert.ToDouble(reader["CatAmount"]),
+                                IconPath = reader["IconPath"].ToString()
                             };
                             topCategories.Add(category);
                         }

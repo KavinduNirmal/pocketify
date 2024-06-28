@@ -33,17 +33,14 @@
             this.Dash_dash_transactions_sub = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2 = new System.Windows.Forms.Panel();
-            this.Dash_dash_cat_pnl2_btn = new System.Windows.Forms.Button();
             this.Dash_dash_cat_pnl2_val = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl2_ico = new System.Windows.Forms.PictureBox();
             this.Dash_dash_cat_pnl1 = new System.Windows.Forms.Panel();
-            this.Dash_dash_cat_pnl1_btn = new System.Windows.Forms.Button();
             this.Dash_dash_cat_pnl1_val = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl1_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_pnl1_ico = new System.Windows.Forms.PictureBox();
             this.Dash_dash_cat_main_pnl = new System.Windows.Forms.Panel();
-            this.Dash_dash_cat_main_pnl_btn = new System.Windows.Forms.Button();
             this.Dash_dash_cat_main_pnl_val = new System.Windows.Forms.Label();
             this.Dash_dash_cat_main_pnl_txt = new System.Windows.Forms.Label();
             this.Dash_dash_cat_main_pnl_ico = new System.Windows.Forms.PictureBox();
@@ -156,7 +153,6 @@
             this.Dash_dash_cat_pnl2.BackColor = System.Drawing.Color.Transparent;
             this.Dash_dash_cat_pnl2.BackgroundImage = global::pocketify.Properties.Resources.Dash_Cat_Back;
             this.Dash_dash_cat_pnl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_cat_pnl2.Controls.Add(this.Dash_dash_cat_pnl2_btn);
             this.Dash_dash_cat_pnl2.Controls.Add(this.Dash_dash_cat_pnl2_val);
             this.Dash_dash_cat_pnl2.Controls.Add(this.Dash_dash_cat_pnl2_txt);
             this.Dash_dash_cat_pnl2.Controls.Add(this.Dash_dash_cat_pnl2_ico);
@@ -165,18 +161,6 @@
             this.Dash_dash_cat_pnl2.Name = "Dash_dash_cat_pnl2";
             this.Dash_dash_cat_pnl2.Size = new System.Drawing.Size(122, 139);
             this.Dash_dash_cat_pnl2.TabIndex = 19;
-            // 
-            // Dash_dash_cat_pnl2_btn
-            // 
-            this.Dash_dash_cat_pnl2_btn.BackgroundImage = global::pocketify.Properties.Resources.two_dot_icon_black;
-            this.Dash_dash_cat_pnl2_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Dash_dash_cat_pnl2_btn.FlatAppearance.BorderSize = 0;
-            this.Dash_dash_cat_pnl2_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dash_dash_cat_pnl2_btn.Location = new System.Drawing.Point(84, 20);
-            this.Dash_dash_cat_pnl2_btn.Name = "Dash_dash_cat_pnl2_btn";
-            this.Dash_dash_cat_pnl2_btn.Size = new System.Drawing.Size(30, 24);
-            this.Dash_dash_cat_pnl2_btn.TabIndex = 18;
-            this.Dash_dash_cat_pnl2_btn.UseVisualStyleBackColor = true;
             // 
             // Dash_dash_cat_pnl2_val
             // 
@@ -215,7 +199,6 @@
             this.Dash_dash_cat_pnl1.BackColor = System.Drawing.Color.Transparent;
             this.Dash_dash_cat_pnl1.BackgroundImage = global::pocketify.Properties.Resources.Dash_Cat_Back;
             this.Dash_dash_cat_pnl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_cat_pnl1.Controls.Add(this.Dash_dash_cat_pnl1_btn);
             this.Dash_dash_cat_pnl1.Controls.Add(this.Dash_dash_cat_pnl1_val);
             this.Dash_dash_cat_pnl1.Controls.Add(this.Dash_dash_cat_pnl1_txt);
             this.Dash_dash_cat_pnl1.Controls.Add(this.Dash_dash_cat_pnl1_ico);
@@ -224,18 +207,6 @@
             this.Dash_dash_cat_pnl1.Name = "Dash_dash_cat_pnl1";
             this.Dash_dash_cat_pnl1.Size = new System.Drawing.Size(122, 139);
             this.Dash_dash_cat_pnl1.TabIndex = 19;
-            // 
-            // Dash_dash_cat_pnl1_btn
-            // 
-            this.Dash_dash_cat_pnl1_btn.BackgroundImage = global::pocketify.Properties.Resources.two_dot_icon_black;
-            this.Dash_dash_cat_pnl1_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Dash_dash_cat_pnl1_btn.FlatAppearance.BorderSize = 0;
-            this.Dash_dash_cat_pnl1_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dash_dash_cat_pnl1_btn.Location = new System.Drawing.Point(84, 20);
-            this.Dash_dash_cat_pnl1_btn.Name = "Dash_dash_cat_pnl1_btn";
-            this.Dash_dash_cat_pnl1_btn.Size = new System.Drawing.Size(30, 24);
-            this.Dash_dash_cat_pnl1_btn.TabIndex = 18;
-            this.Dash_dash_cat_pnl1_btn.UseVisualStyleBackColor = true;
             // 
             // Dash_dash_cat_pnl1_val
             // 
@@ -274,7 +245,6 @@
             this.Dash_dash_cat_main_pnl.BackColor = System.Drawing.Color.Transparent;
             this.Dash_dash_cat_main_pnl.BackgroundImage = global::pocketify.Properties.Resources.Dash_Main_Cat_Back;
             this.Dash_dash_cat_main_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dash_dash_cat_main_pnl.Controls.Add(this.Dash_dash_cat_main_pnl_btn);
             this.Dash_dash_cat_main_pnl.Controls.Add(this.Dash_dash_cat_main_pnl_val);
             this.Dash_dash_cat_main_pnl.Controls.Add(this.Dash_dash_cat_main_pnl_txt);
             this.Dash_dash_cat_main_pnl.Controls.Add(this.Dash_dash_cat_main_pnl_ico);
@@ -283,18 +253,6 @@
             this.Dash_dash_cat_main_pnl.Name = "Dash_dash_cat_main_pnl";
             this.Dash_dash_cat_main_pnl.Size = new System.Drawing.Size(122, 139);
             this.Dash_dash_cat_main_pnl.TabIndex = 15;
-            // 
-            // Dash_dash_cat_main_pnl_btn
-            // 
-            this.Dash_dash_cat_main_pnl_btn.BackgroundImage = global::pocketify.Properties.Resources.two_dot_ico;
-            this.Dash_dash_cat_main_pnl_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Dash_dash_cat_main_pnl_btn.FlatAppearance.BorderSize = 0;
-            this.Dash_dash_cat_main_pnl_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dash_dash_cat_main_pnl_btn.Location = new System.Drawing.Point(84, 20);
-            this.Dash_dash_cat_main_pnl_btn.Name = "Dash_dash_cat_main_pnl_btn";
-            this.Dash_dash_cat_main_pnl_btn.Size = new System.Drawing.Size(30, 24);
-            this.Dash_dash_cat_main_pnl_btn.TabIndex = 18;
-            this.Dash_dash_cat_main_pnl_btn.UseVisualStyleBackColor = true;
             // 
             // Dash_dash_cat_main_pnl_val
             // 
@@ -941,17 +899,14 @@
         private System.Windows.Forms.Label Dash_dash_trans_pnl4_val;
         private System.Windows.Forms.Label Dash_dash_trans_pnl4_txt;
         private System.Windows.Forms.Panel Dash_dash_cat_main_pnl;
-        private System.Windows.Forms.Button Dash_dash_cat_main_pnl_btn;
         private System.Windows.Forms.Label Dash_dash_cat_main_pnl_val;
         private System.Windows.Forms.Label Dash_dash_cat_main_pnl_txt;
         private System.Windows.Forms.PictureBox Dash_dash_cat_main_pnl_ico;
         private System.Windows.Forms.Panel Dash_dash_cat_pnl1;
-        private System.Windows.Forms.Button Dash_dash_cat_pnl1_btn;
         private System.Windows.Forms.Label Dash_dash_cat_pnl1_val;
         private System.Windows.Forms.Label Dash_dash_cat_pnl1_txt;
         private System.Windows.Forms.PictureBox Dash_dash_cat_pnl1_ico;
         private System.Windows.Forms.Panel Dash_dash_cat_pnl2;
-        private System.Windows.Forms.Button Dash_dash_cat_pnl2_btn;
         private System.Windows.Forms.Label Dash_dash_cat_pnl2_val;
         private System.Windows.Forms.Label Dash_dash_cat_pnl2_txt;
         private System.Windows.Forms.PictureBox Dash_dash_cat_pnl2_ico;

@@ -1,8 +1,8 @@
-CREATE DATABASE PocketifyDB;
+CREATE DATABASE Pocketify;
 
 GO
 
-USE PocketifyDB;
+USE Pocketify;
 
 GO
 
