@@ -16,8 +16,9 @@ CREATE TABLE Users
 	PRIMARY KEY(UID)
 );
 
-
 SELECT * FROM Users;
+
+delete from Users where UID = 1;
 
 -- CategoryIcons Table
 CREATE TABLE CategoryIcons (
@@ -60,8 +61,8 @@ SELECT * FROM Transactions;
 
 CREATE TABLE Balance (
     UID INT PRIMARY KEY,
-    Balance FLOAT NOT NULL,
-    BalanceGoal FLOAT,
+    Balance INT NOT NULL,
+    BalanceGoal INT,
     BalanceDeadLine DATE,
     FOREIGN KEY (UID) REFERENCES Users(UID)
 );

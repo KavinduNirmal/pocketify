@@ -24,10 +24,11 @@ namespace pocketify.Forms
 
             navbarButtons = new Button[] { dash_nav_dash_btn, dash_nav_trans_btn, dash_nav_category_btn, dash_nav_budget_btn };
             focusButton = dash_primarybtnbtn;
+            dash_nav_budget_btn.Visible = false;
 
-            
-
-            loadForm(new DashboardForm());
+            var dashboardForm = new DashboardForm();
+            loadForm(dashboardForm);
+            dashboardForm.Dashboard_Load(null, EventArgs.Empty);
 
             foreach (Button button in navbarButtons) 
             {

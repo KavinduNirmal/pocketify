@@ -85,6 +85,11 @@
             this.Dash_dash_balance_progress = new System.Windows.Forms.ProgressBar();
             this.Dash_dash_balance_value = new System.Windows.Forms.Label();
             this.Dash_dash_balace_lbl = new System.Windows.Forms.Label();
+            this.Balance_edit_btn = new System.Windows.Forms.Button();
+            this.Dash_balance_goal_pnl = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Dash_balance_goal_inp = new System.Windows.Forms.TextBox();
+            this.Dash_balance_goal_save = new System.Windows.Forms.Button();
             this.Dash_dash_noshow_pnl.SuspendLayout();
             this.Dash_dash_cat_pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).BeginInit();
@@ -102,6 +107,7 @@
             this.Dash_dash_income_pnl.SuspendLayout();
             this.Dash_dash_cd_balance_panel.SuspendLayout();
             this.Dash_dash_balance_pnl.SuspendLayout();
+            this.Dash_balance_goal_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // Dash_dash_fd_lbl
@@ -751,6 +757,7 @@
             this.Dash_dash_balance_pnl.BackColor = System.Drawing.Color.Transparent;
             this.Dash_dash_balance_pnl.BackgroundImage = global::pocketify.Properties.Resources.Dash_Balance_back;
             this.Dash_dash_balance_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_dash_balance_pnl.Controls.Add(this.Balance_edit_btn);
             this.Dash_dash_balance_pnl.Controls.Add(this.Dash_dash_balance_progress);
             this.Dash_dash_balance_pnl.Controls.Add(this.Dash_dash_balance_value);
             this.Dash_dash_balance_pnl.Controls.Add(this.Dash_dash_balace_lbl);
@@ -795,6 +802,67 @@
             this.Dash_dash_balace_lbl.TabIndex = 6;
             this.Dash_dash_balace_lbl.Text = "Balance";
             // 
+            // Balance_edit_btn
+            // 
+            this.Balance_edit_btn.FlatAppearance.BorderSize = 0;
+            this.Balance_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Balance_edit_btn.Image = global::pocketify.Properties.Resources.two_dot_ico;
+            this.Balance_edit_btn.Location = new System.Drawing.Point(208, 20);
+            this.Balance_edit_btn.Name = "Balance_edit_btn";
+            this.Balance_edit_btn.Size = new System.Drawing.Size(25, 25);
+            this.Balance_edit_btn.TabIndex = 8;
+            this.Balance_edit_btn.UseVisualStyleBackColor = true;
+            this.Balance_edit_btn.Click += new System.EventHandler(this.Balance_edit_btn_Click);
+            // 
+            // Dash_balance_goal_pnl
+            // 
+            this.Dash_balance_goal_pnl.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_balance_goal_pnl.BackgroundImage = global::pocketify.Properties.Resources.Dash_Balance_back;
+            this.Dash_balance_goal_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Dash_balance_goal_pnl.Controls.Add(this.Dash_balance_goal_save);
+            this.Dash_balance_goal_pnl.Controls.Add(this.Dash_balance_goal_inp);
+            this.Dash_balance_goal_pnl.Controls.Add(this.label2);
+            this.Dash_balance_goal_pnl.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.Dash_balance_goal_pnl.Location = new System.Drawing.Point(39, 59);
+            this.Dash_balance_goal_pnl.Name = "Dash_balance_goal_pnl";
+            this.Dash_balance_goal_pnl.Size = new System.Drawing.Size(252, 152);
+            this.Dash_balance_goal_pnl.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(18, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Add Balance Goal";
+            // 
+            // Dash_balance_goal_inp
+            // 
+            this.Dash_balance_goal_inp.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_balance_goal_inp.Location = new System.Drawing.Point(21, 62);
+            this.Dash_balance_goal_inp.Name = "Dash_balance_goal_inp";
+            this.Dash_balance_goal_inp.Size = new System.Drawing.Size(212, 28);
+            this.Dash_balance_goal_inp.TabIndex = 7;
+            // 
+            // Dash_balance_goal_save
+            // 
+            this.Dash_balance_goal_save.BackColor = System.Drawing.Color.White;
+            this.Dash_balance_goal_save.FlatAppearance.BorderSize = 0;
+            this.Dash_balance_goal_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Dash_balance_goal_save.Font = new System.Drawing.Font("Inter Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_balance_goal_save.ForeColor = System.Drawing.Color.Black;
+            this.Dash_balance_goal_save.Location = new System.Drawing.Point(21, 103);
+            this.Dash_balance_goal_save.Name = "Dash_balance_goal_save";
+            this.Dash_balance_goal_save.Size = new System.Drawing.Size(112, 33);
+            this.Dash_balance_goal_save.TabIndex = 9;
+            this.Dash_balance_goal_save.Text = "Save";
+            this.Dash_balance_goal_save.UseVisualStyleBackColor = false;
+            this.Dash_balance_goal_save.Click += new System.EventHandler(this.Dash_balance_goal_save_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -802,6 +870,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1032, 693);
+            this.Controls.Add(this.Dash_balance_goal_pnl);
             this.Controls.Add(this.Dash_dash_noshow_pnl);
             this.Controls.Add(this.Dash_dash_cat_pnl2);
             this.Controls.Add(this.Dash_dash_cat_pnl1);
@@ -856,6 +925,8 @@
             this.Dash_dash_cd_balance_panel.PerformLayout();
             this.Dash_dash_balance_pnl.ResumeLayout(false);
             this.Dash_dash_balance_pnl.PerformLayout();
+            this.Dash_balance_goal_pnl.ResumeLayout(false);
+            this.Dash_balance_goal_pnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,5 +990,10 @@
         private System.Windows.Forms.PictureBox Dash_dash_cat_pnl2_ico;
         private System.Windows.Forms.Panel Dash_dash_noshow_pnl;
         private System.Windows.Forms.Label Dash_dash_noshow_pnl_txt;
+        private System.Windows.Forms.Button Balance_edit_btn;
+        private System.Windows.Forms.Panel Dash_balance_goal_pnl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Dash_balance_goal_inp;
+        private System.Windows.Forms.Button Dash_balance_goal_save;
     }
 }

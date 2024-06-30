@@ -75,7 +75,7 @@ namespace pocketify.Forms
                         UserIDHelper.Instance.Email = userDetails.Email;
 
                         // Get or initialize the user's balance
-                        dbOperations.GetUserBalance(uid);
+                        dbOperations.SetUserBalance(uid);
                         dbOperations.GetUserCreditBalance(uid);
 
                         Dashboard dashboard = new Dashboard();

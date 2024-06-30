@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -133,62 +134,80 @@ namespace pocketify.Database
         // Get the user balance
         public class UserBalance
         {
-            public float Balance { get; set; }
-            public float BalanceGoal { get; set; }
+            public int Balance { get; set; }
+            public int BalanceGoal { get; set; }
             public string BalanceDeadline { get; set; }
 
             public float CreditBalance { get; set; }
         }
 
-        public UserBalance GetUserBalance(int userid)
+        public UserBalance SetUserBalance(int userid)
         {
             using (SqlConnection con = GetConnection())
             {
                 con.Open();
-                string retrieveData = "SELECT Balance, BalanceGoal, BalanceDeadLine FROM Balance WHERE UID = @uid;";
+
                 string initializeFirst = "INSERT INTO Balance (UID, Balance, BalanceGoal, BalanceDeadLine) VALUES (@userId, @balance, @balanceGoal, @balanceDeadline);";
+
+                using (SqlCommand cmd2 = new SqlCommand(initializeFirst, con))
+                {
+                    int newBalance = 0;
+                    cmd2.Parameters.AddWithValue("@userId", userid);
+                    cmd2.Parameters.AddWithValue("@balance", newBalance);
+                    cmd2.Parameters.AddWithValue("@balanceGoal", newBalance);
+                    cmd2.Parameters.AddWithValue("@balanceDeadline", DateTime.Today.ToString("G"));
+
+                    cmd2.ExecuteNonQuery();
+
+                    UserIDHelper.Instance.UserId = userid;
+                    UserIDHelper.Instance.Balance = newBalance;
+                    UserIDHelper.Instance.BalanceGoal = newBalance;
+
+                    return new UserBalance
+                    {
+                        Balance = newBalance,
+                        BalanceGoal = newBalance,
+                        BalanceDeadline = DateTime.Today.ToString("yyyy-MM-dd")
+                    };
+                }
+                
+            }
+        }
+
+        public UserBalance GetUserBalance(int userId)
+        {
+            UserBalance userBalance = null;
+
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string retrieveData = "SELECT BalanceGoal, BalanceDeadline FROM Balance WHERE UID = @uid;";
 
                 using (SqlCommand cmd = new SqlCommand(retrieveData, con))
                 {
-                    cmd.Parameters.AddWithValue("@uid", userid);
+                    cmd.Parameters.AddWithValue("@uid", userId);
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            return new UserBalance
+                            int balanceGoal = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                            
+                            userBalance = new UserBalance
                             {
-                                Balance = reader.GetFloat(0),
-                                BalanceGoal = reader.GetFloat(1),
-                                BalanceDeadline = reader.GetDateTime(2).ToString("yyyy-MM-dd")
+                                BalanceGoal = balanceGoal,
                             };
+
+                            UserIDHelper.Instance.UserId = userId;
+                            UserIDHelper.Instance.BalanceGoal = userBalance.BalanceGoal;
                         }
-                    }
-
-                    // If no rows were found, we need to initialize the balance
-                    using (SqlCommand cmd2 = new SqlCommand(initializeFirst, con))
-                    {
-                        float newBalance = 0;
-                        cmd2.Parameters.AddWithValue("@userId", userid);
-                        cmd2.Parameters.AddWithValue("@balance", newBalance);
-                        cmd2.Parameters.AddWithValue("@balanceGoal", newBalance);
-                        cmd2.Parameters.AddWithValue("@balanceDeadline", DateTime.Today);
-
-                        cmd2.ExecuteNonQuery();
-
-                        UserIDHelper.Instance.UserId = userid;
-                        UserIDHelper.Instance.Balance = newBalance;
-                        UserIDHelper.Instance.BalanceGoal = newBalance;
-
-                        return new UserBalance
-                        {
-                            Balance = newBalance,
-                            BalanceGoal = newBalance,
-                            BalanceDeadline = DateTime.Today.ToString("yyyy-MM-dd")
-                        };
                     }
                 }
             }
+
+            return userBalance;
         }
+
 
         public double GetTotalIncomeThisMonth(int userid)
         {
@@ -330,7 +349,7 @@ namespace pocketify.Database
                             TopTransaction transaction = new TopTransaction
                             {
                                 Title = reader.GetString(0),
-                                Amount = reader.GetFloat(1)
+                                Amount = reader.GetDouble(1)
                             };
                             transactions.Add(transaction);
                         }
@@ -341,15 +360,15 @@ namespace pocketify.Database
             return transactions;
         }
 
+        // get top 4 transactions
         public class TopTransaction
         {
             public string Title { get; set; }
-            public float Amount { get; set; }
+            public double Amount { get; set; }
         }
 
         public class Transaction
         {
-            public int TransactionID { get; set; }
             public string Title { get; set; }
             public double Amount { get; set; }
             public DateTime Date { get; set; }
@@ -358,23 +377,25 @@ namespace pocketify.Database
 
         }
 
+        // retrieve all the transactions.
         public List<Transaction> GetTransactions(int userId, DateTime? startDate, DateTime? endDate)
         {
             List<Transaction> transactions = new List<Transaction>();
 
             using (SqlConnection con = GetConnection())
             {
-                string query = "SELECT TransactionID, Date, Title, Description, Amount " +
-                               "FROM Transactions " +
-                               "WHERE UID = @UserId ";
+                string query = "SELECT t.Title, t.Date, t.Description, t.Amount, c.CategoryName " +
+                               "FROM Transactions t " +
+                               "LEFT JOIN Categories c ON t.CategoryID = c.CatID " + // Join with Categories table
+                               "WHERE t.UID = @UserId ";
 
                 // Add date range condition if startDate and endDate are not null
                 if (startDate != null && endDate != null)
                 {
-                    query += "AND Date >= @StartDate AND Date <= @EndDate ";
+                    query += "AND t.Date >= @StartDate AND t.Date <= @EndDate ";
                 }
 
-                query += "ORDER BY Date DESC;";
+                query += "ORDER BY t.Date DESC;";
 
                 con.Open();
 
@@ -398,11 +419,11 @@ namespace pocketify.Database
                         {
                             Transaction transaction = new Transaction
                             {
-                                TransactionID = Convert.ToInt32(reader["TransactionID"]),
                                 Date = Convert.ToDateTime(reader["Date"]),
                                 Title = reader["Title"].ToString(),
                                 Description = reader["Description"].ToString(),
-                                Amount = Convert.ToDouble(reader["Amount"])
+                                Amount = Convert.ToDouble(reader["Amount"]),
+                                Category = reader["CategoryName"].ToString() // Assign category name
                             };
                             transactions.Add(transaction);
                         }
@@ -413,8 +434,141 @@ namespace pocketify.Database
             return transactions;
         }
 
+
+        // Save a Income
+
+        public void SaveTransactionIncome(int userId, string title, string description, double amount, int categoryId)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                using (SqlTransaction transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        // Insert transaction
+                        string insertTransactionQuery = "INSERT INTO Transactions (UID, Date, Title, Description, Amount, CategoryID) " +
+                                                        "VALUES (@UID, @Date, @Title, @Description, @Amount, @CategoryID); " +
+                                                        "SELECT SCOPE_IDENTITY();";
+
+                        using (SqlCommand cmd = new SqlCommand(insertTransactionQuery, con, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@UID", userId);
+                            cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@Title", title);
+                            cmd.Parameters.AddWithValue("@Description", description);
+                            cmd.Parameters.AddWithValue("@Amount", amount);
+                            cmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                            int transactionID = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            // Insert into Income table
+                            string insertIncomeQuery = "INSERT INTO Income (UID, Date, TransactionID, Value) VALUES (@UID, @Date, @TransactionID, @Value)";
+
+                            using (SqlCommand incomeCmd = new SqlCommand(insertIncomeQuery, con, transaction))
+                            {
+                                incomeCmd.Parameters.AddWithValue("@UID", userId);
+                                incomeCmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                                incomeCmd.Parameters.AddWithValue("@TransactionID", transactionID);
+                                incomeCmd.Parameters.AddWithValue("@Value", amount);
+
+                                incomeCmd.ExecuteNonQuery();
+                            }
+
+                            // Update category amount
+                            string updateCategoryQuery = "UPDATE Categories SET CatAmount = CatAmount + @Amount WHERE UID = @UID AND CatID = @CategoryID";
+
+                            using (SqlCommand updateCmd = new SqlCommand(updateCategoryQuery, con, transaction))
+                            {
+                                updateCmd.Parameters.AddWithValue("@Amount", amount);
+                                updateCmd.Parameters.AddWithValue("@UID", userId);
+                                updateCmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                                updateCmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        // Handle the exception (e.g., log the error)
+                        throw new Exception("Error saving transaction", ex);
+                    }
+                }
+            }
+        }
+
+
+        // Save a Expense 
+        public void SaveTransactionExpense(int userId, string title, string description, double amount, int categoryId)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                using (SqlTransaction transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        // Insert transaction
+                        string insertTransactionQuery = "INSERT INTO Transactions (UID, Date, Title, Description, Amount, CategoryID) " +
+                                                        "VALUES (@UID, @Date, @Title, @Description, @Amount, @CategoryID); " +
+                                                        "SELECT SCOPE_IDENTITY();";
+
+                        using (SqlCommand cmd = new SqlCommand(insertTransactionQuery, con, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@UID", userId);
+                            cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@Title", title);
+                            cmd.Parameters.AddWithValue("@Description", description);
+                            cmd.Parameters.AddWithValue("@Amount", amount);
+                            cmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                            int transactionID = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            // Insert into Expenses table
+                            string insertExpenseQuery = "INSERT INTO Expenses (UID, Date, TransactionID, Value) VALUES (@UID, @Date, @TransactionID, @Value)";
+
+                            using (SqlCommand expenseCmd = new SqlCommand(insertExpenseQuery, con, transaction))
+                            {
+                                expenseCmd.Parameters.AddWithValue("@UID", userId);
+                                expenseCmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                                expenseCmd.Parameters.AddWithValue("@TransactionID", transactionID);
+                                expenseCmd.Parameters.AddWithValue("@Value", amount);
+
+                                expenseCmd.ExecuteNonQuery();
+                            }
+
+                            // Update category amount
+                            string updateCategoryQuery = "UPDATE Categories SET CatAmount = CatAmount - @Amount WHERE UID = @UID AND CatID = @CategoryID";
+
+                            using (SqlCommand updateCmd = new SqlCommand(updateCategoryQuery, con, transaction))
+                            {
+                                updateCmd.Parameters.AddWithValue("@Amount", amount);
+                                updateCmd.Parameters.AddWithValue("@UID", userId);
+                                updateCmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                                updateCmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        // Handle the exception (e.g., log the error)
+                        throw new Exception("Error saving transaction", ex);
+                    }
+                }
+            }
+        }
+
+
         public class Category
         {
+            public int CatID { get; set; }
             public string CategoryName { get; set; }
             public double CatAmount { get; set; }
             public double CategoryBudget { get; set; }
@@ -455,14 +609,14 @@ namespace pocketify.Database
             return topCategories;
         }
 
-
+        // Retrieves the categories from the table.
         public List<Category> RetrieveCategories(int userId)
         {
             List<Category> categories = new List<Category>();
 
             using (SqlConnection con = GetConnection())
             {
-                string query = "SELECT CategoryName, CatAmount, CategoryBudget FROM Categories WHERE UID = @UserId;";
+                string query = "SELECT CatID, CategoryName, CatAmount, CategoryBudget FROM Categories WHERE UID = @UserId;";
 
                 con.Open();
 
@@ -476,6 +630,7 @@ namespace pocketify.Database
                         {
                             Category category = new Category
                             {
+                                CatID = Convert.ToInt32(reader["CatID"]),
                                 CategoryName = reader["CategoryName"].ToString(),
                                 CatAmount = Convert.ToDouble(reader["CatAmount"]),
                                 CategoryBudget = Convert.ToDouble(reader["CategoryBudget"])
@@ -488,7 +643,6 @@ namespace pocketify.Database
 
             return categories;
         }
-
 
         // Get mothly income
         public float GetUserMonthlyIncome(int userId)
@@ -517,7 +671,7 @@ namespace pocketify.Database
             return totalIncome;
         }
 
-
+        // Update user details
         public void UpdateData(string username, string email, int userid)
         {
 
@@ -544,6 +698,29 @@ namespace pocketify.Database
             }
         }
 
+        public void UpdateBalanceGoal(int userId, int balance)
+        {
+            using (SqlConnection con = GetConnection())
+            {
+                con.Open();
+                string query = "UPDATE Balance SET BalanceGoal = @Balance WHERE UID = @Uid;";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Balance", balance);
+                    cmd.Parameters.AddWithValue("@Uid", userId);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                    }
+                }
+            }
+        }
+
+        // Create a new category
         public void SaveCategory(int userId, string catName, double catBudget)
         {
             using (SqlConnection con = GetConnection())
@@ -572,6 +749,7 @@ namespace pocketify.Database
             }
         }
 
+        // Update password.
         public void UpdatePassword(int userid, string pwdHash)
         {
 
@@ -597,6 +775,7 @@ namespace pocketify.Database
             }
         }
 
+        // see if the suer exist and if so get the userid and make it global
         public int GetUid(string username)
         {
             int UID = 0; 
@@ -646,5 +825,6 @@ namespace pocketify.Database
                 }
             }
         }
+
     }
 }
