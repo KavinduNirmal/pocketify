@@ -12,6 +12,12 @@ namespace pocketify.GlobalHelpers
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public double Balance { get; set; }
+        public int BalanceGoal { get; set; }
+        public float CreditBalance { get; set; }
+        public double TotalIncome { get; set; }
+        public double TotalExpenses { get; set; }
+        
 
         private UserIDHelper() { }
 

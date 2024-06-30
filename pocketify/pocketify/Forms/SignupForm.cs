@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using pocketify.Authentication;
 using pocketify.Database;
 using pocketify.GlobalHelpers;
+using static pocketify.Database.DbOperations;
 
 namespace pocketify.Forms
 {
@@ -31,44 +32,61 @@ namespace pocketify.Forms
             string confPassword = signup_pwdc_inp.Text;
             bool terms = Signup_term_check.Checked;
 
-            if (password != confPassword) { MessageBox.Show("Passwords do not match!"); return; } // if the passwords do not match, throw an error.
-            if (!IsValidEmail(email)) { MessageBox.Show("Invalid email format."); return; } // if the email is not a conventional email, throw an error.
-            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confPassword)) { MessageBox.Show("Password cannot be empty"); return; } // if password inputs are empty, throw an error.
-            if (IsTermsAgreed(terms)) 
-            { 
-                Signup_term_check.ForeColor = Color.FromArgb(221,38,38); 
-                MessageBox.Show("You must agree to terms of service"); 
-                return; 
+            if (password != confPassword)
+            {
+                MessageBox.Show("Passwords do not match!");
+                return;
+            }
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid email format.");
+                return;
+            }
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confPassword))
+            {
+                MessageBox.Show("Password cannot be empty");
+                return;
+            }
+            if (!terms)
+            {
+                Signup_term_check.ForeColor = Color.FromArgb(221, 38, 38);
+                MessageBox.Show("You must agree to terms of service");
+                return;
             }
 
             string passwordHash = PasswordHasher.HashPassword(password);
 
             try
             {
-                // if the username is already taken, do not let procceed
+                // Save the user and check if the username already exists
                 if (!SaveUser(email, username, passwordHash))
                 {
                     MessageBox.Show("Error in signup, Username might already exist!");
                 }
-
                 else
                 {
+                    // Get the user ID of the newly created user
                     int uid = dbOperations.GetUid(username);
-                    if (uid != 0) 
+                    if (uid != 0)
                     {
-                        UserIDHelper.Instance.UserName = dbOperations.GetUserDetails(uid).Username;
-                        UserIDHelper.Instance.Email = dbOperations.GetUserDetails(uid).Email;
-                        Dashboard dashboard = new Dashboard(); 
+                        var userDetails = dbOperations.GetUserDetails(uid);
+                        UserIDHelper.Instance.UserId = uid;
+                        UserIDHelper.Instance.UserName = userDetails.Username;
+                        UserIDHelper.Instance.Email = userDetails.Email;
+
+                        // Get or initialize the user's balance
+                        dbOperations.SetUserBalance(uid);
+                        dbOperations.GetUserCreditBalance(uid);
+
+                        Dashboard dashboard = new Dashboard();
                         dashboard.Show();
                         this.Hide();
-                        MessageBox.Show("Signup Successful! : Logging in as " + uid + " " + username);
+                        MessageBox.Show("Signup Successful! Logging in as " + uid + " " + username);
                     }
                     else
                     {
                         MessageBox.Show("User not found or UID is invalid for " + username);
-                        return; // Or handle this case appropriately
                     }
-                    
                 }
             }
             catch (Exception ex)
@@ -76,6 +94,7 @@ namespace pocketify.Forms
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+
 
         // Save the user credentials in the database.
         private bool SaveUser(string email, string username, string passwordHash)

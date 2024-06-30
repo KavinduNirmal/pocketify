@@ -16,6 +16,7 @@ namespace pocketify.Forms
         private readonly Button[] navbarButtons;
         private readonly Button focusButton;
         private Button currentButton;
+        
 
         public Dashboard()
         {
@@ -23,7 +24,11 @@ namespace pocketify.Forms
 
             navbarButtons = new Button[] { dash_nav_dash_btn, dash_nav_trans_btn, dash_nav_category_btn, dash_nav_budget_btn };
             focusButton = dash_primarybtnbtn;
-            
+            dash_nav_budget_btn.Visible = false;
+
+            var dashboardForm = new DashboardForm();
+            loadForm(dashboardForm);
+            dashboardForm.Dashboard_Load(null, EventArgs.Empty);
 
             foreach (Button button in navbarButtons) 
             {
@@ -90,6 +95,7 @@ namespace pocketify.Forms
         private void dash_nav_trans_btn_Click(object sender, EventArgs e)
         {
             loadForm(new Transactions());
+            Page_label.Text = "Transactions";
 
         }
 
@@ -103,11 +109,16 @@ namespace pocketify.Forms
                     button.ForeColor = Color.FromArgb(24, 24, 24);
                 }
             }
+
+            loadForm(new AddTransactionForm());
+            Page_label.Text = "Add Transactions";
         }
 
         private void Dash_acc_btn_Click(object sender, EventArgs e)
         {
-            loadForm(new SettingsPage());
+            loadForm(new SettingsPage(this));
+            Page_label.Text = "Settings";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,7 +133,8 @@ namespace pocketify.Forms
 
         private void dash_nav_dash_btn_Click(object sender, EventArgs e)
         {
-            MouseEventArgs mouseEvent = (MouseEventArgs)e;
+            loadForm(new DashboardForm());
+            Page_label.Text = "Dashboard";
             
         }
 
@@ -134,6 +146,13 @@ namespace pocketify.Forms
         private void dash_nav_category_btn_Click(object sender, EventArgs e)
         {
             loadForm(new Categories());
+            Page_label.Text = "Categories";
+        }
+
+        private void dash_nav_budget_btn_Click(object sender, EventArgs e)
+        {
+            loadForm(new BudgetForm());
+            Page_label.Text = "Budgeting";
         }
     }
 }

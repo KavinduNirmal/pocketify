@@ -109,6 +109,7 @@
             this.dash_nav_budget_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dash_nav_budget_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dash_nav_budget_btn.UseVisualStyleBackColor = false;
+            this.dash_nav_budget_btn.Click += new System.EventHandler(this.dash_nav_budget_btn_Click);
             // 
             // dash_nav_category_btn
             // 
@@ -223,7 +224,7 @@
             this.Page_label.AutoSize = true;
             this.Page_label.Font = new System.Drawing.Font("Inter", 14F, System.Drawing.FontStyle.Bold);
             this.Page_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.Page_label.Location = new System.Drawing.Point(31, 12);
+            this.Page_label.Location = new System.Drawing.Point(33, 17);
             this.Page_label.Name = "Page_label";
             this.Page_label.Size = new System.Drawing.Size(141, 29);
             this.Page_label.TabIndex = 0;

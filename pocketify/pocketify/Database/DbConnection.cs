@@ -14,7 +14,7 @@ namespace pocketify.Database
         public DbConnection()
         {
             // TODO: Create an environment variable instead.
-            _connectionString = "Data Source=MSI;Initial Catalog=Pocketify;Integrated Security=True";
+            _connectionString = "Data Source=MSI;Initial Catalog=Pocketify;Integrated Security=True;";
         }
 
         protected SqlConnection GetConnection()
