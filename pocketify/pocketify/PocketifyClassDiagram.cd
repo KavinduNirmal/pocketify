@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="pocketify.LandingForm">
+    <Position X="18.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACBQAAAAAICBAABDQAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Forms\LandingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Program">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Authentication.PasswordHasher">
+    <Position X="10.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAACAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication\PasswordHasher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Database.DbConnection">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
+      <FileName>Database\DbConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Database.DbOperations">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="pocketify.Database.DbOperations.UserDetails">
+        <TypeIdentifier>
+          <NewMemberFileName>Database\DbOperations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="pocketify.Database.DbOperations.UserBalance">
+        <TypeIdentifier>
+          <NewMemberFileName>Database\DbOperations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="pocketify.Database.DbOperations.TopTransaction">
+        <TypeIdentifier>
+          <NewMemberFileName>Database\DbOperations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="pocketify.Database.DbOperations.Transaction">
+        <TypeIdentifier>
+          <NewMemberFileName>Database\DbOperations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="pocketify.Database.DbOperations.Category">
+        <TypeIdentifier>
+          <NewMemberFileName>Database\DbOperations.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAAAgAgEAgAgAoAEAAIAAAAwAgAAAAhEAgAEAIACgA=</HashCode>
+      <FileName>Database\DbOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.AddTransactionForm">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="dbOperations" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="Trans_amount_inp" Hidden="true" />
+      <Field Name="Trans_amount_txt" Hidden="true" />
+      <Field Name="Trans_cetegories" Hidden="true" />
+      <Field Name="Trans_desc_inp" Hidden="true" />
+      <Field Name="Trans_desc_txt" Hidden="true" />
+      <Field Name="Trans_save_tranc" Hidden="true" />
+      <Field Name="Trans_title_inp" Hidden="true" />
+      <Field Name="Trans_title_txt" Hidden="true" />
+      <Field Name="Trans_type_expense" Hidden="true" />
+      <Field Name="Trans_type_income" Hidden="true" />
+      <Field Name="Trans_type_select" Hidden="true" />
+      <Field Name="Transe_category_select" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAEAAACQCAAEgGBIACBAAAEBAAAAAAACA=</HashCode>
+      <FileName>Forms\AddTransactionForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.BudgetForm">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\BudgetForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.Categories">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="Cat_action_btn" Hidden="true" />
+      <Field Name="Cat_cat_budget_inp" Hidden="true" />
+      <Field Name="Cat_cat_budget_lbl" Hidden="true" />
+      <Field Name="Cat_cat_name" Hidden="true" />
+      <Field Name="Cat_cat_name_inp" Hidden="true" />
+      <Field Name="Cat_cat_save_btn" Hidden="true" />
+      <Field Name="Cat_new_cat_pnl" Hidden="true" />
+      <Field Name="CategoriesDataset" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACCAAQAACASCAEACAAAISAAAAAAAAAgAABA=</HashCode>
+      <FileName>Forms\Categories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.Dashboard">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="Dash_acc_btn" Hidden="true" />
+      <Field Name="dash_nav_budget_btn" Hidden="true" />
+      <Field Name="dash_nav_category_btn" Hidden="true" />
+      <Field Name="dash_nav_dash_btn" Hidden="true" />
+      <Field Name="dash_nav_trans_btn" Hidden="true" />
+      <Field Name="dash_primarybtnbtn" Hidden="true" />
+      <Field Name="DetailsTopBar" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="FormContainer" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="LogoPanel" Hidden="true" />
+      <Field Name="LogoPictureBox" Hidden="true" />
+      <Field Name="NavbarSidebar" Hidden="true" />
+      <Field Name="NavButtons" Hidden="true" />
+      <Field Name="Page_label" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QBEQAAIQACBAAIBSAACASBEDAAAAAIAEIGCAABgABBA=</HashCode>
+      <FileName>Forms\Dashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.DashboardForm">
+    <Position X="16.5" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>+QAQAFBECCBIQRlQzJCsZKTKQAC0YgASgKCKseAADDM=</HashCode>
+      <FileName>Forms\DashboardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.SettingsPage">
+    <Position X="20" Y="6.75" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="editButtons" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="Setting_pw_edit_input" Hidden="true" />
+      <Field Name="Settings_About_lbl" Hidden="true" />
+      <Field Name="Settings_change_pw_btn" Hidden="true" />
+      <Field Name="Settings_email_edit_btn" Hidden="true" />
+      <Field Name="Settings_email_edit_Input" Hidden="true" />
+      <Field Name="Settings_logout_btn" Hidden="true" />
+      <Field Name="Settings_pw_conf_input" Hidden="true" />
+      <Field Name="Settings_save_btn" Hidden="true" />
+      <Field Name="Settings_un_edit_btn" Hidden="true" />
+      <Field Name="Settings_username_input" Hidden="true" />
+      <Field Name="Settings_version_label" Hidden="true" />
+      <Field Name="userEmail" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gFAMAEAQECAgCLAACACAEAAKAECAAAAkBEAAIAMFQAg=</HashCode>
+      <FileName>Forms\SettingsPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.SignupForm">
+    <Position X="14.75" Y="6.75" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="login_logo_1" Hidden="true" />
+      <Field Name="signiup_pwd_input" Hidden="true" />
+      <Field Name="signup_email_input" Hidden="true" />
+      <Field Name="signup_login_btn" Hidden="true" />
+      <Field Name="signup_pwdc_inp" Hidden="true" />
+      <Field Name="signup_signin_btn" Hidden="true" />
+      <Field Name="Signup_term_check" Hidden="true" />
+      <Field Name="signup_username_inp" Hidden="true" />
+      <Field Name="su_cpwd_txt" Hidden="true" />
+      <Field Name="su_email_txt" Hidden="true" />
+      <Field Name="su_pwd_txt" Hidden="true" />
+      <Field Name="su_username_txt" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAUAQEAACgAAEAAAACAAAACAEAAEBBQAABAAAAAAAI=</HashCode>
+      <FileName>Forms\SignupForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Forms.Transactions">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <Members>
+      <Field Name="Cat_action_btn" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="Transaction_end_date" Hidden="true" />
+      <Field Name="Transaction_first_date" Hidden="true" />
+      <Field Name="Transaction_lbl_1" Hidden="true" />
+      <Field Name="Transaction_lbl_2" Hidden="true" />
+      <Field Name="TransactionDataset" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAKAAAQAAKACQAEACAABAAACAAMAAAAAAAAA=</HashCode>
+      <FileName>Forms\Transactions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.GlobalHelpers.ApplicationInfoHelper">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>GlobalHelpers\ApplicationInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.GlobalHelpers.ContextMenuHelper">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="pocketify.GlobalHelpers.ContextMenuHelper.MenuItem" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GlobalHelpers\ContextMenuHelper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GlobalHelpers\ContextMenuHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.GlobalHelpers.UserIDHelper">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAACCAAAAAAAAgAAIgAAABAAAAAQQAEAAAAAAA=</HashCode>
+      <FileName>GlobalHelpers\UserIDHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Properties.Resources">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Internal" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAxAAChABQgAAAAAoAgBOIACAQAAAwAAAhAQAAAAhoA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pocketify.Properties.Settings">
+    <Position X="10.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="16.5" Y="4" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Inter" Size="9" />
+</ClassDiagram>
