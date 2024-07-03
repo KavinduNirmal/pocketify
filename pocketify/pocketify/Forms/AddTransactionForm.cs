@@ -105,5 +105,9 @@ namespace pocketify.Forms
             dashboardForm.Dashboard_Load(null, EventArgs.Empty);
         }
 
+        private void Trans_title_inp_TextChanged(object sender, EventArgs e)
+        {
+            Trans_desc_inp.Text = Trans_title_inp.Text;
+        }
     }
 }

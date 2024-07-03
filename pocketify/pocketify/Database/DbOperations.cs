@@ -226,25 +226,26 @@ namespace pocketify.Database
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@UserId", userid);
-                    cmd.Parameters.AddWithValue("@StartDate", startDate);
-                    cmd.Parameters.AddWithValue("@EndDate", endDate);
+                    cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate;
+                    cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate;
 
                     object result = cmd.ExecuteScalar();
-                    if (result != DBNull.Value)
+                    if (result != DBNull.Value && result != null)
                     {
                         totalIncome = Convert.ToDouble(result);
-                        UserIDHelper.Instance.TotalIncome = totalIncome;
                     }
                     else
                     {
                         totalIncome = 0;
-                        UserIDHelper.Instance.TotalIncome = totalIncome;
                     }
+
+                    UserIDHelper.Instance.TotalIncome = totalIncome;
                 }
             }
 
             return totalIncome;
         }
+
 
         public double GetTotalExpenseThisMonth(int userid)
         {

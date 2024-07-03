@@ -74,6 +74,7 @@
             this.Trans_title_inp.Name = "Trans_title_inp";
             this.Trans_title_inp.Size = new System.Drawing.Size(300, 28);
             this.Trans_title_inp.TabIndex = 25;
+            this.Trans_title_inp.TextChanged += new System.EventHandler(this.Trans_title_inp_TextChanged);
             // 
             // Trans_amount_txt
             // 

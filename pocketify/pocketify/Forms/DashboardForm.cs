@@ -55,6 +55,9 @@ namespace pocketify.Forms
             totalIncome = UserIDHelper.Instance.TotalIncome;
             totalExpenses = UserIDHelper.Instance.TotalExpenses;
 
+            dbOperations.GetTotalIncomeThisMonth(userID);
+            dbOperations.GetTotalExpenseThisMonth(userID);
+
             List<Category> topCategories = dbOperations.GetTopCategories(userID);
                         
             hideThese = new Label[] { Dash_dash_income_prec, Dash_dash_income_month, Dash_dash_expense_month, Dash_dash_expense_prec, };
@@ -91,8 +94,7 @@ namespace pocketify.Forms
             }
 
             Dash_dash_noshow_pnl.Visible = false;
-            dbOperations.GetTotalIncomeThisMonth(userID);
-            dbOperations.GetTotalExpenseThisMonth(userID);
+            
 
             Dash_dash_balance_value.Text = "Rs. " + (totalIncome - totalExpenses).ToString("N2");
 
