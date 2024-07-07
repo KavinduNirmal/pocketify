@@ -47,6 +47,8 @@ namespace pocketify.Forms
         public void Dashboard_Load(object sender, EventArgs e)
         {
             dbOperations.GetUserBalance(userID);
+            UserIDHelper.Instance.TotalExpenses = dbOperations.GetTotalExpenseThisMonth(userID);
+            UserIDHelper.Instance.TotalIncome = dbOperations.GetTotalIncomeThisMonth(userID);
 
             userID = UserIDHelper.Instance.UserId;
             balance = UserIDHelper.Instance.Balance;
@@ -55,18 +57,21 @@ namespace pocketify.Forms
             totalIncome = UserIDHelper.Instance.TotalIncome;
             totalExpenses = UserIDHelper.Instance.TotalExpenses;
 
-            dbOperations.GetTotalIncomeThisMonth(userID);
-            dbOperations.GetTotalExpenseThisMonth(userID);
-
             List<Category> topCategories = dbOperations.GetTopCategories(userID);
                         
-            hideThese = new Label[] { Dash_dash_income_prec, Dash_dash_income_month, Dash_dash_expense_month, Dash_dash_expense_prec, };
+            hideThese = new Label[] { Dash_dash_income_prec, Dash_dash_expense_prec, label17, label21 };
             categoryLabels = new Label[] { Dash_dash_cat_main_pnl_txt, Dash_dash_cat_pnl1_txt, Dash_dash_cat_pnl2_txt};
             categoryValues = new Label[] { Dash_dash_cat_main_pnl_val, Dash_dash_cat_pnl1_val, Dash_dash_cat_pnl2_val };
 
             Dash_dash_balance_value.Text = "Rs. " + balance.ToString("N2");
             Dash_dash_cbp_value.Text = "Rs. " + creditBalance.ToString("N2");
-            
+            Dash_dash_income_month.Text = DateTime.Now.ToString("MMMM");
+            Dash_dash_expense_month.Text = DateTime.Now.ToString("MMMM");
+            Dash_dash_year_expenses.Text = DateTime.Now.ToString("yyyy");
+            Dash_dash_year_income.Text = DateTime.Now.ToString("yyyy");
+
+            Dash_total_income.Text = dbOperations.GetTotalIncome(userID).ToString("N2");
+            Dash_total_expense.Text = dbOperations.GetTotalExpense(userID).ToString("N2");
 
             foreach (Label label in hideThese)
             {
@@ -128,8 +133,8 @@ namespace pocketify.Forms
                 }
             }
 
-            Dash_dash_income_value.Text = "Rs. " + totalIncome.ToString("N2");
-            Dash_dash_expense_value.Text = "Rs. " + totalExpenses.ToString("N2");
+            Dash_dash_income_value.Text = "Rs. " + dbOperations.GetTotalIncomeThisMonth(userID).ToString("N2");
+            Dash_dash_expense_value.Text = "Rs. " + dbOperations.GetTotalExpenseThisMonth(userID).ToString("N2");
             Dash_dash_income_value.ForeColor = Color.FromArgb(4, 197, 94);
             Dash_dash_expense_value.ForeColor = Color.FromArgb(225, 29, 72);
 

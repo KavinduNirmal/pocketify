@@ -246,6 +246,79 @@ namespace pocketify.Database
             return totalIncome;
         }
 
+        public double GetTotalIncome(int userid)
+        {
+            double totalIncome = 0.0;
+            DateTime startDate = new DateTime(DateTime.Today.Year, 1, 1);
+            DateTime endDate = startDate.AddYears(1);
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT SUM(Value) AS TotalIncome " +
+                               "FROM Income " +
+                               "WHERE UID = @UserId AND Date >= @StartDate AND Date < @EndDate;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userid);
+                    cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate;
+                    cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate;
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
+                    {
+                        totalIncome = Convert.ToDouble(result);
+                    }
+                    else
+                    {
+                        totalIncome = 0;
+                    }
+
+                    UserIDHelper.Instance.TotalIncome = totalIncome;
+                }
+            }
+
+            return totalIncome;
+        }
+
+        public double GetTotalExpense(int userid)
+        {
+            double totalIncome = 0.0;
+            DateTime startDate = new DateTime(DateTime.Today.Year, 1, 1);
+            DateTime endDate = startDate.AddYears(1);
+
+            using (SqlConnection con = GetConnection())
+            {
+                string query = "SELECT SUM(Value) AS TotalIncome " +
+                               "FROM Expenses " +
+                               "WHERE UID = @UserId AND Date >= @StartDate AND Date < @EndDate;";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userid);
+                    cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate;
+                    cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate;
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value && result != null)
+                    {
+                        totalIncome = Convert.ToDouble(result);
+                    }
+                    else
+                    {
+                        totalIncome = 0;
+                    }
+
+                    UserIDHelper.Instance.TotalIncome = totalIncome;
+                }
+            }
+
+            return totalIncome;
+        }
 
         public double GetTotalExpenseThisMonth(int userid)
         {

@@ -60,13 +60,13 @@
             this.Dash_dash_trans_pnl1_txt = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.Dash_dash_year_expenses = new System.Windows.Forms.Label();
+            this.Dash_total_expense = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.Dash_dash_year_income = new System.Windows.Forms.Label();
+            this.Dash_total_income = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.Dash_dash_expense_pnl = new System.Windows.Forms.Panel();
             this.Dash_dash_expense_prec = new System.Windows.Forms.Label();
@@ -82,14 +82,14 @@
             this.Dash_dash_cbp_value = new System.Windows.Forms.Label();
             this.Dash_dash_cdp_lbl = new System.Windows.Forms.Label();
             this.Dash_dash_balance_pnl = new System.Windows.Forms.Panel();
+            this.Balance_edit_btn = new System.Windows.Forms.Button();
             this.Dash_dash_balance_progress = new System.Windows.Forms.ProgressBar();
             this.Dash_dash_balance_value = new System.Windows.Forms.Label();
             this.Dash_dash_balace_lbl = new System.Windows.Forms.Label();
-            this.Balance_edit_btn = new System.Windows.Forms.Button();
             this.Dash_balance_goal_pnl = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Dash_balance_goal_inp = new System.Windows.Forms.TextBox();
             this.Dash_balance_goal_save = new System.Windows.Forms.Button();
+            this.Dash_balance_goal_inp = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Dash_dash_noshow_pnl.SuspendLayout();
             this.Dash_dash_cat_pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dash_dash_cat_pnl2_ico)).BeginInit();
@@ -487,8 +487,8 @@
             this.panel6.BackgroundImage = global::pocketify.Properties.Resources.Dash_Med_Back;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.label23);
+            this.panel6.Controls.Add(this.Dash_dash_year_expenses);
+            this.panel6.Controls.Add(this.Dash_total_expense);
             this.panel6.Controls.Add(this.label24);
             this.panel6.Font = new System.Drawing.Font("Inter", 8.25F);
             this.panel6.Location = new System.Drawing.Point(776, 228);
@@ -503,31 +503,30 @@
             this.label21.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(137, 24);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 16);
+            this.label21.Size = new System.Drawing.Size(0, 16);
             this.label21.TabIndex = 8;
-            this.label21.Text = "+7%";
             // 
-            // label22
+            // Dash_dash_year_expenses
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(125, 117);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(46, 16);
-            this.label22.TabIndex = 7;
-            this.label22.Text = "March";
+            this.Dash_dash_year_expenses.AutoSize = true;
+            this.Dash_dash_year_expenses.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_year_expenses.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_year_expenses.Location = new System.Drawing.Point(125, 117);
+            this.Dash_dash_year_expenses.Name = "Dash_dash_year_expenses";
+            this.Dash_dash_year_expenses.Size = new System.Drawing.Size(46, 16);
+            this.Dash_dash_year_expenses.TabIndex = 7;
+            this.Dash_dash_year_expenses.Text = "March";
             // 
-            // label23
+            // Dash_total_expense
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(18, 61);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(160, 24);
-            this.label23.TabIndex = 6;
-            this.label23.Text = "Rs. ###,###.##";
+            this.Dash_total_expense.AutoSize = true;
+            this.Dash_total_expense.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_total_expense.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold);
+            this.Dash_total_expense.Location = new System.Drawing.Point(18, 61);
+            this.Dash_total_expense.Name = "Dash_total_expense";
+            this.Dash_total_expense.Size = new System.Drawing.Size(160, 24);
+            this.Dash_total_expense.TabIndex = 6;
+            this.Dash_total_expense.Text = "Rs. ###,###.##";
             // 
             // label24
             // 
@@ -536,9 +535,9 @@
             this.label24.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(19, 24);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 16);
+            this.label24.Size = new System.Drawing.Size(95, 16);
             this.label24.TabIndex = 6;
-            this.label24.Text = "Income";
+            this.label24.Text = "Total Expense";
             // 
             // panel5
             // 
@@ -546,8 +545,8 @@
             this.panel5.BackgroundImage = global::pocketify.Properties.Resources.Dash_Med_Back;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label19);
+            this.panel5.Controls.Add(this.Dash_dash_year_income);
+            this.panel5.Controls.Add(this.Dash_total_income);
             this.panel5.Controls.Add(this.label20);
             this.panel5.Font = new System.Drawing.Font("Inter", 8.25F);
             this.panel5.Location = new System.Drawing.Point(575, 228);
@@ -562,31 +561,30 @@
             this.label17.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(136, 24);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(34, 16);
+            this.label17.Size = new System.Drawing.Size(0, 16);
             this.label17.TabIndex = 8;
-            this.label17.Text = "+7%";
             // 
-            // label18
+            // Dash_dash_year_income
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(124, 117);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 16);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "March";
+            this.Dash_dash_year_income.AutoSize = true;
+            this.Dash_dash_year_income.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_dash_year_income.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_dash_year_income.Location = new System.Drawing.Point(124, 117);
+            this.Dash_dash_year_income.Name = "Dash_dash_year_income";
+            this.Dash_dash_year_income.Size = new System.Drawing.Size(46, 16);
+            this.Dash_dash_year_income.TabIndex = 7;
+            this.Dash_dash_year_income.Text = "March";
             // 
-            // label19
+            // Dash_total_income
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(16, 61);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(160, 24);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "Rs. ###,###.##";
+            this.Dash_total_income.AutoSize = true;
+            this.Dash_total_income.BackColor = System.Drawing.Color.Transparent;
+            this.Dash_total_income.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold);
+            this.Dash_total_income.Location = new System.Drawing.Point(16, 61);
+            this.Dash_total_income.Name = "Dash_total_income";
+            this.Dash_total_income.Size = new System.Drawing.Size(160, 24);
+            this.Dash_total_income.TabIndex = 6;
+            this.Dash_total_income.Text = "Rs. ###,###.##";
             // 
             // label20
             // 
@@ -595,9 +593,9 @@
             this.label20.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(17, 24);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(52, 16);
+            this.label20.Size = new System.Drawing.Size(86, 16);
             this.label20.TabIndex = 6;
-            this.label20.Text = "Income";
+            this.label20.Text = "Total Income";
             // 
             // Dash_dash_expense_pnl
             // 
@@ -767,6 +765,18 @@
             this.Dash_dash_balance_pnl.Size = new System.Drawing.Size(252, 152);
             this.Dash_dash_balance_pnl.TabIndex = 5;
             // 
+            // Balance_edit_btn
+            // 
+            this.Balance_edit_btn.FlatAppearance.BorderSize = 0;
+            this.Balance_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Balance_edit_btn.Image = global::pocketify.Properties.Resources.two_dot_ico;
+            this.Balance_edit_btn.Location = new System.Drawing.Point(208, 20);
+            this.Balance_edit_btn.Name = "Balance_edit_btn";
+            this.Balance_edit_btn.Size = new System.Drawing.Size(25, 25);
+            this.Balance_edit_btn.TabIndex = 8;
+            this.Balance_edit_btn.UseVisualStyleBackColor = true;
+            this.Balance_edit_btn.Click += new System.EventHandler(this.Balance_edit_btn_Click);
+            // 
             // Dash_dash_balance_progress
             // 
             this.Dash_dash_balance_progress.BackColor = System.Drawing.Color.White;
@@ -802,18 +812,6 @@
             this.Dash_dash_balace_lbl.TabIndex = 6;
             this.Dash_dash_balace_lbl.Text = "Balance";
             // 
-            // Balance_edit_btn
-            // 
-            this.Balance_edit_btn.FlatAppearance.BorderSize = 0;
-            this.Balance_edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Balance_edit_btn.Image = global::pocketify.Properties.Resources.two_dot_ico;
-            this.Balance_edit_btn.Location = new System.Drawing.Point(208, 20);
-            this.Balance_edit_btn.Name = "Balance_edit_btn";
-            this.Balance_edit_btn.Size = new System.Drawing.Size(25, 25);
-            this.Balance_edit_btn.TabIndex = 8;
-            this.Balance_edit_btn.UseVisualStyleBackColor = true;
-            this.Balance_edit_btn.Click += new System.EventHandler(this.Balance_edit_btn_Click);
-            // 
             // Dash_balance_goal_pnl
             // 
             this.Dash_balance_goal_pnl.BackColor = System.Drawing.Color.Transparent;
@@ -827,26 +825,6 @@
             this.Dash_balance_goal_pnl.Name = "Dash_balance_goal_pnl";
             this.Dash_balance_goal_pnl.Size = new System.Drawing.Size(252, 152);
             this.Dash_balance_goal_pnl.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Add Balance Goal";
-            // 
-            // Dash_balance_goal_inp
-            // 
-            this.Dash_balance_goal_inp.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dash_balance_goal_inp.Location = new System.Drawing.Point(21, 62);
-            this.Dash_balance_goal_inp.Name = "Dash_balance_goal_inp";
-            this.Dash_balance_goal_inp.Size = new System.Drawing.Size(212, 28);
-            this.Dash_balance_goal_inp.TabIndex = 7;
             // 
             // Dash_balance_goal_save
             // 
@@ -862,6 +840,26 @@
             this.Dash_balance_goal_save.Text = "Save";
             this.Dash_balance_goal_save.UseVisualStyleBackColor = false;
             this.Dash_balance_goal_save.Click += new System.EventHandler(this.Dash_balance_goal_save_Click);
+            // 
+            // Dash_balance_goal_inp
+            // 
+            this.Dash_balance_goal_inp.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dash_balance_goal_inp.Location = new System.Drawing.Point(21, 62);
+            this.Dash_balance_goal_inp.Name = "Dash_balance_goal_inp";
+            this.Dash_balance_goal_inp.Size = new System.Drawing.Size(212, 28);
+            this.Dash_balance_goal_inp.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Inter", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(18, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Add Balance Goal";
             // 
             // DashboardForm
             // 
@@ -956,13 +954,13 @@
         private System.Windows.Forms.Label Dash_dash_expense_lbl;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label Dash_dash_year_income;
+        private System.Windows.Forms.Label Dash_total_income;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label Dash_dash_year_expenses;
+        private System.Windows.Forms.Label Dash_total_expense;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel Dash_dash_trans_pnl1;
         private System.Windows.Forms.Label Dash_dash_trans_pnl1_val;
